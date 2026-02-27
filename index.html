@@ -315,7 +315,8 @@
                     class="text-xs text-gray-400 hover:text-cyan-electric transition-colors">Terms</a>
                 <a href="javascript:void(0)" onclick="openModal('privacy')"
                     class="text-xs text-gray-400 hover:text-cyan-electric transition-colors">Privacy</a>
-                <a href="#" class="text-xs text-gray-400 hover:text-cyan-electric transition-colors">Contact</a>
+                <a href="javascript:void(0)" onclick="openModal('support')"
+                    class="text-xs text-gray-400 hover:text-cyan-electric transition-colors">Contact / Support</a>
             </div>
         </div>
     </footer>
@@ -360,6 +361,10 @@
                 TermsBody: "Use of tools is provided 'as is'. Users are responsible for their own data. OptiMicroTools does not guarantee uninterrupted service.",
                 PrivacyTitle: "Privacy Policy",
                 PrivacyBody: "100% Client-Side Processing. No data or files are ever sent to our servers. We use cookies (Google AdSense) to personalize ads.",
+                supportTitle: "Support the Project",
+                supportBody: "Your support keeps this project private, fast, and free of cookies. Choose your preferred way to help.",
+                copyBtn: "Copy",
+                copied: "Copied!",
                 CloseBtn: "Close"
             },
             es: {
@@ -377,6 +382,10 @@
                 TermsBody: "El uso de las herramientas se proporciona 'tal cual'. Los usuarios son responsables de sus propios datos. OptiMicroTools no garantiza el servicio ininterrumpido.",
                 PrivacyTitle: "Política de Privacidad",
                 PrivacyBody: "Procesamiento 100% en el cliente. Ningún dato o archivo se envía a nuestros servidores. Usamos cookies (Google AdSense) se usan para personalizar anuncios.",
+                supportTitle: "Apoya el Proyecto",
+                supportBody: "Tu apoyo mantiene este proyecto privado, rápido y libre de cookies. Elige tu forma preferida de ayudar.",
+                copyBtn: "Copiar",
+                copied: "¡Copiado!",
                 CloseBtn: "Cerrar"
             }
         };
@@ -434,6 +443,50 @@
             } else if (type === 'privacy') {
                 document.getElementById('modal-title').textContent = t.PrivacyTitle;
                 document.getElementById('modal-body').textContent = t.PrivacyBody;
+            } else if (type === 'support') {
+                document.getElementById('modal-title').textContent = t.supportTitle;
+                document.getElementById('modal-body').innerHTML = `
+                    <p class="mb-8 opacity-80">${t.supportBody}</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Primary: BMC -->
+                        <a href="https://www.buymeacoffee.com/jota302" target="_blank" 
+                           class="flex items-center justify-center gap-3 p-4 glass rounded-xl border border-cyan-electric/30 hover:border-cyan-electric hover:bg-cyan-electric/10 transition-all group">
+                            <span class="text-2xl">☕</span>
+                            <span class="font-bold text-white group-hover:text-cyan-electric">Buy Me a Coffee</span>
+                        </a>
+                        <!-- Alternative: PayPal -->
+                        <a href="https://paypal.me/jota302" target="_blank" 
+                           class="flex items-center justify-center gap-3 p-4 glass rounded-xl border border-white/5 hover:border-cyan-electric hover:bg-cyan-electric/10 transition-all group">
+                            <span class="text-2xl">💳</span>
+                            <span class="font-bold text-white group-hover:text-cyan-electric">PayPal</span>
+                        </a>
+                        <!-- Crypto: USDT -->
+                        <div class="md:col-span-2 p-4 glass rounded-xl border border-white/5">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-xs font-bold uppercase tracking-wider text-gray-500">USDT (TRC20)</span>
+                                <button onclick="copyAddress('TE95Gtd8qTWnsEcqXxDEoQoKLNg2hMvVtV', this)" 
+                                        class="text-xs bg-cyan-electric/10 text-cyan-electric px-3 py-1 rounded-md hover:bg-cyan-electric hover:text-black transition-all">
+                                    ${t.copyBtn}
+                                </button>
+                            </div>
+                            <code id="usdt-address" class="block bg-black/40 p-3 rounded-lg text-xs md:text-sm font-mono text-cyan-electric break-all border border-white/5">TE95Gtd8qTWnsEcqXxDEoQoKLNg2hMvVtV</code>
+                        </div>
+                        <!-- Local: Nequi -->
+                        <div class="md:col-span-2 p-6 glass rounded-xl border border-white/5 flex flex-col items-center gap-4">
+                            <div class="w-48 h-48 bg-white/5 rounded-lg flex items-center justify-center border border-white/10 relative overflow-hidden">
+                                <img src="assets/nequi-qr.png" alt="Nequi QR" class="w-full h-full object-contain" onerror="this.innerHTML='<div class=\\'flex flex-col items-center gap-2\\'><svg class=\\'w-12 h-12 text-gray-600\\' fill=\\'none\\' stroke=\\'currentColor\\' viewBox=\\'0 0 24 24\\'><path stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\' stroke-width=\\'2\\' d=\\'M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z\\'></path></svg><span class=\\'text-[10px] text-gray-600 font-bold uppercase\\'>Nequi QR Placeholder</span></div>'; this.removeAttribute('onerror'); this.outerHTML = this.innerHTML;">
+                            </div>
+                            <span class="text-xs font-bold text-gray-500 uppercase tracking-widest">Scan for Nequi (Colombia)</span>
+                        </div>
+                        <!-- Contact Info -->
+                        <div class="md:col-span-2 pt-6 border-t border-white/5 flex justify-center">
+                             <a href="mailto:jota302@gmail.com" class="text-gray-400 hover:text-cyan-electric transition-colors flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                <span class="text-sm">jota302@gmail.com</span>
+                             </a>
+                        </div>
+                    </div>
+                `;
             }
 
             document.getElementById('modal-close-btn').textContent = t.CloseBtn;
@@ -445,6 +498,31 @@
             document.getElementById('legal-modal').style.display = 'none';
             document.body.classList.remove('modal-open');
             activeModalType = null;
+        }
+
+        function copyAddress(text, btn) {
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = btn.textContent;
+                btn.textContent = translations[currentLang].copied;
+                btn.classList.replace('bg-cyan-electric/10', 'bg-cyan-electric');
+                btn.classList.replace('text-cyan-electric', 'text-black');
+
+                const addressBox = document.getElementById('usdt-address');
+                if (addressBox) {
+                    addressBox.classList.replace('border-white/5', 'border-cyan-electric/50');
+                    addressBox.classList.add('shadow-[0_0_15px_rgba(6,182,212,0.2)]');
+                }
+
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.classList.replace('bg-cyan-electric', 'bg-cyan-electric/10');
+                    btn.classList.replace('text-black', 'text-cyan-electric');
+                    if (addressBox) {
+                        addressBox.classList.replace('border-cyan-electric/50', 'border-white/5');
+                        addressBox.classList.remove('shadow-[0_0_15px_rgba(6,182,212,0.2)]');
+                    }
+                }, 2000);
+            });
         }
 
         // Accessibility & Events
