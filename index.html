@@ -157,7 +157,7 @@
         </header>
 
         <!-- Tools Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- PureText -->
             <a href="https://text.optimicrotools.com"
                 class="glass rounded-2xl p-8 card-hover transition-all duration-300 group">
@@ -225,6 +225,74 @@
                     </svg>
                 </div>
             </a>
+
+            <!-- SanitizePro -->
+            <a href="https://sanitizer.optimicrotools.com"
+                class="glass rounded-2xl p-8 card-hover transition-all duration-300 group">
+                <div
+                    class="w-12 h-12 rounded-xl bg-cyan-electric/10 flex items-center justify-center mb-6 group-hover:bg-cyan-electric/20 transition-colors">
+                    <svg class="w-6 h-6 text-cyan-electric" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">SanitizePro</h3>
+                <p id="desc-sanitize" class="text-gray-400 mb-6 leading-relaxed">Clean PII and sensitive data from your
+                    prompts before sending them to LLMs. 100% Local.</p>
+                <div class="flex items-center text-cyan-electric font-semibold text-sm">
+                    <span id="btn-launch4">Launch Tool</span>
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- SlimContext -->
+            <a href="https://optimizer.optimicrotools.com"
+                class="glass rounded-2xl p-8 card-hover transition-all duration-300 group">
+                <div
+                    class="w-12 h-12 rounded-xl bg-cyan-electric/10 flex items-center justify-center mb-6 group-hover:bg-cyan-electric/20 transition-colors">
+                    <svg class="w-6 h-6 text-cyan-electric" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">SlimContext</h3>
+                <p id="desc-slim" class="text-gray-400 mb-6 leading-relaxed">Optimize token usage by removing
+                    redundancies and stop words for cheaper, faster LLM queries.</p>
+                <div class="flex items-center text-cyan-electric font-semibold text-sm">
+                    <span id="btn-launch5">Launch Tool</span>
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- FastConvert -->
+            <a href="https://mediaconverter.optimicrotools.com"
+                class="glass rounded-2xl p-8 card-hover transition-all duration-300 group">
+                <div
+                    class="w-12 h-12 rounded-xl bg-cyan-electric/10 flex items-center justify-center mb-6 group-hover:bg-cyan-electric/20 transition-colors">
+                    <svg class="w-6 h-6 text-cyan-electric" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">FastConvert</h3>
+                <p id="desc-fast" class="text-gray-400 mb-6 leading-relaxed">High-speed media conversion using WASM.
+                    Convert and optimize files directly in your browser.</p>
+                <div class="flex items-center text-cyan-electric font-semibold text-sm">
+                    <span id="btn-launch6">Launch Tool</span>
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </div>
+            </a>
         </div>
     </main>
 
@@ -283,6 +351,9 @@
                 puretext: "Clean, format and optimize text for LLMs. Instantly remove AI artifacts and extra noise.",
                 quickqr: "Generate high-precision QR codes locally. Fast, secure, and ready for professional use.",
                 prompt: "Engineer better AI prompts with structured templates and local refinement tools.",
+                "desc-sanitize": "Clean PII and sensitive data from your prompts before sending them to LLMs. 100% Local.",
+                "desc-slim": "Optimize token usage by removing redundancies and stop words for cheaper, faster LLM queries.",
+                "desc-fast": "High-speed media conversion using WASM. Convert and optimize files directly in your browser.",
                 launch: "Launch Tool",
                 footer: "Engineered for Performance & Privacy",
                 TermsTitle: "Terms of Service",
@@ -297,6 +368,9 @@
                 puretext: "Limpia, formatea y optimiza texto para LLMs. Elimina ruido y artefactos de IA al instante.",
                 quickqr: "Genera códigos QR de alta precisión localmente. Rápido, seguro y profesional.",
                 prompt: "Diseña mejores prompts de IA con plantillas estructuradas y herramientas locales.",
+                "desc-sanitize": "Limpia datos sensibles de tus prompts antes de enviarlos a LLMs. Procesamiento 100% local.",
+                "desc-slim": "Optimiza el uso de tokens eliminando redundancias para consultas de IA más baratas y rápidas.",
+                "desc-fast": "Conversión de archivos a alta velocidad con WASM. Convierte y optimiza directamente en tu navegador.",
                 launch: "Abrir Herramienta",
                 footer: "Diseñado para máximo Rendimiento y Privacidad",
                 TermsTitle: "Términos de Servicio",
@@ -316,11 +390,17 @@
             document.getElementById('desc-puretext').textContent = t.puretext;
             document.getElementById('desc-quickqr').textContent = t.quickqr;
             document.getElementById('desc-prompt').textContent = t.prompt;
+            document.getElementById('desc-sanitize').textContent = t["desc-sanitize"];
+            document.getElementById('desc-slim').textContent = t["desc-slim"];
+            document.getElementById('desc-fast').textContent = t["desc-fast"];
             document.getElementById('footer-tag').textContent = t.footer;
 
             document.getElementById('btn-launch').textContent = t.launch;
             document.getElementById('btn-launch2').textContent = t.launch;
             document.getElementById('btn-launch3').textContent = t.launch;
+            document.getElementById('btn-launch4').textContent = t.launch;
+            document.getElementById('btn-launch5').textContent = t.launch;
+            document.getElementById('btn-launch6').textContent = t.launch;
 
             // Language specific HTML lang attribute
             document.documentElement.lang = currentLang;
