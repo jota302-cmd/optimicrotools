@@ -1,0 +1,25 @@
+{
+    "name": "OptiMicroTools",
+    "short_name": "OptiMicro",
+    "icons": [
+        {
+            "src": "/assets/img/favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "/assets/img/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#06B6D4",
+    "background_color": "#000000",
+    "display": "standalone",
+    "start_url": "/"
+}

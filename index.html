@@ -9,6 +9,13 @@
     <title>OptiMicroTools | Performance Directory</title>
     <meta name="description"
         content="Directorio de herramientas de alto rendimiento para optimización, QR y texto. Procesamiento local y privacidad total.">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#06B6D4">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -128,8 +135,8 @@
             </a>
 
             <div class="flex items-center gap-4">
-                <div class="flex items-center gap-2 px-3 py-1.5 glass rounded-full border border-white/10 group cursor-pointer"
-                    onclick="toggleLanguage()">
+                <div id="lang-toggle"
+                    class="flex items-center gap-2 px-3 py-1.5 glass rounded-full border border-white/10 group cursor-pointer">
                     <span id="lang-label"
                         class="text-xs font-semibold opacity-70 group-hover:opacity-100 transition-opacity">EN</span>
                     <div class="w-10 h-5 bg-white/10 rounded-full relative flex items-center px-0.5">
@@ -456,12 +463,13 @@
             </div>
 
             <div class="flex gap-6">
-                <a href="javascript:void(0)" onclick="openModal('terms')"
-                    class="text-xs text-gray-400 hover:text-cyan-electric transition-colors">Terms</a>
-                <a href="javascript:void(0)" onclick="openModal('privacy')"
-                    class="text-xs text-gray-400 hover:text-cyan-electric transition-colors">Privacy</a>
-                <a href="javascript:void(0)" onclick="openModal('support')"
-                    class="text-xs text-gray-400 hover:text-cyan-electric transition-colors">Contact / Support</a>
+                <a href="javascript:void(0)" data-modal="terms"
+                    class="text-xs text-gray-400 hover:text-cyan-electric transition-colors modal-trigger">Terms</a>
+                <a href="javascript:void(0)" data-modal="privacy"
+                    class="text-xs text-gray-400 hover:text-cyan-electric transition-colors modal-trigger">Privacy</a>
+                <a href="javascript:void(0)" data-modal="support"
+                    class="text-xs text-gray-400 hover:text-cyan-electric transition-colors modal-trigger">Contact /
+                    Support</a>
             </div>
         </div>
     </footer>
@@ -469,7 +477,7 @@
     <!-- Legal Modals -->
     <div id="legal-modal" class="modal-overlay">
         <div class="modal-content glass rounded-2xl relative">
-            <button onclick="closeModal()"
+            <button id="modal-close-x"
                 class="absolute top-6 right-6 text-gray-400 hover:text-cyan-electric transition-colors p-2"
                 aria-label="Close">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -481,7 +489,7 @@
                 <h2 id="modal-title" class="text-3xl font-bold text-cyan-electric"></h2>
                 <div id="modal-body" class="text-gray-300 leading-relaxed space-y-4"></div>
                 <div class="pt-8 flex justify-end">
-                    <button onclick="closeModal()"
+                    <button id="modal-close-btn-footer"
                         class="px-6 py-2 bg-cyan-electric/10 border border-cyan-electric text-cyan-electric rounded-lg font-semibold hover:bg-cyan-electric hover:text-black transition-all"
                         id="modal-close-btn"></button>
                 </div>
@@ -666,8 +674,8 @@
                         <div class="md:col-span-2 p-4 glass rounded-xl border border-white/5">
                             <div class="flex justify-between items-center mb-2">
                                 <span class="text-xs font-bold uppercase tracking-wider text-gray-500">Binance USDT (TRC20)</span>
-                                <button onclick="copyAddress('TE95Gtd8qTWnsEcqXxDEoQoKLNg2hMvVtV', this)" 
-                                        class="text-xs bg-cyan-electric/10 text-cyan-electric px-3 py-1 rounded-md hover:bg-cyan-electric hover:text-black transition-all">
+                                <button data-copy="TE95Gtd8qTWnsEcqXxDEoQoKLNg2hMvVtV" 
+                                        class="copy-trigger text-xs bg-cyan-electric/10 text-cyan-electric px-3 py-1 rounded-md hover:bg-cyan-electric hover:text-black transition-all">
                                     ${t.copyBtn}
                                 </button>
                             </div>
@@ -676,7 +684,7 @@
                         <!-- Local: Nequi -->
                         <div class="md:col-span-2 p-6 glass rounded-xl border border-white/5 flex flex-col items-center gap-4">
                             <div class="w-48 h-48 bg-white/5 rounded-lg flex items-center justify-center border border-white/10 relative overflow-hidden">
-                                <img src="assets/nequi-qr.png" alt="Nequi QR" class="w-full h-full object-contain" onerror="this.innerHTML='<div class=\\'flex flex-col items-center gap-2\\'><svg class=\\'w-12 h-12 text-gray-600\\' fill=\\'none\\' stroke=\\'currentColor\\' viewBox=\\'0 0 24 24\\'><path stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\' stroke-width=\\'2\\' d=\\'M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z\\'></path></svg><span class=\\'text-[10px] text-gray-600 font-bold uppercase\\'>Nequi QR Placeholder</span></div>'; this.removeAttribute('onerror'); this.outerHTML = this.innerHTML;">
+                                <img src="assets/img/nequi-qr.png" alt="Nequi QR" class="w-full h-full object-contain" onerror="this.innerHTML='<div class=\\'flex flex-col items-center gap-2\\'><svg class=\\'w-12 h-12 text-gray-600\\' fill=\\'none\\' stroke=\\'currentColor\\' viewBox=\\'0 0 24 24\\'><path stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\' stroke-width=\\'2\\' d=\\'M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z\\'></path></svg><span class=\\'text-[10px] text-gray-600 font-bold uppercase\\'>Nequi QR Placeholder</span></div>'; this.removeAttribute('onerror'); this.outerHTML = this.innerHTML;">
                             </div>
                             <span class="text-xs font-bold text-gray-500 uppercase tracking-widest">Scan for Nequi (Colombia)</span>
                         </div>
@@ -743,8 +751,32 @@
             if (e.key === 'Escape') closeModal();
         });
 
-        // Initialize
-        document.addEventListener('DOMContentLoaded', updateUI);
+        // Initialize and Event Listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            updateUI();
+
+            // Language Toggle
+            document.getElementById('lang-toggle').addEventListener('click', toggleLanguage);
+
+            // Modal Triggers
+            document.querySelectorAll('.modal-trigger').forEach(trigger => {
+                trigger.addEventListener('click', (e) => {
+                    openModal(e.target.dataset.modal);
+                });
+            });
+
+            // Modal Close Triggers
+            document.getElementById('modal-close-x').addEventListener('click', closeModal);
+            document.getElementById('modal-close-btn-footer').addEventListener('click', closeModal);
+
+            // Delegation for dynamic elements in Support modal
+            document.getElementById('modal-body').addEventListener('click', (e) => {
+                if (e.target.classList.contains('copy-trigger')) {
+                    const address = e.target.dataset.copy;
+                    copyAddress(address, e.target);
+                }
+            });
+        });
     </script>
 </body>
 
