@@ -138,8 +138,16 @@
 
             <div class="flex items-center gap-4">
                 <a href="/blog.html"
-                   class="hidden md:flex items-center gap-1.5 px-3 py-1.5 glass rounded-full border border-white/10 text-xs font-semibold opacity-70 hover:opacity-100 hover:border-cyan-electric transition-all">
+                    class="hidden md:flex items-center gap-1.5 px-3 py-1.5 glass rounded-full border border-white/10 text-xs font-semibold opacity-70 hover:opacity-100 hover:border-cyan-electric transition-all">
                     ✍ Blog
+                </a>
+                <a href="/about.html"
+                    class="hidden md:flex items-center gap-1.5 px-3 py-1.5 glass rounded-full border border-white/10 text-xs font-semibold opacity-70 hover:opacity-100 hover:border-cyan-electric transition-all">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span id="nav-about">About</span>
                 </a>
                 <div id="lang-toggle"
                     class="flex items-center gap-2 px-3 py-1.5 glass rounded-full border border-white/10 group cursor-pointer">
@@ -483,6 +491,21 @@
                 <div class="space-y-4">
                     <div class="flex gap-4 items-start">
                         <span class="text-xs font-mono text-gray-500 shrink-0">MAR 2026</span>
+                        <p id="changelog-5" class="text-xs text-gray-400">Blog técnico lanzado. 4 artículos sobre IA,
+                            JavaScript, privacidad y build logs. Sitemap XML enviado a Google Search Console.</p>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <span class="text-xs font-mono text-gray-500 shrink-0">MAR 2026</span>
+                        <p id="changelog-4" class="text-xs text-gray-400">Página About independiente publicada. Enlace a
+                            Blog y About agregados al navbar principal.</p>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <span class="text-xs font-mono text-gray-500 shrink-0">MAR 2026</span>
+                        <p id="changelog-3" class="text-xs text-gray-400">Semantic Injection & Authority Header
+                            implementado. Corrección de bug en modal-close-btn.</p>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <span class="text-xs font-mono text-gray-500 shrink-0">MAR 2026</span>
                         <p id="changelog-1" class="text-xs text-gray-400">Deployed new Dark Luxury micro-identity
                             system. Standardized all asset paths to /assets/img/ for optimized delivery.</p>
                     </div>
@@ -533,8 +556,7 @@
                 <div id="modal-body" class="text-gray-300 leading-relaxed space-y-4"></div>
                 <div class="pt-8 flex justify-end">
                     <button id="modal-close-btn-footer"
-                        class="px-6 py-2 bg-cyan-electric/10 border border-cyan-electric text-cyan-electric rounded-lg font-semibold hover:bg-cyan-electric hover:text-black transition-all"
-                        id="modal-close-btn"></button>
+                        class="px-6 py-2 bg-cyan-electric/10 border border-cyan-electric text-cyan-electric rounded-lg font-semibold hover:bg-cyan-electric hover:text-black transition-all"></button>
                 </div>
             </div>
         </div>
@@ -555,6 +577,7 @@
                 "desc-speed": "Measure your connection speed instantly. No heavy scripts, just pure performance data.",
                 "desc-safe": "Reveal the destination of suspicious links. Stay safe from phishing and hidden redirects.",
                 launch: "Launch Tool",
+                navAbout: "About",
                 footer: "Engineered for Performance & Privacy",
                 TermsTitle: "Terms of Service",
                 TermsBody: "Use of tools is provided 'as is'. Users are responsible for their own data. OptiMicroTools does not guarantee uninterrupted service.",
@@ -594,6 +617,7 @@
                 "desc-speed": "Mide tu velocidad de conexión al instante. Sin scripts pesados, solo datos de rendimiento puro.",
                 "desc-safe": "Revela el destino de enlaces sospechosos. Mantente a salvo de phishing y redirecciones ocultas.",
                 launch: "Abrir Herramienta",
+                navAbout: "Acerca de",
                 footer: "Diseñado para máximo Rendimiento y Privacidad",
                 TermsTitle: "Términos de Servicio",
                 TermsBody: "El uso de las herramientas se proporciona 'tal cual'. Los usuarios son responsables de sus propios datos. OptiMicroTools no garantiza el servicio ininterrumpido.",
@@ -638,6 +662,7 @@
             document.getElementById('desc-speed').textContent = t["desc-speed"];
             document.getElementById('desc-safe').textContent = t["desc-safe"];
             document.getElementById('footer-tag').textContent = t.footer;
+            if (document.getElementById('nav-about')) document.getElementById('nav-about').textContent = t.navAbout;
 
             document.getElementById('btn-launch').textContent = t.launch;
             document.getElementById('btn-launch2').textContent = t.launch;
@@ -660,11 +685,17 @@
                 changelogTitle.textContent = "Registro Técnico (Changelog)";
                 cl1.textContent = "Desplegado nuevo sistema de micro-identidad Dark Luxury. Estandarización de rutas a /assets/img/ para entrega optimizada.";
                 cl2.textContent = "Refactorización de herramientas de red. Implementación de protocolo Zero-Server para auditoría de red orientada a la privacidad.";
+                if (document.getElementById('changelog-3')) document.getElementById('changelog-3').textContent = "Semantic Injection & Authority Header implementado. Corrección de bug en modal de cierre.";
+                if (document.getElementById('changelog-4')) document.getElementById('changelog-4').textContent = "Página Acerca de publicada. Blog y About agregados al navbar principal.";
+                if (document.getElementById('changelog-5')) document.getElementById('changelog-5').textContent = "Blog técnico lanzado. 4 artículos sobre IA, JavaScript, privacidad y build logs. Sitemap XML enviado a Google Search Console.";
             } else {
                 authorityText.innerHTML = "Welcome to OptiMicroTools, the high-performance micro-utility ecosystem engineered for developers, data analysts, and digital productivity enthusiasts. Our platform delivers a suite of modular tools processed entirely on the client-side, ensuring minimal latency and absolute data privacy. From network audits to advanced string manipulation and asset generation, every micro-tool in our directory has been optimized for instantaneous results without server overhead. Our technical stack leverages <strong>Performance Testing</strong>, <strong>QA Automation</strong>, and <strong>WebAssembly</strong> to boost <strong>Developer Productivity</strong> with a radical commitment to <strong>Data Privacy</strong>.";
                 changelogTitle.textContent = "Technical Changelog";
                 cl1.textContent = "Deployed new Dark Luxury micro-identity system. Standardized all asset paths to /assets/img/ for optimized delivery.";
                 cl2.textContent = "Refactored core networking tools. Implemented Zero-Server protocol for Privacy-First network auditing.";
+                if (document.getElementById('changelog-3')) document.getElementById('changelog-3').textContent = "Semantic Injection & Authority Header deployed. Fixed modal-close-btn bug.";
+                if (document.getElementById('changelog-4')) document.getElementById('changelog-4').textContent = "About page published. Blog and About links added to main navbar.";
+                if (document.getElementById('changelog-5')) document.getElementById('changelog-5').textContent = "Technical blog launched. 4 articles on AI, JavaScript, privacy and build logs. XML Sitemap submitted to Google Search Console.";
             }
 
             // Update About Section
@@ -764,7 +795,7 @@
                 `;
             }
 
-            document.getElementById('modal-close-btn').textContent = t.CloseBtn;
+            document.getElementById('modal-close-btn-footer').textContent = t.CloseBtn;
             modal.style.display = 'flex';
             document.body.classList.add('modal-open');
         }
