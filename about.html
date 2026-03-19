@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8167884438770174" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>About | OptiMicroTools — Herramientas Web de Alto Rendimiento</title>
+    <meta name="description" content="Conoce OptiMicroTools: un ecosistema de micro-herramientas web gratuitas construidas con JavaScript puro, privacidad total y rendimiento extremo. Creado por jota302.">
+    <meta name="keywords" content="OptiMicroTools, about, herramientas web gratuitas, JavaScript, privacidad, rendimiento, jota302">
+    <meta name="author" content="jota302">
+    <link rel="canonical" href="https://optimicrotools.com/about.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="About | OptiMicroTools">
+    <meta property="og:description" content="Free, fast, privacy-first web tools built with pure JavaScript. No tracking. No bloat. Just tools.">
+    <meta property="og:url" content="https://optimicrotools.com/about.html">
+    <meta property="og:type" content="website">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About OptiMicroTools",
+      "url": "https://optimicrotools.com/about.html",
+      "description": "OptiMicroTools is a free ecosystem of high-performance micro web tools built with pure JavaScript.",
+      "author": {
+        "@type": "Person",
+        "name": "jota302",
+        "email": "jota302@gmail.com",
+        "sameAs": ["https://x.com/optimicrotools"]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "OptiMicroTools",
+        "url": "https://optimicrotools.com"
+      }
+    }
+    </script>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#06B6D4">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root { --cyan-electric: #06B6D4; --glass-bg: rgba(255,255,255,0.03); --glass-border: rgba(255,255,255,0.1); }
+        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
+        .glass { background: var(--glass-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid var(--glass-border); }
+        .text-cyan-electric { color: var(--cyan-electric); }
+        .bg-cyan-electric { background-color: var(--cyan-electric); }
+        .toggle-dot { transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
+        .ad-slot { border: 1px dashed rgba(255,255,255,0.1); position: relative; min-height: 90px; }
+        .ad-slot::after { content: attr(data-label); position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: .7rem; color: rgba(255,255,255,.2); text-transform: uppercase; letter-spacing: 2px; white-space: nowrap; }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { border-color: var(--cyan-electric); transform: translateY(-3px); box-shadow: 0 10px 30px -10px rgba(6,182,212,0.25); }
+        .tag-badge { display: inline-block; background: rgba(6,182,212,0.1); border: 1px solid rgba(6,182,212,0.25); color: var(--cyan-electric); font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: .25rem .65rem; border-radius: 999px; }
+
+        /* Timeline */
+        .timeline-item { position: relative; padding-left: 2rem; }
+        .timeline-item::before { content: ''; position: absolute; left: 0; top: .6rem; width: 8px; height: 8px; background: var(--cyan-electric); border-radius: 50%; box-shadow: 0 0 8px rgba(6,182,212,0.6); }
+        .timeline-item::after { content: ''; position: absolute; left: 3.5px; top: 1.4rem; width: 1px; height: calc(100% - .5rem); background: rgba(6,182,212,0.2); }
+        .timeline-item:last-child::after { display: none; }
+
+        /* Stat cards */
+        .stat-glow { box-shadow: 0 0 30px -10px rgba(6,182,212,0.2); }
+
+        /* Tool grid */
+        .tool-chip { display: flex; align-items: center; gap: .5rem; padding: .5rem .75rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; font-size: .8rem; transition: all .2s; }
+        .tool-chip:hover { border-color: var(--cyan-electric); color: var(--cyan-electric); }
+        .tool-chip span.icon { width: 1.5rem; height: 1.5rem; border-radius: 5px; background: rgba(6,182,212,0.1); display: flex; align-items: center; justify-content: center; font-size: .7rem; font-weight: 700; color: var(--cyan-electric); flex-shrink: 0; }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+<!-- NAVBAR -->
+<nav class="sticky top-0 z-50 glass border-b border-white/5 px-6 py-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="https://optimicrotools.com" class="flex items-center gap-2 hover:opacity-80 transition-opacity duration-300">
+            <div class="w-8 h-8 rounded bg-cyan-electric flex items-center justify-center font-bold text-black text-xl">O</div>
+            <span class="font-bold text-xl tracking-tighter">OPTIMICRO<span class="text-cyan-electric">TOOLS</span></span>
+        </a>
+        <div class="flex items-center gap-3">
+            <span class="hidden md:flex items-center gap-2 text-sm text-gray-500">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                <span class="text-cyan-electric font-semibold" id="nav-about-label">Acerca de</span>
+            </span>
+            <a href="https://optimicrotools.com" class="hidden md:flex items-center gap-1.5 px-3 py-1.5 glass rounded-full border border-white/10 text-xs font-semibold opacity-70 hover:opacity-100 hover:border-cyan-electric transition-all">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                <span id="nav-tools">Ver herramientas</span>
+            </a>
+            <div id="lang-toggle" class="flex items-center gap-2 px-3 py-1.5 glass rounded-full border border-white/10 group cursor-pointer">
+                <span class="text-xs font-semibold opacity-70 group-hover:opacity-100 transition-opacity">EN</span>
+                <div class="w-10 h-5 bg-white/10 rounded-full relative flex items-center px-0.5">
+                    <div id="toggle-circle" class="toggle-dot w-4 h-4 bg-cyan-electric rounded-full shadow-[0_0_10px_rgba(6,182,212,0.5)]"></div>
+                </div>
+                <span class="text-xs font-semibold opacity-70 group-hover:opacity-100 transition-opacity">ES</span>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Top Ad -->
+<div class="max-w-7xl mx-auto w-full px-6 py-6">
+    <div class="ad-slot w-full md:max-w-[728px] mx-auto rounded-lg" data-label="Ads"></div>
+</div>
+
+<!-- MAIN -->
+<main class="flex-grow max-w-7xl mx-auto px-6 pb-24 pt-4 w-full">
+
+    <!-- Hero -->
+    <header class="text-center mb-20 space-y-5">
+        <span class="tag-badge" id="hero-badge">Acerca del proyecto</span>
+        <h1 id="hero-title" class="text-4xl md:text-6xl font-bold tracking-tight mt-3">
+            Construido para <span class="text-cyan-electric">durar</span>,<br class="hidden md:block"> optimizado para <span class="text-cyan-electric">volar</span>
+        </h1>
+        <p id="hero-sub" class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+            OptiMicroTools nació de una frustración simple: las herramientas web existentes eran lentas, invasivas o pedían registro para hacer cosas triviales. Decidimos construir algo diferente.
+        </p>
+    </header>
+
+    <!-- Stats -->
+    <section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
+        <div class="glass rounded-2xl p-6 text-center stat-glow">
+            <p class="text-3xl font-bold text-cyan-electric">9</p>
+            <p id="stat1-label" class="text-xs text-gray-500 mt-1 uppercase tracking-widest">Herramientas</p>
+        </div>
+        <div class="glass rounded-2xl p-6 text-center stat-glow">
+            <p class="text-3xl font-bold text-cyan-electric">0</p>
+            <p id="stat2-label" class="text-xs text-gray-500 mt-1 uppercase tracking-widest">Servidores</p>
+        </div>
+        <div class="glass rounded-2xl p-6 text-center stat-glow">
+            <p class="text-3xl font-bold text-cyan-electric">&lt;1s</p>
+            <p id="stat3-label" class="text-xs text-gray-500 mt-1 uppercase tracking-widest">Carga promedio</p>
+        </div>
+        <div class="glass rounded-2xl p-6 text-center stat-glow">
+            <p class="text-3xl font-bold text-cyan-electric">100%</p>
+            <p id="stat4-label" class="text-xs text-gray-500 mt-1 uppercase tracking-widest">Privacidad</p>
+        </div>
+    </section>
+
+    <!-- Mission + Philosophy -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+        <div class="glass rounded-3xl p-8 md:p-10">
+            <div class="w-10 h-10 rounded-xl bg-cyan-electric/10 flex items-center justify-center mb-6">
+                <svg class="w-5 h-5 text-cyan-electric" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h2 id="mission-title" class="text-2xl font-bold mb-4">Misión</h2>
+            <p id="mission-body" class="text-gray-400 leading-relaxed">
+                Democratizar el acceso a herramientas digitales de calidad profesional. Cada utilidad en este ecosistema procesa tu información localmente en tu navegador, sin enviar un solo byte a servidores externos. Tu privacidad no es una característica — es la arquitectura.
+            </p>
+        </div>
+        <div class="glass rounded-3xl p-8 md:p-10">
+            <div class="w-10 h-10 rounded-xl bg-cyan-electric/10 flex items-center justify-center mb-6">
+                <svg class="w-5 h-5 text-cyan-electric" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+            </div>
+            <h2 id="philosophy-title" class="text-2xl font-bold mb-4">Filosofía técnica</h2>
+            <p id="philosophy-body" class="text-gray-400 leading-relaxed">
+                Cero dependencias en producción donde sea posible. HTML, CSS y JavaScript puro. Sin frameworks, sin bundlers, sin complejidad innecesaria. El código más rápido es el que no existe; el segundo más rápido es el que ya viene en el navegador.
+            </p>
+        </div>
+    </section>
+
+    <!-- Tools Directory -->
+    <section class="mb-20">
+        <div class="mb-8">
+            <h2 id="tools-title" class="text-2xl font-bold mb-2">El ecosistema</h2>
+            <p id="tools-sub" class="text-gray-500 text-sm">9 herramientas. Un dominio. Cero fricciones.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <a href="https://text.optimicrotools.com" class="tool-chip card-hover"><span class="icon">T</span><div><p class="font-semibold text-white">PureText</p><p id="tool-puretext" class="text-gray-500 text-xs">Limpieza y formateo de texto para LLMs</p></div></a>
+            <a href="https://qr.optimicrotools.com" class="tool-chip card-hover"><span class="icon">Q</span><div><p class="font-semibold text-white">QuickQR Pro</p><p id="tool-quickqr" class="text-gray-500 text-xs">Generador de QR con colores personalizados</p></div></a>
+            <a href="https://prompt.optimicrotools.com" class="tool-chip card-hover"><span class="icon">P</span><div><p class="font-semibold text-white">PromptArchitect</p><p id="tool-prompt" class="text-gray-500 text-xs">Constructor estructurado de prompts para IA</p></div></a>
+            <a href="https://sanitizer.optimicrotools.com" class="tool-chip card-hover"><span class="icon">S</span><div><p class="font-semibold text-white">SanitizePro</p><p id="tool-sanitize" class="text-gray-500 text-xs">Elimina PII de prompts antes de enviarlos</p></div></a>
+            <a href="https://optimizer.optimicrotools.com" class="tool-chip card-hover"><span class="icon">⚡</span><div><p class="font-semibold text-white">SlimContext</p><p id="tool-slim" class="text-gray-500 text-xs">Optimizador de tokens para consultas LLM</p></div></a>
+            <a href="https://mediaconverter.optimicrotools.com" class="tool-chip card-hover"><span class="icon">F</span><div><p class="font-semibold text-white">FastConvert</p><p id="tool-fast" class="text-gray-500 text-xs">Conversión de archivos multimedia con WASM</p></div></a>
+            <a href="https://myip.optimicrotools.com" class="tool-chip card-hover"><span class="icon">🌐</span><div><p class="font-semibold text-white">Digital Trace Auditor</p><p id="tool-myip" class="text-gray-500 text-xs">Auditoría de huella digital e IP</p></div></a>
+            <a href="https://speed.optimicrotools.com" class="tool-chip card-hover"><span class="icon">📶</span><div><p class="font-semibold text-white">SpeedTest Lite</p><p id="tool-speed" class="text-gray-500 text-xs">Medición de velocidad de conexión sin scripts pesados</p></div></a>
+            <a href="https://safe.optimicrotools.com" class="tool-chip card-hover"><span class="icon">🔗</span><div><p class="font-semibold text-white">Link Shield</p><p id="tool-safe" class="text-gray-500 text-xs">Detector de destino real en enlaces sospechosos</p></div></a>
+        </div>
+    </section>
+
+    <!-- Creator -->
+    <section class="mb-20">
+        <div class="glass rounded-3xl p-8 md:p-12">
+            <div class="flex flex-col md:flex-row gap-10 items-start">
+
+                <!-- Avatar placeholder -->
+                <div class="shrink-0">
+                    <div class="w-24 h-24 rounded-2xl bg-cyan-electric/10 border border-cyan-electric/20 flex items-center justify-center">
+                        <span class="text-3xl font-black text-cyan-electric">J</span>
+                    </div>
+                    <p class="text-center text-xs text-gray-600 mt-2 font-mono">jota302</p>
+                </div>
+
+                <!-- Creator info -->
+                <div class="flex-1 space-y-4">
+                    <h2 id="creator-title" class="text-2xl font-bold">El creador</h2>
+                    <p id="creator-body" class="text-gray-400 leading-relaxed">
+                        OptiMicroTools es un proyecto personal de <strong class="text-white">jota302</strong>, profesional con más de 12 años de experiencia en QA Performance, automatización de pruebas y arquitectura de software. La combinación de su background técnico en rendimiento y su interés en inteligencia artificial es lo que da forma a la filosofía detrás de cada herramienta: rápida, privada y sin complicaciones.
+                    </p>
+                    <p id="creator-body2" class="text-gray-400 leading-relaxed">
+                        El proyecto nació como un experimento de aprendizaje — construir herramientas reales mientras se aprende JavaScript moderno e IA — y evolucionó hacia un ecosistema completo que hoy usa gente de todo el mundo. Cada herramienta resuelve un problema que el propio creador enfrentó en su trabajo diario.
+                    </p>
+
+                    <!-- Contact -->
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <a href="mailto:jota302@gmail.com" class="flex items-center gap-2 px-4 py-2 glass rounded-full border border-white/10 text-xs text-gray-400 hover:text-cyan-electric hover:border-cyan-electric transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            jota302@gmail.com
+                        </a>
+                        <a href="https://x.com/optimicrotools" target="_blank" class="flex items-center gap-2 px-4 py-2 glass rounded-full border border-white/10 text-xs text-gray-400 hover:text-cyan-electric hover:border-cyan-electric transition-all">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.294 19.497h2.039L6.486 3.24H4.298l13.309 17.41z"/></svg>
+                            @optimicrotools
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="mb-20">
+        <h2 id="timeline-title" class="text-2xl font-bold mb-8">Historial del proyecto</h2>
+        <div class="space-y-8 max-w-2xl">
+            <div class="timeline-item">
+                <p class="text-xs font-mono text-cyan-electric mb-1">MAR 2026</p>
+                <p id="tl4-title" class="font-semibold text-white mb-1">Blog técnico lanzado</p>
+                <p id="tl4-body" class="text-sm text-gray-500">Publicación de los primeros artículos sobre IA, JavaScript y privacidad web. Inicio de la estrategia de contenido orgánico.</p>
+            </div>
+            <div class="timeline-item">
+                <p class="text-xs font-mono text-cyan-electric mb-1">MAR 2026</p>
+                <p id="tl3-title" class="font-semibold text-white mb-1">Identidad Dark Luxury</p>
+                <p id="tl3-body" class="text-sm text-gray-500">Rediseño completo del sistema visual. Estandarización de assets, paleta #000 + cyan eléctrico y arquitectura modular de subdominios.</p>
+            </div>
+            <div class="timeline-item">
+                <p class="text-xs font-mono text-cyan-electric mb-1">2025 — 2026</p>
+                <p id="tl2-title" class="font-semibold text-white mb-1">Expansión a 9 herramientas</p>
+                <p id="tl2-body" class="text-sm text-gray-500">Construcción iterativa de cada micro-herramienta. SanitizePro, PromptArchitect, SlimContext y FastConvert se suman al ecosistema.</p>
+            </div>
+            <div class="timeline-item">
+                <p class="text-xs font-mono text-cyan-electric mb-1">2024</p>
+                <p id="tl1-title" class="font-semibold text-white mb-1">Origen: PureText y QuickQR Pro</p>
+                <p id="tl1-body" class="text-sm text-gray-500">Las primeras dos herramientas construidas en un fin de semana como experimento de aprendizaje. El proyecto empieza a tomar forma.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="mb-20">
+        <div class="glass rounded-3xl p-8 md:p-10">
+            <h2 id="stack-title" class="text-2xl font-bold mb-6">Stack técnico</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-cyan-electric mb-3" id="stack-frontend">Frontend</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>HTML5 semántico</li>
+                        <li>Tailwind CSS (CDN)</li>
+                        <li>Vanilla JavaScript ES2020+</li>
+                        <li>CSS Custom Properties</li>
+                        <li>WebAssembly (FastConvert)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-cyan-electric mb-3" id="stack-infra">Infraestructura</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>Vercel (hosting estático)</li>
+                        <li>Namecheap (dominio)</li>
+                        <li>GitHub (repositorios)</li>
+                        <li>Cloudflare CDN (librerías)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-cyan-electric mb-3" id="stack-principles">Principios</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li id="stack-p1">Procesamiento Client-Side</li>
+                        <li id="stack-p2">Zero dependencias en producción</li>
+                        <li id="stack-p3">i18n nativo ES/EN</li>
+                        <li id="stack-p4">Diseño responsive mobile-first</li>
+                        <li id="stack-p5">Sin rastreo de usuarios</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="text-center">
+        <div class="glass rounded-3xl p-10 md:p-14 border border-cyan-electric/10">
+            <h2 id="cta-title" class="text-3xl font-bold mb-4">¿Listo para explorar las herramientas?</h2>
+            <p id="cta-sub" class="text-gray-400 mb-8 max-w-xl mx-auto">Todas son gratuitas, sin registro y procesan tu información localmente. Elige la que necesitas y úsala ahora mismo.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://optimicrotools.com" class="px-8 py-3 bg-cyan-electric text-black font-bold rounded-xl hover:opacity-90 transition-opacity">
+                    <span id="cta-btn-hub">Ver todas las herramientas</span>
+                </a>
+                <a href="/blog.html" class="px-8 py-3 glass border border-white/10 font-semibold rounded-xl hover:border-cyan-electric transition-colors">
+                    <span id="cta-btn-blog">Leer el blog</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- Bottom Ad -->
+<div class="max-w-7xl mx-auto w-full px-6 py-6">
+    <div class="ad-slot w-full md:max-w-[728px] mx-auto rounded-lg" data-label="Ads"></div>
+</div>
+
+<!-- FOOTER -->
+<footer class="glass border-t border-white/5 px-6 py-8">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center gap-2">
+            <div class="w-6 h-6 rounded bg-cyan-electric flex items-center justify-center font-bold text-black text-sm">O</div>
+            <span class="font-bold text-sm tracking-tighter">OPTIMICRO<span class="text-cyan-electric">TOOLS</span></span>
+        </div>
+        <div class="flex items-center gap-6 text-xs text-gray-500">
+            <a href="https://optimicrotools.com" id="ft-hub" class="hover:text-cyan-electric transition-colors">Hub</a>
+            <a href="/blog.html" id="ft-blog" class="hover:text-cyan-electric transition-colors">Blog</a>
+            <a href="/about.html" class="text-cyan-electric font-semibold" id="ft-about">Acerca de</a>
+            <a href="https://x.com/optimicrotools" target="_blank" class="hover:text-cyan-electric transition-colors">@optimicrotools</a>
+        </div>
+        <p id="ft-copy" class="text-xs text-gray-600">© 2025 OptiMicroTools · jota302</p>
+    </div>
+</footer>
+
+<script>
+// ── Translations ─────────────────────────────────────────────────
+const TR = {
+    en: {
+        navAbout: 'About', navTools: 'Tools',
+        heroBadge: 'About the project',
+        heroTitle: 'Built to <span class="text-cyan-electric">last</span>,<br class="hidden md:block"> optimized to <span class="text-cyan-electric">fly</span>',
+        heroSub: 'OptiMicroTools was born from a simple frustration: existing web tools were slow, invasive, or required registration to do trivial things. We decided to build something different.',
+        stat1: 'Tools', stat2: 'Servers', stat3: 'Avg load', stat4: 'Privacy',
+        missionTitle: 'Mission',
+        missionBody: 'Democratize access to professional-grade digital tools. Every utility in this ecosystem processes your information locally in your browser, without sending a single byte to external servers. Your privacy is not a feature — it is the architecture.',
+        philosophyTitle: 'Technical philosophy',
+        philosophyBody: 'Zero production dependencies where possible. Pure HTML, CSS and JavaScript. No frameworks, no bundlers, no unnecessary complexity. The fastest code is the code that does not exist; the second fastest is the code already in your browser.',
+        toolsTitle: 'The ecosystem', toolsSub: '9 tools. One domain. Zero friction.',
+        toolPuretext: 'Text cleaning and formatting for LLMs',
+        toolQuickqr: 'QR generator with custom colors',
+        toolPrompt: 'Structured prompt builder for AI',
+        toolSanitize: 'Remove PII from prompts before sending',
+        toolSlim: 'Token optimizer for LLM queries',
+        toolFast: 'WASM-powered media file conversion',
+        toolMyip: 'Digital footprint and IP audit',
+        toolSpeed: 'Connection speed test without heavy scripts',
+        toolSafe: 'Real destination detector for suspicious links',
+        creatorTitle: 'The creator',
+        creatorBody: 'OptiMicroTools is a personal project by <strong class="text-white">jota302</strong>, a professional with over 12 years of experience in QA Performance, test automation and software architecture. The combination of their technical background in performance and interest in artificial intelligence shapes the philosophy behind every tool: fast, private and hassle-free.',
+        creatorBody2: 'The project started as a learning experiment — building real tools while learning modern JavaScript and AI — and evolved into a complete ecosystem used by people worldwide. Each tool solves a problem the creator faced in their own daily work.',
+        timelineTitle: 'Project history',
+        tl4Title: 'Technical blog launched', tl4Body: 'First articles published on AI, JavaScript and web privacy. Start of the organic content strategy.',
+        tl3Title: 'Dark Luxury identity', tl3Body: 'Full visual system redesign. Standardization of assets, #000 + electric cyan palette and modular subdomain architecture.',
+        tl2Title: 'Expansion to 9 tools', tl2Body: 'Iterative construction of each micro-tool. SanitizePro, PromptArchitect, SlimContext and FastConvert join the ecosystem.',
+        tl1Title: 'Origin: PureText and QuickQR Pro', tl1Body: 'The first two tools built in a weekend as a learning experiment. The project starts to take shape.',
+        stackTitle: 'Tech stack',
+        stackFrontend: 'Frontend', stackInfra: 'Infrastructure', stackPrinciples: 'Principles',
+        stackP1: 'Client-Side processing', stackP2: 'Zero production dependencies',
+        stackP3: 'Native i18n ES/EN', stackP4: 'Mobile-first responsive design', stackP5: 'No user tracking',
+        ctaTitle: 'Ready to explore the tools?',
+        ctaSub: 'All are free, no signup required, and process your data locally. Pick the one you need and use it right now.',
+        ctaBtnHub: 'See all tools', ctaBtnBlog: 'Read the blog',
+        ftHub: 'Hub', ftBlog: 'Blog', ftAbout: 'About',
+        ftCopy: '© 2025 OptiMicroTools · jota302'
+    },
+    es: {
+        navAbout: 'Acerca de', navTools: 'Ver herramientas',
+        heroBadge: 'Acerca del proyecto',
+        heroTitle: 'Construido para <span class="text-cyan-electric">durar</span>,<br class="hidden md:block"> optimizado para <span class="text-cyan-electric">volar</span>',
+        heroSub: 'OptiMicroTools nació de una frustración simple: las herramientas web existentes eran lentas, invasivas o pedían registro para hacer cosas triviales. Decidimos construir algo diferente.',
+        stat1: 'Herramientas', stat2: 'Servidores', stat3: 'Carga promedio', stat4: 'Privacidad',
+        missionTitle: 'Misión',
+        missionBody: 'Democratizar el acceso a herramientas digitales de calidad profesional. Cada utilidad en este ecosistema procesa tu información localmente en tu navegador, sin enviar un solo byte a servidores externos. Tu privacidad no es una característica — es la arquitectura.',
+        philosophyTitle: 'Filosofía técnica',
+        philosophyBody: 'Cero dependencias en producción donde sea posible. HTML, CSS y JavaScript puro. Sin frameworks, sin bundlers, sin complejidad innecesaria. El código más rápido es el que no existe; el segundo más rápido es el que ya viene en el navegador.',
+        toolsTitle: 'El ecosistema', toolsSub: '9 herramientas. Un dominio. Cero fricciones.',
+        toolPuretext: 'Limpieza y formateo de texto para LLMs',
+        toolQuickqr: 'Generador de QR con colores personalizados',
+        toolPrompt: 'Constructor estructurado de prompts para IA',
+        toolSanitize: 'Elimina PII de prompts antes de enviarlos',
+        toolSlim: 'Optimizador de tokens para consultas LLM',
+        toolFast: 'Conversión de archivos multimedia con WASM',
+        toolMyip: 'Auditoría de huella digital e IP',
+        toolSpeed: 'Medición de velocidad de conexión sin scripts pesados',
+        toolSafe: 'Detector de destino real en enlaces sospechosos',
+        creatorTitle: 'El creador',
+        creatorBody: 'OptiMicroTools es un proyecto personal de <strong class="text-white">jota302</strong>, profesional con más de 12 años de experiencia en QA Performance, automatización de pruebas y arquitectura de software. La combinación de su background técnico en rendimiento y su interés en inteligencia artificial es lo que da forma a la filosofía detrás de cada herramienta: rápida, privada y sin complicaciones.',
+        creatorBody2: 'El proyecto nació como un experimento de aprendizaje — construir herramientas reales mientras se aprende JavaScript moderno e IA — y evolucionó hacia un ecosistema completo que hoy usa gente de todo el mundo. Cada herramienta resuelve un problema que el propio creador enfrentó en su trabajo diario.',
+        timelineTitle: 'Historial del proyecto',
+        tl4Title: 'Blog técnico lanzado', tl4Body: 'Publicación de los primeros artículos sobre IA, JavaScript y privacidad web. Inicio de la estrategia de contenido orgánico.',
+        tl3Title: 'Identidad Dark Luxury', tl3Body: 'Rediseño completo del sistema visual. Estandarización de assets, paleta #000 + cyan eléctrico y arquitectura modular de subdominios.',
+        tl2Title: 'Expansión a 9 herramientas', tl2Body: 'Construcción iterativa de cada micro-herramienta. SanitizePro, PromptArchitect, SlimContext y FastConvert se suman al ecosistema.',
+        tl1Title: 'Origen: PureText y QuickQR Pro', tl1Body: 'Las primeras dos herramientas construidas en un fin de semana como experimento de aprendizaje. El proyecto empieza a tomar forma.',
+        stackTitle: 'Stack técnico',
+        stackFrontend: 'Frontend', stackInfra: 'Infraestructura', stackPrinciples: 'Principios',
+        stackP1: 'Procesamiento Client-Side', stackP2: 'Zero dependencias en producción',
+        stackP3: 'i18n nativo ES/EN', stackP4: 'Diseño responsive mobile-first', stackP5: 'Sin rastreo de usuarios',
+        ctaTitle: '¿Listo para explorar las herramientas?',
+        ctaSub: 'Todas son gratuitas, sin registro y procesan tu información localmente. Elige la que necesitas y úsala ahora mismo.',
+        ctaBtnHub: 'Ver todas las herramientas', ctaBtnBlog: 'Leer el blog',
+        ftHub: 'Hub', ftBlog: 'Blog', ftAbout: 'Acerca de',
+        ftCopy: '© 2025 OptiMicroTools · jota302'
+    }
+};
+
+// ── State ────────────────────────────────────────────────────────
+let lang;
+try { lang = localStorage.getItem('lang'); } catch(e) { lang = null; }
+if (!lang) lang = navigator.language.startsWith('es') ? 'es' : 'en';
+
+// ── Helpers ──────────────────────────────────────────────────────
+const setText = (id, v) => { const e = document.getElementById(id); if(e) e.textContent = v; };
+const setHTML = (id, v) => { const e = document.getElementById(id); if(e) e.innerHTML = v; };
+
+// ── updateUI ─────────────────────────────────────────────────────
+function updateUI() {
+    const t = TR[lang];
+    document.documentElement.lang = lang;
+
+    setText('nav-about-label', t.navAbout);
+    setText('nav-tools', t.navTools);
+    setText('hero-badge', t.heroBadge);
+    setHTML('hero-title', t.heroTitle);
+    setText('hero-sub', t.heroSub);
+
+    setText('stat1-label', t.stat1); setText('stat2-label', t.stat2);
+    setText('stat3-label', t.stat3); setText('stat4-label', t.stat4);
+
+    setText('mission-title', t.missionTitle); setText('mission-body', t.missionBody);
+    setText('philosophy-title', t.philosophyTitle); setText('philosophy-body', t.philosophyBody);
+
+    setText('tools-title', t.toolsTitle); setText('tools-sub', t.toolsSub);
+    setText('tool-puretext', t.toolPuretext); setText('tool-quickqr', t.toolQuickqr);
+    setText('tool-prompt', t.toolPrompt);   setText('tool-sanitize', t.toolSanitize);
+    setText('tool-slim', t.toolSlim);       setText('tool-fast', t.toolFast);
+    setText('tool-myip', t.toolMyip);       setText('tool-speed', t.toolSpeed);
+    setText('tool-safe', t.toolSafe);
+
+    setText('creator-title', t.creatorTitle);
+    setHTML('creator-body', t.creatorBody);
+    setText('creator-body2', t.creatorBody2);
+
+    setText('timeline-title', t.timelineTitle);
+    setText('tl4-title', t.tl4Title); setText('tl4-body', t.tl4Body);
+    setText('tl3-title', t.tl3Title); setText('tl3-body', t.tl3Body);
+    setText('tl2-title', t.tl2Title); setText('tl2-body', t.tl2Body);
+    setText('tl1-title', t.tl1Title); setText('tl1-body', t.tl1Body);
+
+    setText('stack-title', t.stackTitle);
+    setText('stack-frontend', t.stackFrontend);
+    setText('stack-infra', t.stackInfra);
+    setText('stack-principles', t.stackPrinciples);
+    setText('stack-p1', t.stackP1); setText('stack-p2', t.stackP2);
+    setText('stack-p3', t.stackP3); setText('stack-p4', t.stackP4);
+    setText('stack-p5', t.stackP5);
+
+    setText('cta-title', t.ctaTitle); setText('cta-sub', t.ctaSub);
+    setText('cta-btn-hub', t.ctaBtnHub); setText('cta-btn-blog', t.ctaBtnBlog);
+
+    setText('ft-hub', t.ftHub); setText('ft-blog', t.ftBlog);
+    setText('ft-about', t.ftAbout); setText('ft-copy', t.ftCopy);
+
+    // Toggle circle
+    document.getElementById('toggle-circle').style.transform = lang === 'es' ? 'translateX(20px)' : 'translateX(0)';
+
+    // Ad labels
+    document.querySelectorAll('.ad-slot').forEach(el =>
+        el.setAttribute('data-label', lang === 'es' ? 'Anuncio' : 'Advertisement')
+    );
+}
+
+function toggleLanguage() {
+    lang = lang === 'en' ? 'es' : 'en';
+    try { localStorage.setItem('lang', lang); } catch(e) {}
+    updateUI();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateUI();
+    document.getElementById('lang-toggle').addEventListener('click', toggleLanguage);
+});
+</script>
+
+</body>
+</html>

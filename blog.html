@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8167884438770174"
+        crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | OptiMicroTools — Herramientas, IA y Productividad Digital</title>
+    <meta name="description"
+        content="Artículos técnicos sobre herramientas web gratuitas, inteligencia artificial práctica y JavaScript. Aprende IA, privacidad web y automatización sin frameworks pesados.">
+    <meta name="keywords"
+        content="herramientas web gratis, inteligencia artificial, JavaScript, productividad, QR, sanitización prompts, privacidad web, vanilla js">
+    <meta name="author" content="OptiMicroTools">
+    <link rel="canonical" href="https://optimicrotools.com/blog.html">
+    <meta property="og:title" content="Blog | OptiMicroTools">
+    <meta property="og:description"
+        content="Technical articles on AI, JavaScript, privacy and free digital productivity tools.">
+    <meta property="og:url" content="https://optimicrotools.com/blog.html">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#06B6D4">
+    <script
+        type="application/ld+json">{"@context":"https://schema.org","@type":"Blog","name":"OptiMicroTools Blog","url":"https://optimicrotools.com/blog.html","inLanguage":["es","en"],"publisher":{"@type":"Organization","name":"OptiMicroTools","url":"https://optimicrotools.com"}}</script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cyan-electric: #06B6D4;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1)
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden
+        }
+
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border)
+        }
+
+        .text-cyan-electric {
+            color: var(--cyan-electric)
+        }
+
+        .bg-cyan-electric {
+            background-color: var(--cyan-electric)
+        }
+
+        .toggle-dot {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+        }
+
+        .ad-slot {
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            position: relative;
+            min-height: 90px
+        }
+
+        .ad-slot::after {
+            content: attr(data-label);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: .7rem;
+            color: rgba(255, 255, 255, .2);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            white-space: nowrap
+        }
+
+        .blog-card {
+            transition: all .3s ease;
+            cursor: pointer
+        }
+
+        .blog-card:hover {
+            border-color: var(--cyan-electric);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px -10px rgba(6, 182, 212, .25)
+        }
+
+        .blog-card.disabled {
+            opacity: .5;
+            cursor: not-allowed;
+            pointer-events: none
+        }
+
+        .tag-badge {
+            display: inline-block;
+            background: rgba(6, 182, 212, .1);
+            border: 1px solid rgba(6, 182, 212, .25);
+            color: var(--cyan-electric);
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            padding: .25rem .65rem;
+            border-radius: 999px
+        }
+
+        .tag-soon {
+            border-color: rgba(107, 114, 128, .3);
+            background: rgba(107, 114, 128, .08);
+            color: #6b7280
+        }
+
+        .tag-featured {
+            border-color: rgba(16, 185, 129, .3);
+            background: rgba(16, 185, 129, .08);
+            color: #10b981
+        }
+
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            background: var(--cyan-electric);
+            z-index: 9999;
+            transition: width .1s ease;
+            box-shadow: 0 0 8px rgba(6, 182, 212, .6);
+            width: 0%
+        }
+
+        .article-body h2 {
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: #fff;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: .5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, .07)
+        }
+
+        .article-body h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--cyan-electric);
+            margin-top: 1.75rem;
+            margin-bottom: .65rem
+        }
+
+        .article-body p {
+            color: #9ca3af;
+            line-height: 1.85;
+            margin-bottom: 1.25rem
+        }
+
+        .article-body ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5rem
+        }
+
+        .article-body ul li {
+            color: #9ca3af;
+            padding: .4rem 0 .4rem 1.5rem;
+            position: relative;
+            line-height: 1.7
+        }
+
+        .article-body ul li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--cyan-electric);
+            font-weight: 700
+        }
+
+        .article-body ol {
+            counter-reset: ol-c;
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5rem
+        }
+
+        .article-body ol li {
+            color: #9ca3af;
+            padding: .5rem 0 .5rem 2.2rem;
+            position: relative;
+            line-height: 1.7;
+            counter-increment: ol-c
+        }
+
+        .article-body ol li::before {
+            content: counter(ol-c);
+            position: absolute;
+            left: 0;
+            top: .5rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            background: rgba(6, 182, 212, .15);
+            color: var(--cyan-electric);
+            font-size: .75rem;
+            font-weight: 700;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.5rem
+        }
+
+        .article-body strong {
+            color: #fff;
+            font-weight: 600
+        }
+
+        .article-body a {
+            color: var(--cyan-electric);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: opacity .2s
+        }
+
+        .article-body a:hover {
+            opacity: .75
+        }
+
+        .article-body code {
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 4px;
+            padding: .15rem .45rem;
+            font-size: .88em;
+            color: var(--cyan-electric);
+            font-family: 'Courier New', monospace
+        }
+
+        .article-body pre {
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+            overflow-x: auto
+        }
+
+        .article-body pre code {
+            background: none;
+            border: none;
+            padding: 0;
+            font-size: .85rem;
+            color: #e2e8f0;
+            line-height: 1.7
+        }
+
+        .callout {
+            border-left: 3px solid var(--cyan-electric);
+            background: rgba(6, 182, 212, .07);
+            border-radius: 0 8px 8px 0;
+            padding: 1.25rem 1.5rem;
+            margin: 2rem 0
+        }
+
+        .callout p {
+            margin: 0 !important;
+            color: rgba(255, 255, 255, .75) !important;
+            font-style: italic
+        }
+
+        .callout-bad {
+            border-left-color: rgba(239, 68, 68, .5);
+            background: rgba(239, 68, 68, .05)
+        }
+
+        .callout-bad p,
+        .callout-good p {
+            font-style: normal !important;
+            font-family: 'Courier New', monospace;
+            font-size: .85rem !important;
+            line-height: 1.7 !important;
+            color: rgba(255, 255, 255, .7) !important
+        }
+
+        .toc-link {
+            color: #6b7280;
+            font-size: .85rem;
+            transition: color .2s, border-color .2s;
+            display: block;
+            padding: .28rem 0 .28rem .75rem;
+            border-left: 2px solid transparent;
+            text-decoration: none
+        }
+
+        .toc-link:hover,
+        .toc-link.active {
+            color: var(--cyan-electric);
+            border-left-color: var(--cyan-electric)
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+    <div class="reading-progress" id="reading-progress"></div>
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 glass border-b border-white/5 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="https://optimicrotools.com"
+                class="flex items-center gap-2 hover:opacity-80 transition-opacity duration-300">
+                <div
+                    class="w-8 h-8 rounded bg-cyan-electric flex items-center justify-center font-bold text-black text-xl">
+                    O</div>
+                <span class="font-bold text-xl tracking-tighter">OPTIMICRO<span
+                        class="text-cyan-electric">TOOLS</span></span>
+            </a>
+            <div class="flex items-center gap-3">
+                <span class="hidden md:flex items-center gap-2 text-sm text-gray-500">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                    <span class="text-cyan-electric font-semibold">Blog</span>
+                </span>
+                <a href="https://optimicrotools.com"
+                    class="hidden md:flex items-center gap-1.5 px-3 py-1.5 glass rounded-full border border-white/10 text-xs font-semibold opacity-70 hover:opacity-100 hover:border-cyan-electric transition-all">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                    <span id="nav-tools">Tools</span>
+                </a>
+                <div id="lang-toggle"
+                    class="flex items-center gap-2 px-3 py-1.5 glass rounded-full border border-white/10 group cursor-pointer">
+                    <span class="text-xs font-semibold opacity-70 group-hover:opacity-100 transition-opacity">EN</span>
+                    <div class="w-10 h-5 bg-white/10 rounded-full relative flex items-center px-0.5">
+                        <div id="toggle-circle"
+                            class="toggle-dot w-4 h-4 bg-cyan-electric rounded-full shadow-[0_0_10px_rgba(6,182,212,0.5)]">
+                        </div>
+                    </div>
+                    <span class="text-xs font-semibold opacity-70 group-hover:opacity-100 transition-opacity">ES</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Top Ad -->
+    <div class="max-w-7xl mx-auto w-full px-6 py-6">
+        <div class="ad-slot w-full md:max-w-[728px] mx-auto rounded-lg" data-label="Ads"></div>
+    </div>
+
+    <!-- ═══════════════ BLOG LISTING ═══════════════ -->
+    <header id="blog-listing" class="max-w-7xl mx-auto px-6 pb-20 pt-2">
+        <div class="text-center space-y-4 mb-12">
+            <span class="tag-badge" id="hdr-badge">Blog técnico</span>
+            <h1 id="hdr-title" class="text-4xl md:text-5xl font-bold tracking-tight mt-3">Herramientas, <span
+                    class="text-cyan-electric">IA</span> y Productividad</h1>
+            <p id="hdr-sub" class="text-gray-400 text-lg max-w-2xl mx-auto">Artículos prácticos sobre cómo construimos
+                estas herramientas, qué aprendemos en el camino y cómo la IA está cambiando el desarrollo web.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Card 1: PromptArchitect — Featured -->
+            <article class="blog-card glass rounded-2xl p-6 lg:col-span-2 border border-white/5"
+                onclick="showArticle(0)" role="button" tabindex="0">
+                <div class="flex flex-wrap items-center gap-2 mb-4">
+                    <span class="tag-badge" id="c1-tag">IA & Productividad</span>
+                    <span class="tag-badge tag-featured" id="c1-feat">Destacado</span>
+                </div>
+                <h2 id="c1-title" class="text-2xl font-bold mb-3">PromptArchitect: Cómo escribir prompts de IA que
+                    realmente funcionan</h2>
+                <p id="c1-exc" class="text-gray-400 leading-relaxed mb-5">La diferencia entre un resultado mediocre y
+                    uno extraordinario al usar IA no está en el modelo — está en cómo le haces la pregunta.</p>
+                <div class="flex items-center justify-between flex-wrap gap-3">
+                    <div class="flex items-center gap-3 text-xs text-gray-500">
+                        <span id="c1-date">📅 Jun 2025</span><span>·</span><span id="c1-read">⏱ 8
+                            min</span><span>·</span><span>🏷 JS, IA</span>
+                    </div>
+                    <span id="c1-cta" class="flex items-center gap-1 text-cyan-electric text-sm font-semibold">Leer
+                        artículo <svg class="w-4 h-4 inline ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg></span>
+                </div>
+            </article>
+
+            <!-- Card 2: Vanilla JS -->
+            <article class="blog-card glass rounded-2xl p-6 border border-white/5" onclick="showArticle(1)"
+                role="button" tabindex="0">
+                <span class="tag-badge mb-4 block w-fit" id="c2-tag">JavaScript</span>
+                <h2 id="c2-title" class="text-xl font-bold mb-3">JavaScript Vanilla vs Frameworks: Por qué elegí la
+                    opción difícil</h2>
+                <p id="c2-exc" class="text-gray-400 text-sm leading-relaxed mb-4">Cuando el rendimiento es prioridad, la
+                    respuesta no siempre es React o Vue.</p>
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                    <div class="flex items-center gap-2 text-xs text-gray-500">
+                        <span id="c2-date">📅 Jul 2025</span><span>·</span><span id="c2-read">⏱ 7 min</span>
+                    </div>
+                    <span id="c2-cta" class="flex items-center gap-1 text-cyan-electric text-xs font-semibold">Leer <svg
+                            class="w-3 h-3 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg></span>
+                </div>
+            </article>
+
+            <!-- Card 3: SanitizePro -->
+            <article class="blog-card glass rounded-2xl p-6 border border-white/5" onclick="showArticle(2)"
+                role="button" tabindex="0">
+                <span class="tag-badge mb-4 block w-fit" id="c3-tag">Seguridad & IA</span>
+                <h2 id="c3-title" class="text-xl font-bold mb-3">Cómo proteger tus datos antes de usar ChatGPT: guía de
+                    sanitización de prompts</h2>
+                <p id="c3-exc" class="text-gray-400 text-sm leading-relaxed mb-4">Cada vez que usas una IA con datos
+                    reales de tu empresa, estás asumiendo un riesgo que puedes eliminar en segundos.</p>
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                    <div class="flex items-center gap-2 text-xs text-gray-500">
+                        <span id="c3-date">📅 Ago 2025</span><span>·</span><span id="c3-read">⏱ 9 min</span>
+                    </div>
+                    <span id="c3-cta" class="flex items-center gap-1 text-cyan-electric text-xs font-semibold">Leer <svg
+                            class="w-3 h-3 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg></span>
+                </div>
+            </article>
+
+            <!-- Card 4: QuickQR -->
+            <article class="blog-card glass rounded-2xl p-6 border border-white/5" onclick="showArticle(3)"
+                role="button" tabindex="0">
+                <span class="tag-badge mb-4 block w-fit" id="c4-tag">Build Log</span>
+                <h2 id="c4-title" class="text-xl font-bold mb-3">Cómo construí un generador de QR con JS puro en un fin
+                    de semana</h2>
+                <p id="c4-exc" class="text-gray-400 text-sm leading-relaxed mb-4">De la idea al despliegue en Vercel:
+                    las decisiones técnicas que nadie te cuenta.</p>
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                    <div class="flex items-center gap-2 text-xs text-gray-500">
+                        <span id="c4-date">📅 Sep 2025</span><span>·</span><span id="c4-read">⏱ 10 min</span>
+                    </div>
+                    <span id="c4-cta" class="flex items-center gap-1 text-cyan-electric text-xs font-semibold">Leer <svg
+                            class="w-3 h-3 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg></span>
+                </div>
+            </article>
+
+        </div>
+    </header>
+
+    <!-- ═══════════════ ARTICLE VIEWER ═══════════════ -->
+    <main id="article-view" class="hidden max-w-7xl mx-auto px-6 pb-24">
+        <div class="flex flex-col lg:flex-row gap-12">
+
+            <!-- Article Content -->
+            <article class="flex-1 min-w-0" itemscope itemtype="https://schema.org/BlogPosting">
+                <meta itemprop="author" content="OptiMicroTools">
+                <header class="mb-10">
+                    <button onclick="hideArticle()"
+                        class="flex items-center gap-2 text-sm text-gray-500 hover:text-cyan-electric transition-colors mb-8">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
+                        <span id="art-back">← Volver al blog</span>
+                    </button>
+                    <div class="flex flex-wrap gap-2 mb-5" id="art-tags"></div>
+                    <h1 id="art-title" class="text-3xl md:text-4xl font-bold leading-tight mb-4" itemprop="headline">
+                    </h1>
+                    <p id="art-lead" class="text-gray-400 text-lg leading-relaxed mb-6" itemprop="description"></p>
+                    <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 pb-8 border-b border-white/5">
+                        <span id="art-date"></span><span>·</span><span id="art-time"></span><span>·</span><span>✍️
+                            OptiMicroTools</span>
+                    </div>
+                </header>
+
+                <div class="ad-slot w-full md:max-w-[728px] rounded-lg mb-10" data-label="Ads"></div>
+
+                <!-- Article bodies: one div per article per language -->
+                <div class="article-body" itemprop="articleBody">
+
+                    <!-- ══ ARTICLE 0: PromptArchitect ══ -->
+                    <div id="a0-es" class="hidden">
+                        <p>Cuando empecé a investigar inteligencia artificial por mi cuenta, cometí el error que comete
+                            casi todo el mundo: asumir que el modelo hace el trabajo solo. Escribía algo genérico como
+                            <strong>"dame ideas para un proyecto web"</strong> y obtenía respuestas igual de genéricas.
+                            El problema no era la IA — era yo.</p>
+                        <div class="callout">
+                            <p>"Un modelo de IA es como un colaborador extraordinariamente capaz al que nunca le has
+                                dicho exactamente qué quieres. El resultado depende casi siempre de la calidad de tu
+                                instrucción."</p>
+                        </div>
+                        <p>Esto me llevó a crear <a href="https://prompt.optimicrotools.com"
+                                target="_blank">PromptArchitect</a>, una herramienta gratuita que te ayuda a construir
+                            prompts estructurados para obtener mejores resultados en ChatGPT, Claude, Gemini y cualquier
+                            otro modelo de lenguaje.</p>
+                        <h2 id="a0es-s1">¿Qué es exactamente un "prompt" y por qué importa tanto?</h2>
+                        <p>Un <strong>prompt</strong> es la instrucción o pregunta que le das a un modelo de IA. Es el
+                            punto de partida de todo lo que viene después. A diferencia de un motor de búsqueda, donde
+                            una palabra clave es suficiente, los modelos de lenguaje responden mejor cuando tienen
+                            <strong>contexto</strong>, <strong>formato esperado</strong> y <strong>restricciones
+                                claras</strong>.</p>
+                        <h2 id="a0es-s2">La anatomía de un prompt de alta calidad</h2>
+                        <p>Los prompts más efectivos comparten la misma estructura — las mismas capas que usa
+                            PromptArchitect para guiarte:</p>
+                        <h3>1. Rol o Persona</h3>
+                        <p>Dile al modelo <em>quién debe ser</em>. No "dame un resumen", sino "actúa como editor senior
+                            de tecnología y dame un resumen ejecutivo para audiencia no técnica". El rol activa patrones
+                            de respuesta completamente distintos.</p>
+                        <h3>2. Tarea específica</h3>
+                        <p>Usa verbos de acción claros: <em>analiza, compara, genera, reescribe, extrae, clasifica</em>.
+                            "Analiza los pros y contras" es mejor que "dime qué piensas".</p>
+                        <h3>3. Contexto relevante</h3>
+                        <p>El modelo solo sabe lo que le dices. ¿Para quién es esto? ¿Cuál es el objetivo final? El
+                            contexto evita que el modelo rellene vacíos con suposiciones incorrectas.</p>
+                        <h3>4. Formato de salida</h3>
+                        <p>Especifica cómo quieres la respuesta: "en lista numerada", "en máximo 200 palabras", "en
+                            tabla de tres columnas". Elimina la ambigüedad y te ahorra múltiples rondas de corrección.
+                        </p>
+                        <h3>5. Restricciones y límites</h3>
+                        <p>Dile qué <em>no</em> debe hacer. "No uses jerga técnica", "no incluyas introducciones
+                            largas". Las restricciones negativas son igual de valiosas que las instrucciones positivas.
+                        </p>
+                        <h2 id="a0es-s3">Un ejemplo real: antes y después</h2>
+                        <h3>Prompt básico (resultado genérico)</h3>
+                        <div class="callout callout-bad">
+                            <p>"Dame ideas de contenido para mi web de herramientas."</p>
+                        </div>
+                        <p>Resultado típico: cinco ideas que sirven para cualquier web del planeta. Nada accionable.</p>
+                        <h3>Prompt arquitectado (resultado accionable)</h3>
+                        <div class="callout callout-good">
+                            <p>"Actúa como estratega de contenido SEO especializado en SaaS. Mi sitio es
+                                optimicrotools.com, un directorio de 9 micro-herramientas gratuitas procesadas 100% en
+                                el navegador. Mi audiencia son desarrolladores junior y freelancers en Latinoamérica.
+                                Dame 10 ideas de artículos en español con: título SEO-friendly, intención de búsqueda y
+                                por qué encaja. Formato de tabla. Sin introducciones."</p>
+                        </div>
+                        <p>La diferencia es obvia. El segundo prompt tarda 2 minutos en escribirse y genera ideas
+                            directamente usables.</p>
+                        <h2 id="a0es-s4">Cómo usar PromptArchitect</h2>
+                        <ol>
+                            <li>Ve a <a href="https://prompt.optimicrotools.com"
+                                    target="_blank">prompt.optimicrotools.com</a></li>
+                            <li>Selecciona el tipo de tarea (escribir, analizar, generar código, resumir, etc.)</li>
+                            <li>Completa los campos guiados: rol, tarea, contexto, formato y restricciones</li>
+                            <li>Copia el prompt generado y pégalo en ChatGPT, Claude o el modelo que prefieras</li>
+                            <li>Guarda los prompts que más te sirvan para reutilizarlos después</li>
+                        </ol>
+                        <h2 id="a0es-s5">Los 3 errores más comunes al usar IA</h2>
+                        <ul>
+                            <li><strong>Asumir contexto implícito.</strong> El modelo solo sabe lo que le dices. Tu
+                                industria, audiencia y restricciones deben estar explícitas.</li>
+                            <li><strong>No especificar el formato.</strong> Sin formato definido, el modelo elige — y
+                                rara vez es lo que necesitas.</li>
+                            <li><strong>Abandonar al primer resultado imperfecto.</strong> Un prompt es un punto de
+                                partida. Itera: "ahora hazlo más conciso" es una instrucción perfectamente válida.</li>
+                        </ul>
+                        <h2 id="a0es-s6">Conclusión</h2>
+                        <p>Si usas IA y los resultados no son los que esperabas, lo más probable es que el problema esté
+                            en el prompt. No necesitas ser programador — necesitas ser más específico. <a
+                                href="https://prompt.optimicrotools.com" target="_blank">PromptArchitect</a> existe para
+                            darte esa estructura desde el primer día, gratis.</p>
+                        <div class="callout">
+                            <p>¿Tienes un caso donde la IA no te da buenos resultados? Escríbenos en <a
+                                    href="https://x.com/optimicrotools" target="_blank"
+                                    style="color:var(--cyan-electric)">@optimicrotools</a>.</p>
+                        </div>
+                    </div>
+                    <div id="a0-en" class="hidden">
+                        <p>When I started researching artificial intelligence on my own, I made the same mistake almost
+                            everyone makes: assuming the model does the work by itself. I'd write something generic like
+                            <strong>"give me ideas for a web project"</strong> and get equally generic responses. The
+                            problem wasn't the AI — it was me.</p>
+                        <div class="callout">
+                            <p>"An AI model is like an extraordinarily capable collaborator you've never told exactly
+                                what you want. The result almost always depends on the quality of your instruction."</p>
+                        </div>
+                        <p>This led me to build <a href="https://prompt.optimicrotools.com"
+                                target="_blank">PromptArchitect</a>, a free tool that helps you build structured prompts
+                            to get better results from ChatGPT, Claude, Gemini, and any other language model.</p>
+                        <h2 id="a0en-s1">What exactly is a "prompt" and why does it matter?</h2>
+                        <p>A <strong>prompt</strong> is the instruction or question you give an AI model. Unlike a
+                            search engine where a keyword is enough, language models respond better when they have
+                            <strong>context</strong>, an <strong>expected format</strong>, and <strong>clear
+                                constraints</strong>.</p>
+                        <h2 id="a0en-s2">The anatomy of a high-quality prompt</h2>
+                        <h3>1. Role or Persona</h3>
+                        <p>Tell the model <em>who it should be</em>. Not "summarize this", but "act as a senior tech
+                            editor and give me an executive summary for a non-technical audience". The role activates
+                            completely different response patterns.</p>
+                        <h3>2. Specific task</h3>
+                        <p>Use clear action verbs: <em>analyze, compare, generate, rewrite, extract, classify</em>.</p>
+                        <h3>3. Relevant context</h3>
+                        <p>The model only knows what you tell it. Who is this for? What's the end goal? Context prevents
+                            the model from filling gaps with wrong assumptions.</p>
+                        <h3>4. Output format</h3>
+                        <p>Specify how you want the response: "as a numbered list", "in 200 words max", "as a 3-column
+                            table". This eliminates ambiguity and saves correction rounds.</p>
+                        <h3>5. Constraints</h3>
+                        <p>Tell it what <em>not</em> to do. "Don't use technical jargon", "no long introductions".
+                            Negative constraints are equally valuable.</p>
+                        <h2 id="a0en-s3">A real example: before and after</h2>
+                        <div class="callout callout-bad">
+                            <p>"Give me content ideas for my web tools site."</p>
+                        </div>
+                        <p>Typical result: five ideas that work for any website on the planet. Nothing actionable.</p>
+                        <div class="callout callout-good">
+                            <p>"Act as an SEO content strategist specialized in SaaS. My site is optimicrotools.com, a
+                                directory of 9 free micro-tools processed 100% in the browser. My audience is junior
+                                developers and freelancers in Latin America. Give me 10 article ideas in English with:
+                                SEO title, search intent, and why it fits. Table format. No introductions."</p>
+                        </div>
+                        <h2 id="a0en-s4">How to use PromptArchitect</h2>
+                        <ol>
+                            <li>Go to <a href="https://prompt.optimicrotools.com"
+                                    target="_blank">prompt.optimicrotools.com</a></li>
+                            <li>Select the type of task (write, analyze, generate code, summarize, etc.)</li>
+                            <li>Fill in the guided fields: role, task, context, format, and constraints</li>
+                            <li>Copy the generated prompt and paste it into ChatGPT, Claude, or your preferred model
+                            </li>
+                            <li>Save the prompts that work best for later reuse</li>
+                        </ol>
+                        <h2 id="a0en-s5">Conclusion</h2>
+                        <p>If AI results aren't what you expected, the problem is most likely in the prompt. You don't
+                            need to be a programmer — you need to be more specific. <a
+                                href="https://prompt.optimicrotools.com" target="_blank">PromptArchitect</a> gives you
+                            that structure from day one, free.</p>
+                    </div>
+
+                    <!-- ══ ARTICLE 1: Vanilla JS vs Frameworks ══ -->
+                    <div id="a1-es" class="hidden">
+                        <p>Cuando empecé a construir OptiMicroTools, la primera pregunta técnica que enfrenté no fue
+                            "¿cómo lo construyo?" sino "¿con qué lo construyo?". Era 2024, el ecosistema JavaScript
+                            estaba dominado por React, Next.js, Vue, Svelte — cada uno con sus ventajas, su comunidad,
+                            sus tutoriales. La respuesta "correcta" parecía obvia: elige un framework moderno y avanza.
+                        </p>
+                        <p>Elegí no hacerlo. Y esta es la historia de por qué.</p>
+                        <div class="callout">
+                            <p>"El framework más rápido es el que no tienes. Cada dependencia es deuda técnica que pagas
+                                con tiempo de carga, complejidad de despliegue y fricción de mantenimiento."</p>
+                        </div>
+                        <h2 id="a1es-s1">El contexto que lo cambia todo</h2>
+                        <p>Antes de hablar de frameworks, hay que hablar de contexto. La decisión de qué herramienta
+                            usar nunca es universal — depende enteramente de qué estás construyendo, para quién, y bajo
+                            qué restricciones.</p>
+                        <p>En mi caso, las restricciones eran claras desde el día uno:</p>
+                        <ul>
+                            <li><strong>Host gratuito en Vercel</strong> — sin servidor, sin backend, sin base de datos.
+                            </li>
+                            <li><strong>Herramientas de una sola página</strong> — cada micro-herramienta es un
+                                <code>index.html</code> independiente.</li>
+                            <li><strong>Rendimiento como promesa central</strong> — el nombre del proyecto es
+                                OptiMicro<em>Tools</em>. La velocidad no es un feature, es la identidad.</li>
+                            <li><strong>Audiencia técnica</strong> — desarrolladores que van a notar si la página tarda
+                                3 segundos en cargar.</li>
+                        </ul>
+                        <p>Con esas restricciones encima de la mesa, los frameworks modernos empezaron a verse
+                            diferentes.</p>
+                        <h2 id="a1es-s2">El costo real de un framework</h2>
+                        <p>React, Vue y similares son herramientas extraordinarias. Nadie que trabaje en una aplicación
+                            compleja con estado compartido, rutas dinámicas y equipos de múltiples personas debería
+                            construirla sin ellos. Pero tienen un costo que rara vez se discute en los tutoriales:</p>
+                        <ul>
+                            <li><strong>Bundle size inicial.</strong> Una app React vacía pesa entre 40-130 KB
+                                minificada antes de escribir una sola línea de lógica propia. Para una micro-herramienta
+                                que hace una cosa, eso es overhead puro.</li>
+                            <li><strong>Tiempo de hidratación.</strong> Los frameworks modernos necesitan un ciclo de
+                                "hidratación" donde el JS descargado se conecta al DOM. En conexiones lentas, el usuario
+                                ve una página bloqueada durante ese proceso.</li>
+                            <li><strong>Complejidad de despliegue.</strong> Con Vanilla JS, mi flujo de despliegue es:
+                                guardar el archivo → push a GitHub → Vercel lo detecta → listo en 30 segundos. Con
+                                Next.js o Vite, hay pasos de build, configuración de entorno, y potenciales errores en
+                                cada paso.</li>
+                            <li><strong>Dependencias transitivas.</strong> <code>npm install react</code> instala react,
+                                react-dom, y decenas de paquetes adicionales. Cada uno es una superficie de ataque
+                                potencial y una fuente de actualizaciones forzadas.</li>
+                        </ul>
+                        <h2 id="a1es-s3">Lo que Vanilla JS puede hacer hoy</h2>
+                        <p>JavaScript moderno (ES2020+) tiene capacidades que hace 5 años requerían frameworks o
+                            librerías externas:</p>
+                        <ul>
+                            <li><strong>Módulos nativos</strong> con <code>import/export</code> — organización de código
+                                sin bundler.</li>
+                            <li><strong>Template literals</strong> — HTML dinámico sin JSX ni compilación.</li>
+                            <li><strong>Optional chaining</strong> (<code>?.</code>) y <strong>nullish
+                                    coalescing</strong> (<code>??</code>) — código defensivo limpio.</li>
+                            <li><strong>Fetch API nativa</strong> — peticiones HTTP sin axios.</li>
+                            <li><strong>CSS Custom Properties</strong> — theming dinámico sin CSS-in-JS.</li>
+                            <li><strong>Web Components</strong> — componentes reutilizables sin framework.</li>
+                        </ul>
+                        <p>Todo OptiMicroTools usa exactamente esto. El sistema de i18n (ES/EN) que ves en cada
+                            herramienta es un objeto JavaScript puro con una función <code>updateUI()</code>. El toggle
+                            de idioma es un event listener sobre un div. El efecto glass es CSS puro con
+                            <code>backdrop-filter</code>.</p>
+                        <h2 id="a1es-s4">Cuándo SÍ usar un framework</h2>
+                        <p>Esta decisión no es "Vanilla JS siempre". Es "Vanilla JS cuando tiene sentido". Los
+                            frameworks son la respuesta correcta cuando:</p>
+                        <ul>
+                            <li>Tu aplicación tiene estado complejo que se comparte entre múltiples componentes.</li>
+                            <li>Trabajas en equipo y necesitas convenciones compartidas de estructura.</li>
+                            <li>Tu producto tiene decenas de rutas y vistas dinámicas.</li>
+                            <li>Necesitas renderizado del lado del servidor (SSR) para SEO en contenido dinámico.</li>
+                        </ul>
+                        <p>Si estás construyendo el próximo Airbnb, usa Next.js. Si estás construyendo una herramienta
+                            que convierte texto en mayúsculas, no lo hagas.</p>
+                        <h2 id="a1es-s5">El resultado después de 9 herramientas</h2>
+                        <p>Después de construir las 9 micro-herramientas de OptiMicroTools en Vanilla JS, los números
+                            hablan:</p>
+                        <ul>
+                            <li>Tiempo de carga promedio: <strong>bajo 1 segundo</strong> en conexión 4G.</li>
+                            <li>Tamaño del HTML principal: <strong>menos de 50 KB</strong> por herramienta.</li>
+                            <li>Dependencias en producción: <strong>cero</strong> (excepto las librerías específicas
+                                como qrcodejs).</li>
+                            <li>Tiempo de despliegue en Vercel: <strong>30 segundos promedio</strong>.</li>
+                        </ul>
+                        <h2 id="a1es-s6">Conclusión</h2>
+                        <p>Elegir Vanilla JS no fue nostalgia ni purismo técnico. Fue una decisión de ingeniería basada
+                            en las restricciones reales del proyecto. El framework más rápido, el más confiable y el más
+                            fácil de mantener para OptiMicroTools era el que ya venía incluido en el navegador.</p>
+                        <p>La próxima vez que vayas a iniciar un proyecto, antes de hacer
+                            <code>npx create-react-app</code>, pregúntate honestamente: ¿realmente lo necesito?</p>
+                        <div class="callout">
+                            <p>¿Tienes dudas sobre qué stack elegir para tu próximo proyecto? Cuéntanos en <a
+                                    href="https://x.com/optimicrotools" target="_blank"
+                                    style="color:var(--cyan-electric)">@optimicrotools</a>.</p>
+                        </div>
+                    </div>
+                    <div id="a1-en" class="hidden">
+                        <p>When I started building OptiMicroTools, the first technical question I faced wasn't "how do I
+                            build it?" but "what do I build it with?". It was 2024, the JavaScript ecosystem was
+                            dominated by React, Next.js, Vue, Svelte — each with their advantages, community, and
+                            tutorials. The "correct" answer seemed obvious: pick a modern framework and move forward.
+                        </p>
+                        <p>I chose not to. And this is the story of why.</p>
+                        <div class="callout">
+                            <p>"The fastest framework is the one you don't have. Every dependency is technical debt you
+                                pay with load time, deployment complexity, and maintenance friction."</p>
+                        </div>
+                        <h2 id="a1en-s1">Context changes everything</h2>
+                        <p>Before talking about frameworks, we need to talk about context. The decision of which tool to
+                            use is never universal — it depends entirely on what you're building, for whom, and under
+                            what constraints.</p>
+                        <p>In my case, the constraints were clear from day one: free hosting on Vercel (no server, no
+                            backend), single-page tools (each micro-tool is an independent <code>index.html</code>),
+                            performance as the core promise, and a technical audience that would notice a 3-second load
+                            time.</p>
+                        <h2 id="a1en-s2">The real cost of a framework</h2>
+                        <ul>
+                            <li><strong>Initial bundle size.</strong> An empty React app weighs 40-130 KB minified
+                                before writing a single line of your own logic.</li>
+                            <li><strong>Hydration time.</strong> Modern frameworks need a "hydration" cycle where
+                                downloaded JS connects to the DOM. On slow connections, the user sees a blocked page
+                                during this process.</li>
+                            <li><strong>Deployment complexity.</strong> With Vanilla JS, my deployment flow is: save
+                                file → push to GitHub → Vercel detects it → live in 30 seconds. With Next.js, there are
+                                build steps, environment configuration, and potential errors at each stage.</li>
+                            <li><strong>Transitive dependencies.</strong> <code>npm install react</code> installs react,
+                                react-dom, and dozens of additional packages — each a potential attack surface.</li>
+                        </ul>
+                        <h2 id="a1en-s3">What Vanilla JS can do today</h2>
+                        <p>Modern JavaScript (ES2020+) has capabilities that 5 years ago required frameworks: native
+                            <code>import/export</code> modules, template literals, optional chaining (<code>?.</code>),
+                            native Fetch API, CSS Custom Properties, and Web Components.</p>
+                        <p>All of OptiMicroTools uses exactly this. The i18n system (ES/EN) you see in every tool is a
+                            plain JavaScript object with an <code>updateUI()</code> function. The language toggle is an
+                            event listener on a div.</p>
+                        <h2 id="a1en-s4">When to use a framework</h2>
+                        <p>Use frameworks when: your app has complex shared state, you're working in a team, you have
+                            dozens of dynamic routes, or you need SSR for dynamic content SEO. If you're building the
+                            next Airbnb, use Next.js. If you're building a tool that converts text to uppercase, don't.
+                        </p>
+                        <h2 id="a1en-s5">Results after 9 tools</h2>
+                        <ul>
+                            <li>Average load time: <strong>under 1 second</strong> on 4G.</li>
+                            <li>Main HTML size: <strong>under 50 KB</strong> per tool.</li>
+                            <li>Production dependencies: <strong>zero</strong> (except specific libraries like
+                                qrcodejs).</li>
+                            <li>Vercel deployment time: <strong>30 seconds average</strong>.</li>
+                        </ul>
+                        <h2 id="a1en-s6">Conclusion</h2>
+                        <p>Choosing Vanilla JS wasn't nostalgia or technical purism. It was an engineering decision
+                            based on the project's real constraints. The next time you start a project, before running
+                            <code>npx create-react-app</code>, honestly ask yourself: do I really need this?</p>
+                    </div>
+
+                    <!-- ══ ARTICLE 2: SanitizePro ══ -->
+                    <div id="a2-es" class="hidden">
+                        <p>Imagina este escenario: le pides a ChatGPT que te ayude a redactar un correo para un cliente.
+                            Copias y pegas el contexto directamente desde tu CRM — nombre del cliente, empresa, NIT,
+                            historial de pagos, correo corporativo. La IA te genera el texto perfecto. Y tus datos
+                            confidenciales acaban de salir de tu red.</p>
+                        <p>No es un escenario hipotético. Es lo que ocurre decenas de veces al día en empresas de todos
+                            los tamaños. Y tiene solución.</p>
+                        <div class="callout">
+                            <p>"El problema no es usar IA con datos reales. El problema es no limpiarlos antes. La
+                                diferencia entre los dos es de aproximadamente 3 segundos."</p>
+                        </div>
+                        <h2 id="a2es-s1">¿Qué es la sanitización de prompts?</h2>
+                        <p>La <strong>sanitización de prompts</strong> es el proceso de identificar y eliminar (o
+                            reemplazar) información sensible de un texto antes de enviarlo a un modelo de IA externo. El
+                            objetivo es mantener el contexto útil para la IA mientras se eliminan los datos que no
+                            deberían salir de tu entorno.</p>
+                        <p>Esto incluye:</p>
+                        <ul>
+                            <li><strong>PII (Información de Identificación Personal):</strong> nombres completos,
+                                correos electrónicos, números de teléfono, direcciones.</li>
+                            <li><strong>Datos financieros:</strong> números de cuenta, NITs, datos de facturación.</li>
+                            <li><strong>Credenciales técnicas:</strong> API keys, tokens, contraseñas, IPs internas.
+                            </li>
+                            <li><strong>Propiedad intelectual:</strong> código propietario, fórmulas, procesos internos
+                                confidenciales.</li>
+                        </ul>
+                        <h2 id="a2es-s2">Cómo funciona SanitizePro por dentro</h2>
+                        <p><a href="https://sanitizer.optimicrotools.com" target="_blank">SanitizePro</a> usa un motor
+                            de detección basado en expresiones regulares (Regex) combinado con heurísticas para
+                            identificar patrones de datos sensibles. Todo el procesamiento ocurre en tu navegador —
+                            ningún byte de tu prompt sale hacia servidores externos.</p>
+                        <p>Estas son las 5 capas de detección que implementa la herramienta:</p>
+                        <h3>Capa 1: Correos electrónicos</h3>
+                        <pre><code>const emailRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
+sanitized = sanitized.replace(emailRegex, '[EMAIL]');</code></pre>
+                        <p>Detecta cualquier patrón con formato <code>usuario@dominio.ext</code> y lo reemplaza con el
+                            marcador <code>[EMAIL]</code>, manteniendo el contexto semántico sin exponer la dirección
+                            real.</p>
+                        <h3>Capa 2: Números de teléfono</h3>
+                        <pre><code>const phoneRegex = /(\+?\d{1,3}[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}/g;
+sanitized = sanitized.replace(phoneRegex, '[PHONE]');</code></pre>
+                        <p>El patrón es flexible: detecta formatos internacionales (<code>+57 300 123 4567</code>),
+                            locales (<code>(300) 123-4567</code>) y variaciones con guiones o espacios.</p>
+                        <h3>Capa 3: Direcciones IP</h3>
+                        <pre><code>const ipRegex = /\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b/g;
+sanitized = sanitized.replace(ipRegex, '[IP_ADDRESS]');</code></pre>
+                        <p>Crítico para prompts técnicos donde se mencionan IPs de servidores internos, bases de datos o
+                            redes privadas.</p>
+                        <h3>Capa 4: API Keys y tokens</h3>
+                        <pre><code>const apiKeyRegex = /\b(sk-)?([a-zA-Z0-9]{32,}|[a-zA-Z0-9]{20,})\b/g;
+sanitized = sanitized.replace(apiKeyRegex, '[API_KEY]');</code></pre>
+                        <p>Detecta strings alfanuméricos largos que tienen la forma típica de API keys (como las de
+                            OpenAI que empiezan con <code>sk-</code>) y tokens de autenticación.</p>
+                        <h3>Capa 5: Nombres propios (heurística)</h3>
+                        <pre><code>const nameHeuristic = /(?&lt;=\s)([A-Z][a-z]+)\b/g;
+sanitized = sanitized.replace(nameHeuristic, (match) => {
+    const exclusions = ['The','And','But','For','With','That','This','AI','LLM'];
+    return exclusions.includes(match) ? match : '[NAME]';
+});</code></pre>
+                        <p>Esta es la capa más sofisticada. Usa un <strong>lookbehind</strong> de JavaScript para
+                            detectar palabras con inicial mayúscula precedidas por espacio — patrón típico de nombres
+                            propios — y excluye palabras comunes en inglés para evitar falsos positivos.</p>
+                        <h2 id="a2es-s3">El flujo completo en 3 pasos</h2>
+                        <ol>
+                            <li><strong>Pega tu prompt con datos reales</strong> en el área de entrada. No hay límite de
+                                longitud.</li>
+                            <li><strong>Haz clic en "Sanitizar".</strong> El motor procesa el texto localmente aplicando
+                                las 5 capas en secuencia.</li>
+                            <li><strong>Copia el resultado limpio</strong> y pégalo en ChatGPT, Claude o el LLM que
+                                uses.</li>
+                        </ol>
+                        <h2 id="a2es-s4">Limitaciones importantes que debes conocer</h2>
+                        <p>SanitizePro es una herramienta de detección automática, no un sistema infalible. Hay
+                            situaciones que el motor puede no detectar:</p>
+                        <ul>
+                            <li>Nombres propios en español (la heurística actual está optimizada para inglés).</li>
+                            <li>Datos numéricos sin formato estándar (códigos internos, IDs personalizados).</li>
+                            <li>Información confidencial describrita en texto natural sin patrones reconocibles.</li>
+                        </ul>
+                        <p>Por eso la herramienta siempre recomienda una revisión manual rápida antes del envío final,
+                            especialmente con datos críticos.</p>
+                        <h2 id="a2es-s5">Conclusión: 3 segundos que pueden evitar un incidente</h2>
+                        <p>La adopción de IA en entornos empresariales es inevitable y deseable. Pero usarla de forma
+                            responsable requiere un paso previo que casi nadie hace: limpiar los datos antes de
+                            compartirlos. <a href="https://sanitizer.optimicrotools.com" target="_blank">SanitizePro</a>
+                            automatiza ese paso, sin costo, sin registro y sin salir de tu navegador.</p>
+                        <div class="callout">
+                            <p>¿Tu empresa maneja datos sensibles y quiere adoptar IA de forma segura? Escríbenos en <a
+                                    href="https://x.com/optimicrotools" target="_blank"
+                                    style="color:var(--cyan-electric)">@optimicrotools</a>.</p>
+                        </div>
+                    </div>
+                    <div id="a2-en" class="hidden">
+                        <p>Imagine this scenario: you ask ChatGPT to help you draft an email to a client. You copy and
+                            paste context directly from your CRM — client name, company, tax ID, payment history,
+                            corporate email. The AI generates the perfect text. And your confidential data just left
+                            your network.</p>
+                        <p>This isn't a hypothetical scenario. It happens dozens of times a day in companies of all
+                            sizes. And it has a solution.</p>
+                        <div class="callout">
+                            <p>"The problem isn't using AI with real data. The problem is not cleaning it first. The
+                                difference between the two is about 3 seconds."</p>
+                        </div>
+                        <h2 id="a2en-s1">What is prompt sanitization?</h2>
+                        <p><strong>Prompt sanitization</strong> is the process of identifying and removing (or
+                            replacing) sensitive information from text before sending it to an external AI model. The
+                            goal is to maintain useful context for the AI while eliminating data that shouldn't leave
+                            your environment — including PII (emails, phones, names), financial data, technical
+                            credentials (API keys, IPs), and proprietary intellectual property.</p>
+                        <h2 id="a2en-s2">How SanitizePro works under the hood</h2>
+                        <p><a href="https://sanitizer.optimicrotools.com" target="_blank">SanitizePro</a> uses a
+                            detection engine based on Regular Expressions (Regex) combined with heuristics to identify
+                            sensitive data patterns. All processing happens in your browser — no byte of your prompt
+                            travels to external servers.</p>
+                        <h3>Layer 1: Email addresses</h3>
+                        <pre><code>const emailRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
+sanitized = sanitized.replace(emailRegex, '[EMAIL]');</code></pre>
+                        <h3>Layer 2: Phone numbers</h3>
+                        <pre><code>const phoneRegex = /(\+?\d{1,3}[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}/g;
+sanitized = sanitized.replace(phoneRegex, '[PHONE]');</code></pre>
+                        <h3>Layer 3: IP addresses</h3>
+                        <pre><code>const ipRegex = /\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b/g;
+sanitized = sanitized.replace(ipRegex, '[IP_ADDRESS]');</code></pre>
+                        <h3>Layer 4: API Keys and tokens</h3>
+                        <pre><code>const apiKeyRegex = /\b(sk-)?([a-zA-Z0-9]{32,}|[a-zA-Z0-9]{20,})\b/g;
+sanitized = sanitized.replace(apiKeyRegex, '[API_KEY]');</code></pre>
+                        <h3>Layer 5: Proper names (heuristic)</h3>
+                        <pre><code>const nameHeuristic = /(?&lt;=\s)([A-Z][a-z]+)\b/g;
+sanitized = sanitized.replace(nameHeuristic, (match) => {
+    const exclusions = ['The','And','But','For','With','That','This','AI','LLM'];
+    return exclusions.includes(match) ? match : '[NAME]';
+});</code></pre>
+                        <p>This is the most sophisticated layer — it uses a JavaScript <strong>lookbehind</strong> to
+                            detect capitalized words preceded by a space (typical proper name pattern) while excluding
+                            common English words to avoid false positives.</p>
+                        <h2 id="a2en-s3">Conclusion</h2>
+                        <p>Responsible AI adoption requires one step almost nobody takes: cleaning data before sharing
+                            it. <a href="https://sanitizer.optimicrotools.com" target="_blank">SanitizePro</a> automates
+                            that step, at no cost, no signup, and without leaving your browser.</p>
+                    </div>
+
+                    <!-- ══ ARTICLE 3: QuickQR Pro ══ -->
+                    <div id="a3-es" class="hidden">
+                        <p>Era un sábado por la mañana cuando me encontré en una situación familiar para cualquier
+                            desarrollador: necesitaba una herramienta simple para generar códigos QR, abrí el navegador,
+                            y encontré 15 sitios que me pedían registro, mostraban 8 anuncios, o simplemente no
+                            funcionaban bien en móvil. Decidí construir la mía.</p>
+                        <p>72 horas después, <a href="https://qr.optimicrotools.com" target="_blank">QuickQR Pro</a>
+                            estaba en producción. Este es el relato técnico de cómo lo hice.</p>
+                        <h2 id="a3es-s1">La decisión de librería: qrcodejs</h2>
+                        <p>El primer problema técnico fue elegir cómo generar el QR. Hay dos enfoques principales en el
+                            ecosistema JS:</p>
+                        <ul>
+                            <li><strong>Implementación propia desde cero</strong> — usando el estándar ISO/IEC 18004 que
+                                define los QR codes. Fascinante como ejercicio académico, completamente impráctica para
+                                un fin de semana.</li>
+                            <li><strong>Librería externa</strong> — usar código probado y optimizado que resuelve el
+                                problema.</li>
+                        </ul>
+                        <p>Elegí <strong>qrcodejs</strong>, una librería de 20 KB cargada desde CDN de Cloudflare. La
+                            decisión se basó en tres criterios: tamaño mínimo, sin dependencias propias, y soporte de
+                            Canvas para descarga de imagen.</p>
+                        <pre><code>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"&gt;&lt;/script&gt;</code></pre>
+                        <h2 id="a3es-s2">La función de generación</h2>
+                        <p>El corazón de QuickQR Pro son estas pocas líneas:</p>
+                        <pre><code>function generateQR() {
+    // Limpiar el contenedor anterior
+    elements.qrContainer.innerHTML = '';
+    state.qrcode = null;
+
+    const text = elements.input.value.trim();
+    if (!text) return;
+
+    state.qrcode = new QRCode(elements.qrContainer, {
+        text: text,
+        width: 256,
+        height: 256,
+        colorDark: elements.qrColor.value,   // Color del QR
+        colorLight: elements.bgColor.value,  // Color del fondo
+        correctLevel: QRCode.CorrectLevel.H  // Máxima corrección de errores
+    });
+}</code></pre>
+                        <p>El parámetro <code>correctLevel: QRCode.CorrectLevel.H</code> merece una explicación. Los QR
+                            codes tienen 4 niveles de corrección de errores (L, M, Q, H). El nivel H permite que hasta
+                            el <strong>30% del código esté dañado o cubierto</strong> y aún sea legible. Es el más
+                            robusto y el ideal para uso profesional, especialmente cuando el QR se va a imprimir o usar
+                            con un logo encima.</p>
+                        <h2 id="a3es-s3">Personalización de colores: el detalle que marca la diferencia</h2>
+                        <p>La mayoría de generadores de QR solo generan el código negro sobre fondo blanco. QuickQR Pro
+                            permite personalizar ambos colores usando los color pickers nativos de HTML5:</p>
+                        <pre><code>&lt;input type="color" id="qrColor" value="#000000"&gt;   &lt;!-- Color del QR --&gt;
+&lt;input type="color" id="bgColor" value="#ffffff"&gt;   &lt;!-- Color del fondo --&gt;</code></pre>
+                        <p>Un detalle técnico importante: <strong>nunca uses un QR de color claro sobre fondo
+                                oscuro</strong>. Los escáneres detectan el QR buscando módulos oscuros sobre fondo
+                            claro. Invertir los colores puede hacer que el código sea ilegible para muchos lectores. La
+                            herramienta no bloquea esta combinación — es tu decisión — pero vale la pena saberlo.</p>
+                        <h2 id="a3es-s4">La descarga: del Canvas al archivo PNG</h2>
+                        <p>qrcodejs genera el QR en un elemento <code>&lt;canvas&gt;</code> del DOM. Para descargarlo
+                            como imagen, uso la API nativa de Canvas:</p>
+                        <pre><code>const canvas = elements.qrContainer.querySelector('canvas');
+if (canvas) {
+    const link = document.createElement('a');
+    link.download = 'quickqr-optimicrotools.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+}</code></pre>
+                        <p><code>canvas.toDataURL('image/png')</code> convierte el contenido del canvas en un string
+                            Base64 que el navegador puede descargar directamente. Sin servidor, sin procesamiento
+                            externo.</p>
+                        <h2 id="a3es-s5">El despliegue en Vercel: 30 segundos</h2>
+                        <p>Al ser un archivo HTML estático, el despliegue en Vercel fue trivial:</p>
+                        <ol>
+                            <li>Crear repositorio en GitHub con el <code>index.html</code></li>
+                            <li>Conectar el repo a Vercel (import project)</li>
+                            <li>Configurar el CNAME en Namecheap: <code>qr</code> → <code>cname.vercel-dns.com</code>
+                            </li>
+                            <li>Agregar el dominio <code>qr.optimicrotools.com</code> en la configuración del proyecto
+                                en Vercel</li>
+                        </ol>
+                        <p>Sin configuración de build, sin variables de entorno, sin Dockerfile. El archivo HTML es el
+                            artefacto de producción.</p>
+                        <h2 id="a3es-s6">Lo que aprendí</h2>
+                        <ul>
+                            <li><strong>Las librerías de CDN son una decisión de arquitectura.</strong> Ahorro el peso
+                                en tu bundle, pero introduces una dependencia de disponibilidad externa. Para una
+                                librería estable como qrcodejs, el tradeoff vale la pena.</li>
+                            <li><strong>El Canvas API es más poderoso de lo que parece.</strong> Generación,
+                                manipulación y exportación de imágenes sin ninguna dependencia adicional.</li>
+                            <li><strong>La experiencia de usuario importa más que la tecnología.</strong> Lo que hizo
+                                útil a QuickQR Pro no fue ninguna decisión técnica brillante — fue no pedir registro, no
+                                mostrar popups, y cargar en menos de un segundo.</li>
+                        </ul>
+                        <h2 id="a3es-s7">Conclusión</h2>
+                        <p>Construir una herramienta en un fin de semana no requiere un stack complejo. Requiere
+                            claridad sobre el problema, una librería confiable, y la disciplina de no sobre-ingenierar
+                            la solución. <a href="https://qr.optimicrotools.com" target="_blank">QuickQR Pro</a> sigue
+                            corriendo en el mismo <code>index.html</code> del primer fin de semana, sin cambios de
+                            arquitectura, sin deuda técnica acumulada.</p>
+                        <div class="callout">
+                            <p>¿Tienes una idea de micro-herramienta que te gustaría ver en OptiMicroTools? Escríbenos
+                                en <a href="https://x.com/optimicrotools" target="_blank"
+                                    style="color:var(--cyan-electric)">@optimicrotools</a>.</p>
+                        </div>
+                    </div>
+                    <div id="a3-en" class="hidden">
+                        <p>It was a Saturday morning when I found myself in a situation familiar to any developer: I
+                            needed a simple QR code generator, opened my browser, and found 15 sites asking for
+                            registration, showing 8 ads, or simply not working well on mobile. I decided to build my
+                            own.</p>
+                        <p>72 hours later, <a href="https://qr.optimicrotools.com" target="_blank">QuickQR Pro</a> was
+                            in production. This is the technical account of how I did it.</p>
+                        <h2 id="a3en-s1">Library choice: qrcodejs</h2>
+                        <p>I chose <strong>qrcodejs</strong>, a 20 KB library loaded from Cloudflare CDN. The decision
+                            was based on three criteria: minimal size, no own dependencies, and Canvas support for image
+                            download.</p>
+                        <pre><code>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"&gt;&lt;/script&gt;</code></pre>
+                        <h2 id="a3en-s2">The generation function</h2>
+                        <pre><code>state.qrcode = new QRCode(elements.qrContainer, {
+    text: text,
+    width: 256,
+    height: 256,
+    colorDark: elements.qrColor.value,
+    colorLight: elements.bgColor.value,
+    correctLevel: QRCode.CorrectLevel.H  // Max error correction
+});</code></pre>
+                        <p><code>correctLevel: H</code> allows up to <strong>30% of the code to be damaged or
+                                covered</strong> and still be readable — ideal for professional use, especially when the
+                            QR will be printed or used with a logo overlay.</p>
+                        <h2 id="a3en-s3">Download: from Canvas to PNG</h2>
+                        <pre><code>const canvas = elements.qrContainer.querySelector('canvas');
+if (canvas) {
+    const link = document.createElement('a');
+    link.download = 'quickqr-optimicrotools.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+}</code></pre>
+                        <p><code>canvas.toDataURL('image/png')</code> converts the canvas content into a Base64 string
+                            the browser can download directly. No server, no external processing.</p>
+                        <h2 id="a3en-s4">What I learned</h2>
+                        <ul>
+                            <li><strong>CDN libraries are an architecture decision.</strong> You save bundle weight but
+                                introduce an external availability dependency. For a stable library like qrcodejs, the
+                                tradeoff is worth it.</li>
+                            <li><strong>The Canvas API is more powerful than it looks.</strong> Image generation,
+                                manipulation, and export with no additional dependencies.</li>
+                            <li><strong>UX matters more than technology.</strong> What made QuickQR Pro useful wasn't
+                                any brilliant technical decision — it was no registration required, no popups, and
+                                loading in under a second.</li>
+                        </ul>
+                        <h2 id="a3en-s5">Conclusion</h2>
+                        <p>Building a tool in a weekend doesn't require a complex stack. It requires clarity about the
+                            problem, a reliable library, and the discipline not to over-engineer the solution. <a
+                                href="https://qr.optimicrotools.com" target="_blank">QuickQR Pro</a> still runs on the
+                            same <code>index.html</code> from the first weekend.</p>
+                    </div>
+
+                </div><!-- /article-body -->
+
+                <div class="ad-slot w-full md:max-w-[728px] rounded-lg mt-12 mb-8" data-label="Ads"></div>
+
+                <div class="flex items-center justify-between pt-8 border-t border-white/5">
+                    <button id="art-prev-btn" onclick="prevArticle()"
+                        class="flex items-center gap-2 text-gray-500 hover:text-cyan-electric text-sm transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
+                        <span id="art-prev-label"></span>
+                    </button>
+                    <button onclick="hideArticle()"
+                        class="flex items-center gap-2 text-cyan-electric text-sm font-semibold hover:opacity-75 transition-opacity">
+                        <span id="art-all">Ver todos los artículos</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                    <button id="art-next-btn" onclick="nextArticle()"
+                        class="flex items-center gap-2 text-gray-500 hover:text-cyan-electric text-sm transition-colors">
+                        <span id="art-next-label"></span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </button>
+                </div>
+            </article>
+
+            <!-- SIDEBAR -->
+            <aside class="w-full lg:w-72 shrink-0 space-y-6">
+                <div class="glass rounded-2xl p-6 sticky top-24">
+                    <h3 id="toc-title" class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">Contenido
+                    </h3>
+                    <nav id="toc-nav" class="space-y-0.5"></nav>
+                </div>
+                <div class="glass rounded-2xl p-6 border border-cyan-electric/20">
+                    <div class="w-10 h-10 rounded-xl bg-cyan-electric/10 flex items-center justify-center mb-4">
+                        <svg class="w-5 h-5 text-cyan-electric" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                    </div>
+                    <h4 id="cta-title" class="font-bold text-white mb-2">Prueba la herramienta</h4>
+                    <p id="cta-sub" class="text-gray-500 text-xs leading-relaxed mb-4">Gratis, sin registro, 100% en tu
+                        navegador.</p>
+                    <a id="cta-link" href="https://optimicrotools.com" target="_blank"
+                        class="flex items-center justify-center gap-2 w-full py-2.5 bg-cyan-electric text-black text-sm font-bold rounded-xl hover:opacity-90 transition-opacity">
+                        <span id="cta-btn">Abrir herramienta</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="ad-slot rounded-xl" style="min-height:250px;" data-label="Ads"></div>
+                <div class="glass rounded-2xl p-6">
+                    <h3 id="sb-tools-title" class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4">Otras
+                        herramientas</h3>
+                    <div class="space-y-3">
+                        <a href="https://prompt.optimicrotools.com"
+                            class="flex items-center gap-3 text-sm text-gray-400 hover:text-cyan-electric transition-colors"><span
+                                class="w-6 h-6 rounded bg-cyan-electric/10 flex items-center justify-center text-cyan-electric text-xs font-bold">P</span>PromptArchitect</a>
+                        <a href="https://qr.optimicrotools.com"
+                            class="flex items-center gap-3 text-sm text-gray-400 hover:text-cyan-electric transition-colors"><span
+                                class="w-6 h-6 rounded bg-cyan-electric/10 flex items-center justify-center text-cyan-electric text-xs font-bold">Q</span>QuickQR
+                            Pro</a>
+                        <a href="https://sanitizer.optimicrotools.com"
+                            class="flex items-center gap-3 text-sm text-gray-400 hover:text-cyan-electric transition-colors"><span
+                                class="w-6 h-6 rounded bg-cyan-electric/10 flex items-center justify-center text-cyan-electric text-xs font-bold">S</span>SanitizePro</a>
+                        <a href="https://text.optimicrotools.com"
+                            class="flex items-center gap-3 text-sm text-gray-400 hover:text-cyan-electric transition-colors"><span
+                                class="w-6 h-6 rounded bg-cyan-electric/10 flex items-center justify-center text-cyan-electric text-xs font-bold">T</span>PureText</a>
+                        <a href="https://speed.optimicrotools.com"
+                            class="flex items-center gap-3 text-sm text-gray-400 hover:text-cyan-electric transition-colors"><span
+                                class="w-6 h-6 rounded bg-cyan-electric/10 flex items-center justify-center text-cyan-electric text-xs font-bold">⚡</span>SpeedTest
+                            Lite</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-auto glass border-t border-white/5 px-6 py-8">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <div
+                    class="w-6 h-6 rounded bg-cyan-electric flex items-center justify-center font-bold text-black text-sm">
+                    O</div>
+                <span class="font-bold text-sm tracking-tighter">OPTIMICRO<span
+                        class="text-cyan-electric">TOOLS</span></span>
+            </div>
+            <div class="flex items-center gap-6 text-xs text-gray-500">
+                <a href="https://optimicrotools.com" id="ft-hub"
+                    class="hover:text-cyan-electric transition-colors">Hub</a>
+                <a href="/blog.html" class="text-cyan-electric font-semibold">Blog</a>
+                <a href="https://x.com/optimicrotools" target="_blank"
+                    class="hover:text-cyan-electric transition-colors">@optimicrotools</a>
+            </div>
+            <p id="ft-copy" class="text-xs text-gray-600">© 2025 OptiMicroTools. Built with Vanilla JS.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ═══════════════════════════════════════════════════════════════
+        // ARTICLE DATA
+        // ═══════════════════════════════════════════════════════════════
+        const ARTICLES = [
+            {
+                tags: { es: ['IA & Productividad', 'JavaScript', 'Herramientas'], en: ['AI & Productivity', 'JavaScript', 'Tools'] },
+                title: { es: 'PromptArchitect: Cómo escribir prompts de IA que realmente funcionan', en: 'PromptArchitect: How to write AI prompts that actually work' },
+                lead: { es: 'La diferencia entre un resultado mediocre y uno extraordinario al usar inteligencia artificial no está en el modelo — está en cómo le haces la pregunta.', en: "The difference between a mediocre and an extraordinary AI result isn't in the model — it's in how you ask the question." },
+                date: { es: '📅 Jun 2025', en: '📅 Jun 2025' },
+                time: { es: '⏱ 8 min lectura', en: '⏱ 8 min read' },
+                cta: { es: 'https://prompt.optimicrotools.com', en: 'https://prompt.optimicrotools.com' },
+                ctaLbl: { es: 'Abrir PromptArchitect', en: 'Open PromptArchitect' },
+                toc: {
+                    es: [['a0es-s1', '¿Qué es un prompt?'], ['a0es-s2', 'Anatomía del prompt'], ['a0es-s3', 'Antes y después'], ['a0es-s4', 'Cómo usarlo'], ['a0es-s5', 'Errores comunes'], ['a0es-s6', 'Conclusión']],
+                    en: [['a0en-s1', 'What is a prompt?'], ['a0en-s2', 'Prompt anatomy'], ['a0en-s3', 'Before & after'], ['a0en-s4', 'How to use it'], ['a0en-s5', 'Conclusion']]
+                }
+            },
+            {
+                tags: { es: ['JavaScript', 'Arquitectura', 'Build Log'], en: ['JavaScript', 'Architecture', 'Build Log'] },
+                title: { es: 'JavaScript Vanilla vs Frameworks: Por qué elegí la opción difícil', en: 'Vanilla JavaScript vs Frameworks: Why I chose the hard option' },
+                lead: { es: 'Cuando el rendimiento es la prioridad central de tu proyecto, la respuesta no siempre es React o Vue. Esta es la decisión de ingeniería detrás de OptiMicroTools.', en: 'When performance is your project\'s core priority, the answer isn\'t always React or Vue. This is the engineering decision behind OptiMicroTools.' },
+                date: { es: '📅 Jul 2025', en: '📅 Jul 2025' },
+                time: { es: '⏱ 7 min lectura', en: '⏱ 7 min read' },
+                cta: { es: 'https://optimicrotools.com', en: 'https://optimicrotools.com' },
+                ctaLbl: { es: 'Ver todas las herramientas', en: 'See all tools' },
+                toc: {
+                    es: [['a1es-s1', 'El contexto lo cambia todo'], ['a1es-s2', 'El costo real de un framework'], ['a1es-s3', 'Lo que Vanilla JS puede hoy'], ['a1es-s4', 'Cuándo SÍ usar un framework'], ['a1es-s5', 'Resultados: 9 herramientas'], ['a1es-s6', 'Conclusión']],
+                    en: [['a1en-s1', 'Context changes everything'], ['a1en-s2', 'The real cost of a framework'], ['a1en-s3', 'What Vanilla JS can do today'], ['a1en-s4', 'When to use a framework'], ['a1en-s5', 'Results after 9 tools'], ['a1en-s6', 'Conclusion']]
+                }
+            },
+            {
+                tags: { es: ['Seguridad & IA', 'Privacidad', 'JavaScript'], en: ['Security & AI', 'Privacy', 'JavaScript'] },
+                title: { es: 'Cómo proteger tus datos antes de usar ChatGPT: guía de sanitización de prompts', en: 'How to protect your data before using ChatGPT: a prompt sanitization guide' },
+                lead: { es: 'Cada vez que usas una IA con datos reales de tu empresa, asumes un riesgo de privacidad que puedes eliminar en 3 segundos. Te explico cómo funciona SanitizePro por dentro.', en: 'Every time you use AI with real company data, you\'re taking a privacy risk you can eliminate in 3 seconds. Here\'s how SanitizePro works under the hood.' },
+                date: { es: '📅 Ago 2025', en: '📅 Aug 2025' },
+                time: { es: '⏱ 9 min lectura', en: '⏱ 9 min read' },
+                cta: { es: 'https://sanitizer.optimicrotools.com', en: 'https://sanitizer.optimicrotools.com' },
+                ctaLbl: { es: 'Abrir SanitizePro', en: 'Open SanitizePro' },
+                toc: {
+                    es: [['a2es-s1', '¿Qué es la sanitización?'], ['a2es-s2', 'Cómo funciona por dentro'], ['a2es-s3', 'Flujo en 3 pasos'], ['a2es-s4', 'Limitaciones importantes'], ['a2es-s5', 'Conclusión']],
+                    en: [['a2en-s1', 'What is prompt sanitization?'], ['a2en-s2', 'How it works under the hood'], ['a2en-s3', 'Conclusion']]
+                }
+            },
+            {
+                tags: { es: ['Build Log', 'JavaScript', 'Herramientas'], en: ['Build Log', 'JavaScript', 'Tools'] },
+                title: { es: 'Cómo construí un generador de QR con JS puro en un fin de semana', en: 'How I built a QR code generator with pure JS in a weekend' },
+                lead: { es: 'De la frustración con los generadores existentes al despliegue en producción en 72 horas: las decisiones técnicas reales detrás de QuickQR Pro.', en: 'From frustration with existing generators to production deployment in 72 hours: the real technical decisions behind QuickQR Pro.' },
+                date: { es: '📅 Sep 2025', en: '📅 Sep 2025' },
+                time: { es: '⏱ 10 min lectura', en: '⏱ 10 min read' },
+                cta: { es: 'https://qr.optimicrotools.com', en: 'https://qr.optimicrotools.com' },
+                ctaLbl: { es: 'Abrir QuickQR Pro', en: 'Open QuickQR Pro' },
+                toc: {
+                    es: [['a3es-s1', 'Elección de librería: qrcodejs'], ['a3es-s2', 'La función de generación'], ['a3es-s3', 'Personalización de colores'], ['a3es-s4', 'Descarga: Canvas a PNG'], ['a3es-s5', 'Despliegue en Vercel'], ['a3es-s6', 'Lo que aprendí'], ['a3es-s7', 'Conclusión']],
+                    en: [['a3en-s1', 'Library choice: qrcodejs'], ['a3en-s2', 'The generation function'], ['a3en-s3', 'Download: Canvas to PNG'], ['a3en-s4', 'What I learned'], ['a3en-s5', 'Conclusion']]
+                }
+            }
+        ];
+
+        // ═══════════════════════════════════════════════════════════════
+        // TRANSLATIONS (UI strings)
+        // ═══════════════════════════════════════════════════════════════
+        const TR = {
+            en: {
+                navTools: 'Tools', hdrBadge: 'Technical Blog',
+                hdrTitle: 'Tools, <span class="text-cyan-electric">AI</span> & Productivity',
+                hdrSub: 'Practical articles on how we build these tools, what we learn along the way, and how AI is changing web development.',
+                c1Tag: 'AI & Productivity', c1Feat: 'Featured', c1Date: '📅 Jun 2025', c1Read: '⏱ 8 min', c1Cta: 'Read article',
+                c2Tag: 'JavaScript', c2Date: '📅 Jul 2025', c2Read: '⏱ 7 min', c2Cta: 'Read',
+                c2Title: 'Vanilla JS vs Frameworks: Why I chose the hard option',
+                c2Exc: "When performance is the priority, the answer isn't always React or Vue.",
+                c3Tag: 'Security & AI', c3Date: '📅 Aug 2025', c3Read: '⏱ 9 min', c3Cta: 'Read',
+                c3Title: 'How to protect your data before using ChatGPT: a prompt sanitization guide',
+                c3Exc: 'Every time you use AI with real company data, you\'re taking a privacy risk you can eliminate in 3 seconds.',
+                c4Tag: 'Build Log', c4Date: '📅 Sep 2025', c4Read: '⏱ 10 min', c4Cta: 'Read',
+                c4Title: 'How I built a QR generator with pure JS in a weekend',
+                c4Exc: 'From idea to Vercel deployment: the real technical decisions behind QuickQR Pro.',
+                artBack: '← Back to blog', artAll: 'View all articles',
+                tocTitle: 'Contents', ctaSub: 'Free, no signup, 100% in your browser.', ctaBtn: 'Open tool',
+                sbToolsTitle: 'Other tools', ftHub: 'Hub', ftCopy: '© 2025 OptiMicroTools. Built with Vanilla JS.',
+                prevArt: 'Previous', nextArt: 'Next'
+            },
+            es: {
+                navTools: 'Ver herramientas', hdrBadge: 'Blog técnico',
+                hdrTitle: 'Herramientas, <span class="text-cyan-electric">IA</span> y Productividad',
+                hdrSub: 'Artículos prácticos sobre cómo construimos estas herramientas, qué aprendemos en el camino y cómo la IA está cambiando el desarrollo web.',
+                c1Tag: 'IA & Productividad', c1Feat: 'Destacado', c1Date: '📅 Jun 2025', c1Read: '⏱ 8 min', c1Cta: 'Leer artículo',
+                c2Tag: 'JavaScript', c2Date: '📅 Jul 2025', c2Read: '⏱ 7 min', c2Cta: 'Leer',
+                c2Title: 'JavaScript Vanilla vs Frameworks: Por qué elegí la opción difícil',
+                c2Exc: 'Cuando el rendimiento es prioridad, la respuesta no siempre es React o Vue.',
+                c3Tag: 'Seguridad & IA', c3Date: '📅 Ago 2025', c3Read: '⏱ 9 min', c3Cta: 'Leer',
+                c3Title: 'Cómo proteger tus datos antes de usar ChatGPT: guía de sanitización de prompts',
+                c3Exc: 'Cada vez que usas una IA con datos reales de tu empresa, asumes un riesgo que puedes eliminar en 3 segundos.',
+                c4Tag: 'Build Log', c4Date: '📅 Sep 2025', c4Read: '⏱ 10 min', c4Cta: 'Leer',
+                c4Title: 'Cómo construí un generador de QR con JS puro en un fin de semana',
+                c4Exc: 'De la idea al despliegue en Vercel: las decisiones técnicas reales detrás de QuickQR Pro.',
+                artBack: '← Volver al blog', artAll: 'Ver todos los artículos',
+                tocTitle: 'Contenido', ctaSub: 'Gratis, sin registro, 100% en tu navegador.', ctaBtn: 'Abrir herramienta',
+                sbToolsTitle: 'Otras herramientas', ftHub: 'Hub', ftCopy: '© 2025 OptiMicroTools. Hecho con JS puro.',
+                prevArt: 'Anterior', nextArt: 'Siguiente'
+            }
+        };
+
+        // ═══════════════════════════════════════════════════════════════
+        // STATE
+        // ═══════════════════════════════════════════════════════════════
+        let lang, currentArticle = 0;
+        try { lang = localStorage.getItem('lang'); } catch (e) { lang = null; }
+        if (!lang) lang = navigator.language.startsWith('es') ? 'es' : 'en';
+
+        // ═══════════════════════════════════════════════════════════════
+        // HELPERS
+        // ═══════════════════════════════════════════════════════════════
+        function setText(id, v) { const e = document.getElementById(id); if (e) e.textContent = v; }
+        function setHTML(id, v) { const e = document.getElementById(id); if (e) e.innerHTML = v; }
+        function toggleHide(id, hide) { const e = document.getElementById(id); if (e) e.classList.toggle('hidden', hide); }
+
+        // ═══════════════════════════════════════════════════════════════
+        // UPDATE UI — listing + article header
+        // ═══════════════════════════════════════════════════════════════
+        function updateUI() {
+            const t = TR[lang];
+            document.documentElement.lang = lang;
+
+            // Nav
+            setText('nav-tools', t.navTools);
+
+            // Listing header
+            setText('hdr-badge', t.hdrBadge);
+            setHTML('hdr-title', t.hdrTitle);
+            setText('hdr-sub', t.hdrSub);
+
+            // Cards
+            setText('c1-tag', t.c1Tag); setText('c1-feat', t.c1Feat);
+            setText('c1-title', ARTICLES[0].title[lang]); setText('c1-exc', ARTICLES[0].lead[lang].substring(0, 120) + '…');
+            setText('c1-date', t.c1Date); setText('c1-read', t.c1Read);
+            setHTML('c1-cta', t.c1Cta + '<svg class="w-4 h-4 inline ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>');
+
+            setText('c2-tag', t.c2Tag); setText('c2-title', t.c2Title); setText('c2-exc', t.c2Exc);
+            setText('c2-date', t.c2Date); setText('c2-read', t.c2Read);
+            setHTML('c2-cta', t.c2Cta + '<svg class="w-3 h-3 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>');
+
+            setText('c3-tag', t.c3Tag); setText('c3-title', t.c3Title); setText('c3-exc', t.c3Exc);
+            setText('c3-date', t.c3Date); setText('c3-read', t.c3Read);
+            setHTML('c3-cta', t.c3Cta + '<svg class="w-3 h-3 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>');
+
+            setText('c4-tag', t.c4Tag); setText('c4-title', t.c4Title); setText('c4-exc', t.c4Exc);
+            setText('c4-date', t.c4Date); setText('c4-read', t.c4Read);
+            setHTML('c4-cta', t.c4Cta + '<svg class="w-3 h-3 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>');
+
+            // Article UI strings
+            setText('art-back', t.artBack);
+            setText('art-all', t.artAll);
+            setText('toc-title', t.tocTitle);
+            setText('cta-sub', t.ctaSub);
+            setText('cta-btn', t.ctaBtn);
+            setText('sb-tools-title', t.sbToolsTitle);
+            setText('ft-hub', t.ftHub);
+            setText('ft-copy', t.ftCopy);
+
+            // Toggle
+            document.getElementById('toggle-circle').style.transform = lang === 'es' ? 'translateX(20px)' : 'translateX(0)';
+
+            // Ad labels
+            document.querySelectorAll('.ad-slot').forEach(el => el.setAttribute('data-label', lang === 'es' ? 'Anuncio' : 'Advertisement'));
+
+            // If article is open, refresh its content too
+            if (!document.getElementById('article-view').classList.contains('hidden')) {
+                renderArticle(currentArticle);
+            }
+        }
+
+        // ═══════════════════════════════════════════════════════════════
+        // RENDER ARTICLE
+        // ═══════════════════════════════════════════════════════════════
+        function renderArticle(idx) {
+            const art = ARTICLES[idx];
+            const t = TR[lang];
+
+            // Header
+            const tagsHtml = art.tags[lang].map(tag => `<span class="tag-badge">${tag}</span>`).join('');
+            setHTML('art-tags', tagsHtml);
+            setText('art-title', art.title[lang]);
+            setText('art-lead', art.lead[lang]);
+            setText('art-date', art.date[lang]);
+            setText('art-time', art.time[lang]);
+
+            // CTA sidebar
+            document.getElementById('cta-link').href = art.cta[lang];
+            setText('cta-btn', art.ctaLbl[lang]);
+
+            // Show correct body, hide others
+            ARTICLES.forEach((_, i) => {
+                toggleHide(`a${i}-es`, true);
+                toggleHide(`a${i}-en`, true);
+            });
+            toggleHide(`a${idx}-${lang}`, false);
+
+            // TOC
+            const tocItems = art.toc[lang];
+            const tocHtml = tocItems.map(([id, label]) =>
+                `<a class="toc-link" href="#" onclick="goTo('${id}');return false;">${label}</a>`
+            ).join('');
+            setHTML('toc-nav', tocHtml);
+
+            // Prev / Next
+            const prevBtn = document.getElementById('art-prev-btn');
+            const nextBtn = document.getElementById('art-next-btn');
+            if (idx > 0) {
+                prevBtn.classList.remove('hidden');
+                setText('art-prev-label', `← ${ARTICLES[idx - 1].title[lang].substring(0, 30)}…`);
+            } else {
+                prevBtn.classList.add('hidden');
+            }
+            if (idx < ARTICLES.length - 1) {
+                nextBtn.classList.remove('hidden');
+                setText('art-next-label', `${ARTICLES[idx + 1].title[lang].substring(0, 30)}… →`);
+            } else {
+                nextBtn.classList.add('hidden');
+            }
+        }
+
+        // ═══════════════════════════════════════════════════════════════
+        // NAVIGATION
+        // ═══════════════════════════════════════════════════════════════
+        function showArticle(idx) {
+            currentArticle = idx;
+            renderArticle(idx);
+            toggleHide('blog-listing', true);
+            toggleHide('article-view', false);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function hideArticle() {
+            toggleHide('article-view', true);
+            toggleHide('blog-listing', false);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function prevArticle() { if (currentArticle > 0) { showArticle(currentArticle - 1); } }
+        function nextArticle() { if (currentArticle < ARTICLES.length - 1) { showArticle(currentArticle + 1); } }
+
+        function goTo(id) {
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // ═══════════════════════════════════════════════════════════════
+        // READING PROGRESS
+        // ═══════════════════════════════════════════════════════════════
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            document.getElementById('reading-progress').style.width = (h > 0 ? (document.documentElement.scrollTop / h) * 100 : 0) + '%';
+        });
+
+        // ═══════════════════════════════════════════════════════════════
+        // LANG TOGGLE
+        // ═══════════════════════════════════════════════════════════════
+        function toggleLanguage() {
+            lang = lang === 'en' ? 'es' : 'en';
+            try { localStorage.setItem('lang', lang); } catch (e) { }
+            updateUI();
+        }
+
+        // ═══════════════════════════════════════════════════════════════
+        // KEYBOARD ACCESSIBILITY
+        // ═══════════════════════════════════════════════════════════════
+        document.querySelectorAll('[role="button"]').forEach(el => {
+            el.addEventListener('keydown', e => { if (e.key === 'Enter') el.click(); });
+        });
+
+        // ═══════════════════════════════════════════════════════════════
+        // INIT
+        // ═══════════════════════════════════════════════════════════════
+        document.addEventListener('DOMContentLoaded', () => {
+            updateUI();
+            document.getElementById('lang-toggle').addEventListener('click', toggleLanguage);
+        });
+    </script>
+</body>
+
+</html>
