@@ -5,7 +5,7 @@
   <!-- Hub principal -->
   <url>
     <loc>https://optimicrotools.com/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://optimicrotools.com/"/>
@@ -15,7 +15,7 @@
   <!-- Blog -->
   <url>
     <loc>https://optimicrotools.com/blog.html</loc>
-    <lastmod>2025-03-19</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://optimicrotools.com/blog.html"/>
@@ -25,17 +25,37 @@
   <!-- About -->
   <url>
     <loc>https://optimicrotools.com/about.html</loc>
-    <lastmod>2025-03-19</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://optimicrotools.com/about.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://optimicrotools.com/about.html"/>
   </url>
 
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://optimicrotools.com/privacy.html</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://optimicrotools.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://optimicrotools.com/privacy.html"/>
+  </url>
+
+  <!-- Terms of Service -->
+  <url>
+    <loc>https://optimicrotools.com/terms.html</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://optimicrotools.com/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://optimicrotools.com/terms.html"/>
+  </url>
+
   <!-- PureText -->
   <url>
     <loc>https://text.optimicrotools.com/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://text.optimicrotools.com/"/>
@@ -45,7 +65,7 @@
   <!-- QuickQR Pro -->
   <url>
     <loc>https://qr.optimicrotools.com/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://qr.optimicrotools.com/"/>
@@ -55,7 +75,7 @@
   <!-- PromptArchitect -->
   <url>
     <loc>https://prompt.optimicrotools.com/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://prompt.optimicrotools.com/"/>
@@ -65,7 +85,7 @@
   <!-- SanitizePro -->
   <url>
     <loc>https://sanitizer.optimicrotools.com/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://sanitizer.optimicrotools.com/"/>
@@ -75,7 +95,7 @@
   <!-- SlimContext (optimizer) -->
   <url>
     <loc>https://optimizer.optimicrotools.com/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://optimizer.optimicrotools.com/"/>
@@ -85,7 +105,7 @@
   <!-- SpeedTest Lite -->
   <url>
     <loc>https://speed.optimicrotools.com/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://speed.optimicrotools.com/"/>
@@ -95,7 +115,7 @@
   <!-- Link Shield (safe) -->
   <url>
     <loc>https://safe.optimicrotools.com/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://safe.optimicrotools.com/"/>
@@ -105,7 +125,7 @@
   <!-- Digital Trace Auditor (myip) -->
   <url>
     <loc>https://myip.optimicrotools.com/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://myip.optimicrotools.com/"/>
@@ -115,7 +135,7 @@
   <!-- FastConvert (mediaconverter) -->
   <url>
     <loc>https://mediaconverter.optimicrotools.com/</loc>
-    <lastmod>2025-03-01</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://mediaconverter.optimicrotools.com/"/>
