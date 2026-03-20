@@ -688,6 +688,7 @@
         };
 
         let currentLang = localStorage.getItem('lang') || (navigator.language.startsWith('es') ? 'es' : 'en');
+        try { localStorage.setItem('lang', currentLang); } catch (e) { }
 
         function updateUI() {
             const t = translations[currentLang];
