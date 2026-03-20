@@ -14,6 +14,12 @@ Accede a tu panel de control de Namecheap y para el dominio `optimicrotools.com`
 | `text` | CNAME Record | `cname.vercel-dns.com` |
 | `qr` | CNAME Record | `cname.vercel-dns.com` |
 | `prompt` | CNAME Record | `cname.vercel-dns.com` |
+| `sanitizer` | CNAME Record | `cname.vercel-dns.com` |
+| `optimizer` | CNAME Record | `cname.vercel-dns.com` |
+| `mediaconverter` | CNAME Record | `cname.vercel-dns.com` |
+| `myip` | CNAME Record | `cname.vercel-dns.com` |
+| `speed` | CNAME Record | `cname.vercel-dns.com` |
+| `safe` | CNAME Record | `cname.vercel-dns.com` |
 
 > [!NOTE]
 > El valor `cname.vercel-dns.com` es el estándar para despliegues en Vercel. Si usas otro proveedor, ajusta el valor según sus instrucciones.
