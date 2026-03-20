@@ -766,6 +766,15 @@
             // Language specific HTML lang attribute
             document.documentElement.lang = currentLang;
 
+            // Append language parameter to external tool links
+            document.querySelectorAll('a.card-hover').forEach(link => {
+                try {
+                    let url = new URL(link.href);
+                    url.searchParams.set('lang', currentLang);
+                    link.href = url.toString();
+                } catch(e) {}
+            });
+
             // Update toggle visual
             const circle = document.getElementById('toggle-circle');
             if (currentLang === 'es') {
