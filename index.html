@@ -524,6 +524,17 @@
                 <div class="space-y-4">
                     <div class="flex gap-4 items-start">
                         <span class="text-xs font-mono text-gray-500 shrink-0">MAR 2026</span>
+                        <p id="changelog-8" class="text-xs text-gray-400">Blog expanded to 7 articles. Support modal
+                            added to blog footer. SEO static blocks made bilingual across all 9 tools.</p>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <span class="text-xs font-mono text-gray-500 shrink-0">MAR 2026</span>
+                        <p id="changelog-7" class="text-xs text-gray-400">Full i18n unification: URL param lang
+                            propagation, unified localStorage key, body fade-in. Contact email fixes across all tools.
+                        </p>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <span class="text-xs font-mono text-gray-500 shrink-0">MAR 2026</span>
                         <p id="changelog-6" class="text-xs text-gray-400">Privacy &amp; Terms pages published as
                             standalone URLs. Mobile hamburger menu added to navbar.</p>
                     </div>
@@ -734,6 +745,8 @@
                 if (document.getElementById('changelog-3')) document.getElementById('changelog-3').textContent = "Semantic Injection & Authority Header desplegado. Sistema de micro-identidad Dark Luxury estandarizado.";
                 if (document.getElementById('changelog-4')) document.getElementById('changelog-4').textContent = "Página About publicada. Blog y About en navbar. Propiedad GSC verificada.";
                 if (document.getElementById('changelog-5')) document.getElementById('changelog-5').textContent = "Blog técnico lanzado. 4 artículos sobre IA, JavaScript, privacidad y build logs. Sitemap enviado a GSC.";
+                if (document.getElementById('changelog-8')) document.getElementById('changelog-8').textContent = "Blog ampliado a 7 artículos. Modal de soporte agregado al footer del blog. Bloques SEO estáticos convertidos a bilingüe en las 9 herramientas.";
+                if (document.getElementById('changelog-7')) document.getElementById('changelog-7').textContent = "Unificación completa de i18n: URL param lang, clave localStorage unificada, body fade-in. Corrección de email de contacto en todas las herramientas.";
                 if (document.getElementById('changelog-6')) document.getElementById('changelog-6').textContent = "Páginas Privacy y Terms publicadas como URLs independientes. Menú hamburguesa agregado al navbar móvil.";
             } else {
                 authorityText.innerHTML = "Welcome to OptiMicroTools, the high-performance micro-utility ecosystem engineered for developers, data analysts, and digital productivity enthusiasts. Our platform delivers a suite of modular tools processed entirely on the client-side, ensuring minimal latency and absolute data privacy. From network audits to advanced string manipulation and asset generation, every micro-tool in our directory has been optimized for instantaneous results without server overhead. Our technical stack leverages <strong>Performance Testing</strong>, <strong>QA Automation</strong>, and <strong>WebAssembly</strong> to boost <strong>Developer Productivity</strong> with a radical commitment to <strong>Data Privacy</strong>.";
@@ -745,6 +758,8 @@
                 if (document.getElementById('changelog-3')) document.getElementById('changelog-3').textContent = "Semantic Injection & Authority Header deployed. Dark Luxury micro-identity system standardized.";
                 if (document.getElementById('changelog-4')) document.getElementById('changelog-4').textContent = "About page published. Blog & About links added to main navbar. GSC property verified.";
                 if (document.getElementById('changelog-5')) document.getElementById('changelog-5').textContent = "Technical blog launched. 4 articles on AI, JavaScript, privacy and build logs. XML Sitemap submitted to GSC.";
+                if (document.getElementById('changelog-8')) document.getElementById('changelog-8').textContent = "Blog expanded to 7 articles. Support modal added to blog footer. SEO static blocks made bilingual across all 9 tools.";
+                if (document.getElementById('changelog-7')) document.getElementById('changelog-7').textContent = "Full i18n unification: URL param lang propagation, unified localStorage key, body fade-in. Contact email fixes across all tools.";
                 if (document.getElementById('changelog-6')) document.getElementById('changelog-6').textContent = "Privacy & Terms pages published as standalone URLs. Mobile hamburger menu added to navbar.";
             }
 
@@ -772,7 +787,7 @@
                     let url = new URL(link.href);
                     url.searchParams.set('lang', currentLang);
                     link.href = url.toString();
-                } catch(e) {}
+                } catch (e) { }
             });
 
             // Update toggle visual

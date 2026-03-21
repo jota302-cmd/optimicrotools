@@ -332,7 +332,8 @@
                     <span id="nav-tools">Tools</span>
                 </a>
                 <div id="lang-toggle"
-                    class="flex items-center gap-2 px-3 py-1.5 glass rounded-full border border-white/10 group cursor-pointer">
+                    class="flex items-center gap-2 px-3 py-1.5 glass rounded-full border border-white/10 group cursor-pointer"
+                    onclick="toggleLanguage()">
                     <span class="text-xs font-semibold opacity-70 group-hover:opacity-100 transition-opacity">EN</span>
                     <div class="w-10 h-5 bg-white/10 rounded-full relative flex items-center px-0.5">
                         <div id="toggle-circle"
@@ -445,6 +446,65 @@
                         </svg></span>
                 </div>
             </article>
+            <!-- Card 5: SlimContext -->
+            <article class="blog-card glass rounded-2xl p-6 border border-white/5" onclick="showArticle(4)"
+                role="button" tabindex="0">
+                <span class="tag-badge mb-4 block w-fit" id="c5-tag">IA & Productividad</span>
+                <h2 id="c5-title" class="text-xl font-bold mb-3">El costo oculto de los prompts verbosos: cómo reducir
+                    tokens sin perder contexto</h2>
+                <p id="c5-exc" class="text-gray-400 text-sm leading-relaxed mb-4">Cada token que envías a GPT-4 o Claude
+                    API cuesta dinero. La mayoría de prompts llevan un 20–40% de ruido.</p>
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                    <div class="flex items-center gap-2 text-xs text-gray-500">
+                        <span id="c5-date">📅 Oct 2025</span><span>·</span><span id="c5-read">⏱ 8 min</span>
+                    </div>
+                    <span id="c5-cta" class="flex items-center gap-1 text-cyan-electric text-xs font-semibold">Leer <svg
+                            class="w-3 h-3 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg></span>
+                </div>
+            </article>
+
+            <!-- Card 6: Link Shield -->
+            <article class="blog-card glass rounded-2xl p-6 border border-white/5" onclick="showArticle(5)"
+                role="button" tabindex="0">
+                <span class="tag-badge mb-4 block w-fit" id="c6-tag">Seguridad & IA</span>
+                <h2 id="c6-title" class="text-xl font-bold mb-3">Antes de hacer click: cómo funciona la detección de
+                    URLs maliciosas por dentro</h2>
+                <p id="c6-exc" class="text-gray-400 text-sm leading-relaxed mb-4">Los links acortados son el vector de
+                    phishing más subestimado de 2025.</p>
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                    <div class="flex items-center gap-2 text-xs text-gray-500">
+                        <span id="c6-date">📅 Nov 2025</span><span>·</span><span id="c6-read">⏱ 9 min</span>
+                    </div>
+                    <span id="c6-cta" class="flex items-center gap-1 text-cyan-electric text-xs font-semibold">Leer <svg
+                            class="w-3 h-3 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg></span>
+                </div>
+            </article>
+
+            <!-- Card 7: FastConvert -->
+            <article class="blog-card glass rounded-2xl p-6 border border-white/5" onclick="showArticle(6)"
+                role="button" tabindex="0">
+                <span class="tag-badge mb-4 block w-fit" id="c7-tag">Rendimiento Web</span>
+                <h2 id="c7-title" class="text-xl font-bold mb-3">WebP vs AVIF en 2025: cuándo usar cada formato y cómo
+                    convertir sin perder calidad</h2>
+                <p id="c7-exc" class="text-gray-400 text-sm leading-relaxed mb-4">Las imágenes siguen siendo el mayor
+                    culpable de un mal Core Web Vitals.</p>
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                    <div class="flex items-center gap-2 text-xs text-gray-500">
+                        <span id="c7-date">📅 Dic 2025</span><span>·</span><span id="c7-read">⏱ 10 min</span>
+                    </div>
+                    <span id="c7-cta" class="flex items-center gap-1 text-cyan-electric text-xs font-semibold">Leer <svg
+                            class="w-3 h-3 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg></span>
+                </div>
+            </article>
 
         </div>
     </header>
@@ -485,7 +545,8 @@
                         <p>Cuando empecé a investigar inteligencia artificial por mi cuenta, cometí el error que comete
                             casi todo el mundo: asumir que el modelo hace el trabajo solo. Escribía algo genérico como
                             <strong>"dame ideas para un proyecto web"</strong> y obtenía respuestas igual de genéricas.
-                            El problema no era la IA — era yo.</p>
+                            El problema no era la IA — era yo.
+                        </p>
                         <div class="callout">
                             <p>"Un modelo de IA es como un colaborador extraordinariamente capaz al que nunca le has
                                 dicho exactamente qué quieres. El resultado depende casi siempre de la calidad de tu
@@ -500,7 +561,8 @@
                             punto de partida de todo lo que viene después. A diferencia de un motor de búsqueda, donde
                             una palabra clave es suficiente, los modelos de lenguaje responden mejor cuando tienen
                             <strong>contexto</strong>, <strong>formato esperado</strong> y <strong>restricciones
-                                claras</strong>.</p>
+                                claras</strong>.
+                        </p>
                         <h2 id="a0es-s2">La anatomía de un prompt de alta calidad</h2>
                         <p>Los prompts más efectivos comparten la misma estructura — las mismas capas que usa
                             PromptArchitect para guiarte:</p>
@@ -571,7 +633,8 @@
                         <p>When I started researching artificial intelligence on my own, I made the same mistake almost
                             everyone makes: assuming the model does the work by itself. I'd write something generic like
                             <strong>"give me ideas for a web project"</strong> and get equally generic responses. The
-                            problem wasn't the AI — it was me.</p>
+                            problem wasn't the AI — it was me.
+                        </p>
                         <div class="callout">
                             <p>"An AI model is like an extraordinarily capable collaborator you've never told exactly
                                 what you want. The result almost always depends on the quality of your instruction."</p>
@@ -583,7 +646,8 @@
                         <p>A <strong>prompt</strong> is the instruction or question you give an AI model. Unlike a
                             search engine where a keyword is enough, language models respond better when they have
                             <strong>context</strong>, an <strong>expected format</strong>, and <strong>clear
-                                constraints</strong>.</p>
+                                constraints</strong>.
+                        </p>
                         <h2 id="a0en-s2">The anatomy of a high-quality prompt</h2>
                         <h3>1. Role or Persona</h3>
                         <p>Tell the model <em>who it should be</em>. Not "summarize this", but "act as a senior tech
@@ -649,7 +713,8 @@
                             <li><strong>Host gratuito en Vercel</strong> — sin servidor, sin backend, sin base de datos.
                             </li>
                             <li><strong>Herramientas de una sola página</strong> — cada micro-herramienta es un
-                                <code>index.html</code> independiente.</li>
+                                <code>index.html</code> independiente.
+                            </li>
                             <li><strong>Rendimiento como promesa central</strong> — el nombre del proyecto es
                                 OptiMicro<em>Tools</em>. La velocidad no es un feature, es la identidad.</li>
                             <li><strong>Audiencia técnica</strong> — desarrolladores que van a notar si la página tarda
@@ -692,7 +757,8 @@
                         <p>Todo OptiMicroTools usa exactamente esto. El sistema de i18n (ES/EN) que ves en cada
                             herramienta es un objeto JavaScript puro con una función <code>updateUI()</code>. El toggle
                             de idioma es un event listener sobre un div. El efecto glass es CSS puro con
-                            <code>backdrop-filter</code>.</p>
+                            <code>backdrop-filter</code>.
+                        </p>
                         <h2 id="a1es-s4">Cuándo SÍ usar un framework</h2>
                         <p>Esta decisión no es "Vanilla JS siempre". Es "Vanilla JS cuando tiene sentido". Los
                             frameworks son la respuesta correcta cuando:</p>
@@ -719,7 +785,8 @@
                             en las restricciones reales del proyecto. El framework más rápido, el más confiable y el más
                             fácil de mantener para OptiMicroTools era el que ya venía incluido en el navegador.</p>
                         <p>La próxima vez que vayas a iniciar un proyecto, antes de hacer
-                            <code>npx create-react-app</code>, pregúntate honestamente: ¿realmente lo necesito?</p>
+                            <code>npx create-react-app</code>, pregúntate honestamente: ¿realmente lo necesito?
+                        </p>
                         <div class="callout">
                             <p>¿Tienes dudas sobre qué stack elegir para tu próximo proyecto? Cuéntanos en <a
                                     href="https://x.com/optimicrotools" target="_blank"
@@ -761,7 +828,8 @@
                         <h2 id="a1en-s3">What Vanilla JS can do today</h2>
                         <p>Modern JavaScript (ES2020+) has capabilities that 5 years ago required frameworks: native
                             <code>import/export</code> modules, template literals, optional chaining (<code>?.</code>),
-                            native Fetch API, CSS Custom Properties, and Web Components.</p>
+                            native Fetch API, CSS Custom Properties, and Web Components.
+                        </p>
                         <p>All of OptiMicroTools uses exactly this. The i18n system (ES/EN) you see in every tool is a
                             plain JavaScript object with an <code>updateUI()</code> function. The language toggle is an
                             event listener on a div.</p>
@@ -781,7 +849,8 @@
                         <h2 id="a1en-s6">Conclusion</h2>
                         <p>Choosing Vanilla JS wasn't nostalgia or technical purism. It was an engineering decision
                             based on the project's real constraints. The next time you start a project, before running
-                            <code>npx create-react-app</code>, honestly ask yourself: do I really need this?</p>
+                            <code>npx create-react-app</code>, honestly ask yourself: do I really need this?
+                        </p>
                     </div>
 
                     <!-- ══ ARTICLE 2: SanitizePro ══ -->
@@ -820,9 +889,12 @@
                         <h3>Capa 1: Correos electrónicos</h3>
                         <pre><code>const emailRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
 sanitized = sanitized.replace(emailRegex, '[EMAIL]');</code></pre>
-                        <p>Detecta cualquier patrón con formato <code>usuario@dominio.ext</code> y lo reemplaza con el
+                        <p>Detecta cualquier patrón con formato
+                            <code>jota302@gmail.com</code>
+                            y lo reemplaza con el
                             marcador <code>[EMAIL]</code>, manteniendo el contexto semántico sin exponer la dirección
-                            real.</p>
+                            real.
+                        </p>
                         <h3>Capa 2: Números de teléfono</h3>
                         <pre><code>const phoneRegex = /(\+?\d{1,3}[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}/g;
 sanitized = sanitized.replace(phoneRegex, '[PHONE]');</code></pre>
@@ -1081,6 +1153,576 @@ if (canvas) {
                             same <code>index.html</code> from the first weekend.</p>
                     </div>
 
+
+                    <!-- ══ ARTICLE 4: SlimContext ══ -->
+                    <div id="a4-es" class="hidden">
+                        <p>La primera vez que recibí una factura de la API de OpenAI me sorprendí. No por lo alta que
+                            era, sino por lo innecesaria. Revisé mis llamadas y encontré el patrón: mis prompts estaban
+                            llenos de cortesía, repetición y contexto redundante que no aportaba nada al resultado.
+                            Estaba pagando por palabras que el modelo no necesitaba.</p>
+                        <div class="callout">
+                            <p>«Un prompt de 800 tokens que produce la misma respuesta que uno de 500 no es mejor — es
+                                un 60% más caro.»</p>
+                        </div>
+                        <p>Esto me llevó a construir <a href="https://optimizer.optimicrotools.com"
+                                target="_blank">SlimContext</a>, una herramienta que reduce el tamaño de tus prompts sin
+                            sacrificar su profundidad semántica.</p>
+                        <h2 id="a4es-s1">¿Por qué importan los tokens?</h2>
+                        <p>Un <strong>token</strong> es la unidad básica que los modelos de lenguaje procesan. No
+                            equivale exactamente a una palabra — en inglés y español, 1 token suele ser aproximadamente
+                            0.75 palabras. Un párrafo de 100 palabras puede ser entre 120 y 160 tokens dependiendo del
+                            vocabulario.</p>
+                        <p>El costo importa en dos contextos:</p>
+                        <ul>
+                            <li><strong>APIs de pago</strong> (GPT-4, Claude API, Gemini API): pagas por cada token de
+                                entrada y salida. Un prompt innecesariamente largo te cuesta dinero real en cada
+                                llamada.</li>
+                            <li><strong>Ventana de contexto</strong>: los modelos tienen un límite de tokens por
+                                conversación. Prompts verbosos reducen el espacio disponible para el historial y la
+                                respuesta.</li>
+                        </ul>
+                        <h2 id="a4es-s2">Cómo funciona por dentro</h2>
+                        <p>SlimContext aplica tres capas de procesamiento en cascada, cada una más agresiva que la
+                            anterior:</p>
+                        <h3>Capa 1: Limpieza de ruido sintáctico</h3>
+                        <p>Elimina espacios múltiples, saltos de línea redundantes, puntuación duplicada y caracteres de
+                            control. Es una operación de normalización pura con expresiones regulares básicas:</p>
+                        <pre><code>// Normalización de espacios y saltos de línea
+text = text.replace(/[ 	]+/g, ' ');
+text = text.replace(/
+{3,}/g, '
+
+');
+text = text.replace(/[.]{2,}/g, '…');</code></pre>
+                        <h3>Capa 2: Eliminación de frases de relleno</h3>
+                        <p>Detecta y elimina constructores lingüísticos que no añaden información: introducciones
+                            formulaicas ("Como se mencionó anteriormente", "Es importante destacar que"), redundancias
+                            semánticas ("completamente único", "resultado final") y muletillas de cortesía en contextos
+                            técnicos.</p>
+                        <pre><code>const fillerPatterns = [
+  /(cabe destacar que|es importante señalar que|como se mencionó)/gi,
+  /(básicamente|esencialmente|fundamentalmente)/gi,
+  /(resultado final|conclusión final|suma total)/gi
+];</code></pre>
+                        <h3>Capa 3: Modo Agresivo (lista lógica)</h3>
+                        <p>Convierte párrafos en estructuras de lista compacta. Extrae las proposiciones principales y
+                            descarta las cláusulas subordinadas de apoyo. Este modo puede reducir un prompt un 40-60% —
+                            pero requiere revisión manual del output.</p>
+                        <h2 id="a4es-s3">Los 3 modos explicados</h2>
+                        <ul>
+                            <li><strong>Standard Cleanup:</strong> solo limpieza sintáctica. Preserva el 100% del
+                                significado. Reducción típica: 5-15%. Recomendado para prompts de sistema que ya están
+                                bien escritos.</li>
+                            <li><strong>Balanced Optimization:</strong> limpieza sintáctica + eliminación de relleno.
+                                Preserva la lógica central. Reducción típica: 15-30%. El modo más útil para uso general.
+                            </li>
+                            <li><strong>Aggressive:</strong> todo lo anterior + reformateo en lista. Prioriza densidad
+                                de información sobre flujo narrativo. Reducción típica: 30-50%. Úsalo cuando el costo
+                                por token es crítico y puedes revisar el output.</li>
+                        </ul>
+                        <h2 id="a4es-s4">Benchmarks reales</h2>
+                        <p>Tomé 10 prompts reales de distintas categorías y los pasé por los tres modos. Estos son los
+                            resultados promedio:</p>
+                        <div class="callout">
+                            <p><strong>Prompt de sistema para chatbot corporativo</strong> — Original: 847 tokens →
+                                Standard: 801 (-5.4%) → Balanced: 623 (-26.4%) → Aggressive: 489 (-42.3%)</p>
+                        </div>
+                        <div class="callout">
+                            <p><strong>Instrucción de análisis de datos</strong> — Original: 312 tokens → Standard: 298
+                                (-4.5%) → Balanced: 241 (-22.8%) → Aggressive: 187 (-40.1%)</p>
+                        </div>
+                        <p>El modo Balanced ofrece el mejor balance entre reducción y preservación de significado para
+                            la mayoría de casos de uso.</p>
+                        <h2 id="a4es-s5">Cuándo usarlo</h2>
+                        <p>SlimContext es especialmente útil cuando:</p>
+                        <ul>
+                            <li>Tienes prompts de sistema largos que se envían en cada request de tu API</li>
+                            <li>Estás cerca del límite de la ventana de contexto en conversaciones largas</li>
+                            <li>Quieres limpiar el output de un modelo antes de usarlo como input de otro</li>
+                            <li>Trabajas con n8n, Make u otros workflows donde el costo por token se multiplica por
+                                miles de ejecuciones</li>
+                        </ul>
+                        <h2 id="a4es-s6">Conclusión</h2>
+                        <p>La optimización de tokens no es prematura. Si usas LLMs en producción, cada prompt
+                            innecesariamente largo es un costo acumulativo que escala con el volumen. SlimContext no
+                            reemplaza escribir bien — te ayuda a identificar el ruido que se cuela incluso en los
+                            prompts que creías perfectos. <a href="https://optimizer.optimicrotools.com"
+                                target="_blank">Pruébalo con tu propio texto</a> y mide la diferencia.</p>
+                    </div>
+
+                    <div id="a4-en" class="hidden">
+                        <p>The first time I got an OpenAI API bill I was surprised. Not because it was too high, but
+                            because it was so unnecessary. I reviewed my calls and found the pattern: my prompts were
+                            full of courtesy phrases, repetition and redundant context that added nothing to the output.
+                            I was paying for words the model didn't need.</p>
+                        <div class="callout">
+                            <p>«An 800-token prompt that produces the same response as a 500-token one isn't better —
+                                it's 60% more expensive.»</p>
+                        </div>
+                        <p>This led me to build <a href="https://optimizer.optimicrotools.com"
+                                target="_blank">SlimContext</a>, a tool that reduces your prompt size without
+                            sacrificing semantic depth.</p>
+                        <h2 id="a4en-s1">Why tokens matter</h2>
+                        <p>A <strong>token</strong> is the basic unit language models process. It doesn't map exactly to
+                            words — in English, 1 token is roughly 0.75 words. A 100-word paragraph can be 120 to 160
+                            tokens depending on vocabulary.</p>
+                        <p>Cost matters in two contexts:</p>
+                        <ul>
+                            <li><strong>Paid APIs</strong> (GPT-4, Claude API, Gemini API): you pay per input and output
+                                token. A needlessly long prompt costs real money on every call.</li>
+                            <li><strong>Context window</strong>: models have a token limit per conversation. Verbose
+                                prompts eat into the space available for history and the response itself.</li>
+                        </ul>
+                        <h2 id="a4en-s2">How it works under the hood</h2>
+                        <p>SlimContext applies three processing layers in cascade, each more aggressive than the last:
+                        </p>
+                        <h3>Layer 1: Syntactic noise cleanup</h3>
+                        <p>Removes multiple spaces, redundant line breaks, duplicate punctuation and control characters.
+                            Pure normalization with basic regex:</p>
+                        <pre><code>// Whitespace and line break normalization
+text = text.replace(/[ 	]+/g, ' ');
+text = text.replace(/
+{3,}/g, '
+
+');
+text = text.replace(/[.]{2,}/g, '…');</code></pre>
+                        <h3>Layer 2: Filler phrase removal</h3>
+                        <p>Detects and removes linguistic constructs that add no information: formulaic openers ("As
+                            previously mentioned", "It is important to note that"), semantic redundancies ("completely
+                            unique", "end result") and courtesy fillers in technical contexts.</p>
+                        <pre><code>const fillerPatterns = [
+  /(it is worth noting that|as mentioned above|it should be noted)/gi,
+  /(basically|essentially|fundamentally)/gi,
+  /(end result|final conclusion|total sum)/gi
+];</code></pre>
+                        <h3>Layer 3: Aggressive mode (logical list)</h3>
+                        <p>Converts paragraphs into compact list structures. Extracts main propositions and discards
+                            supporting subordinate clauses. This mode can reduce a prompt 40-60% — but requires manual
+                            review of the output.</p>
+                        <h2 id="a4en-s3">The 3 modes explained</h2>
+                        <ul>
+                            <li><strong>Standard Cleanup:</strong> syntactic cleanup only. Preserves 100% of meaning.
+                                Typical reduction: 5-15%. Recommended for system prompts that are already well-written.
+                            </li>
+                            <li><strong>Balanced Optimization:</strong> syntactic cleanup + filler removal. Preserves
+                                core logic. Typical reduction: 15-30%. The most useful mode for general use.</li>
+                            <li><strong>Aggressive:</strong> everything above + list reformatting. Prioritizes
+                                information density over narrative flow. Typical reduction: 30-50%. Use when token cost
+                                is critical and you can review the output.</li>
+                        </ul>
+                        <h2 id="a4en-s4">Real benchmarks</h2>
+                        <p>I ran 10 real prompts from different categories through all three modes. These are the
+                            average results:</p>
+                        <div class="callout">
+                            <p><strong>Corporate chatbot system prompt</strong> — Original: 847 tokens → Standard: 801
+                                (-5.4%) → Balanced: 623 (-26.4%) → Aggressive: 489 (-42.3%)</p>
+                        </div>
+                        <div class="callout">
+                            <p><strong>Data analysis instruction</strong> — Original: 312 tokens → Standard: 298 (-4.5%)
+                                → Balanced: 241 (-22.8%) → Aggressive: 187 (-40.1%)</p>
+                        </div>
+                        <h2 id="a4en-s5">When to use it</h2>
+                        <p>SlimContext is especially useful when you have long system prompts sent on every API request,
+                            when you're near the context window limit in long conversations, or when you work with n8n,
+                            Make or other workflows where per-token cost multiplies across thousands of executions.</p>
+                        <h2 id="a4en-s6">Conclusion</h2>
+                        <p>Token optimization is never premature. If you use LLMs in production, every unnecessarily
+                            long prompt is a cumulative cost that scales with volume. SlimContext doesn't replace
+                            writing well — it helps you identify the noise that sneaks in even in prompts you thought
+                            were perfect. <a href="https://optimizer.optimicrotools.com" target="_blank">Try it with
+                                your own text</a> and measure the difference.</p>
+                    </div>
+
+                    <!-- ══ ARTICLE 5: Link Shield ══ -->
+                    <div id="a5-es" class="hidden">
+                        <p>En 2025, el vector de ataque más subestimado no es un exploit de día cero ni un malware
+                            sofisticado. Es un link de nueve caracteres que redirige a <code>bit.ly/x9k2m</code> y que
+                            alguien te envió por WhatsApp. Los acortadores de URL se han convertido en la herramienta
+                            favorita del phishing moderno precisamente porque son invisibles por diseño.</p>
+                        <div class="callout">
+                            <p>«El problema no es el link acortado en sí — es que no sabes a dónde te lleva hasta que ya
+                                estás ahí.»</p>
+                        </div>
+                        <p><a href="https://safe.optimicrotools.com" target="_blank">Link Shield</a> resuelve
+                            exactamente ese problema: te muestra el destino final de cualquier enlace antes de que tu
+                            navegador lo visite.</p>
+                        <h2 id="a5es-s1">El problema de los links acortados</h2>
+                        <p>Un acortador de URL opera mediante una redirección HTTP. Cuando visitas
+                            <code>bit.ly/abc123</code>, el servidor de bit.ly responde con un código <strong>301 o
+                                302</strong> y una cabecera <code>Location</code> que apunta a la URL real. Tu navegador
+                            sigue esa redirección automáticamente, sin preguntarte.
+                        </p>
+                        <p>El problema se agrava porque las redirecciones pueden ser encadenadas:
+                            <code>bit.ly/abc</code> → <code>tinyurl.com/xyz</code> → <code>t.co/qrs</code> →
+                            <code>sitio-malicioso.com/phishing</code>. Cada capa oculta la siguiente.
+                        </p>
+                        <h2 id="a5es-s2">Cómo seguimos redirecciones</h2>
+                        <p>La clave de Link Shield está en que el análisis ocurre <strong>en el servidor</strong>, no en
+                            tu navegador. La secuencia es:</p>
+                        <ol>
+                            <li>Recibes la URL sospechosa en Link Shield</li>
+                            <li>Un worker de Cloudflare hace un <code>fetch()</code> con <code>redirect: 'manual'</code>
+                                a la URL</li>
+                            <li>Capturamos la cabecera <code>Location</code> sin seguir la redirección</li>
+                            <li>Repetimos el proceso hasta llegar a la URL final (máximo 10 saltos)</li>
+                            <li>Devolvemos el destino final y los metadatos de cada salto</li>
+                        </ol>
+                        <pre><code>// Seguimiento de redirecciones sin visitar la URL
+async function expandUrl(url, maxHops = 10) {
+  let current = url;
+  const hops = [];
+  
+  for (let i = 0; i &lt; maxHops; i++) {
+    const res = await fetch(current, {
+      method: 'HEAD',
+      redirect: 'manual'
+    });
+    
+    if (res.status >= 300 && res.status &lt; 400) {
+      const next = res.headers.get('location');
+      hops.push({ from: current, to: next, status: res.status });
+      current = next;
+    } else {
+      break;
+    }
+  }
+  
+  return { final: current, hops };
+}</code></pre>
+                        <h2 id="a5es-s3">Indicadores de riesgo que evaluamos</h2>
+                        <p>Además de expandir el link, Link Shield evalúa varios indicadores:</p>
+                        <ul>
+                            <li><strong>Número de saltos:</strong> más de 3 redirecciones es inusual y sospechoso</li>
+                            <li><strong>Dominios conocidos de acortadores:</strong> bit.ly, tinyurl, t.co, ow.ly y
+                                decenas más en una lista de referencia</li>
+                            <li><strong>Patrones de URL sospechosos:</strong> subdominios con números aleatorios, TLDs
+                                poco comunes (.xyz, .tk, .ml), parámetros de rastreo agresivos</li>
+                            <li><strong>Inconsistencia de dominio:</strong> si el dominio final no coincide con el
+                                contexto en que te enviaron el link (te dicen que es de tu banco pero apunta a otro
+                                dominio)</li>
+                        </ul>
+                        <h2 id="a5es-s4">Lo que no detectamos — y por qué es importante saberlo</h2>
+                        <p>La honestidad importa en seguridad. Link Shield <strong>no</strong> es un antivirus ni una
+                            lista de bloqueo en tiempo real. No detectamos:</p>
+                        <ul>
+                            <li>Sitios de phishing recién creados que aún no están en ninguna base de datos</li>
+                            <li>VPNs con IPs residenciales que enmascaran la reputación del dominio</li>
+                            <li>Contenido malicioso servido condicionalmente (solo a usuarios móviles, solo en ciertos
+                                países)</li>
+                        </ul>
+                        <p>Somos una primera capa de defensa, no la única.</p>
+                        <h2 id="a5es-s5">El código real de análisis</h2>
+                        <pre><code>function analyzeUrl(finalUrl) {
+  const url = new URL(finalUrl);
+  const risks = [];
+  
+  // TLDs de alto riesgo
+  const riskyTLDs = ['.tk', '.ml', '.ga', '.cf', '.xyz', '.top'];
+  if (riskyTLDs.some(tld => url.hostname.endsWith(tld))) {
+    risks.push('HIGH_RISK_TLD');
+  }
+  
+  // Subdominio con patron numerico (ej: 192-168-1-1.malicious.com)
+  if (/\d{1,3}-\d{1,3}-\d{1,3}/.test(url.hostname)) {
+    risks.push('IP_DISGUISE_PATTERN');
+  }
+  
+  // Path sospechosamente largo con caracteres aleatorios
+  if (url.pathname.length > 50 && /[a-z0-9]{20,}/.test(url.pathname)) {
+    risks.push('SUSPICIOUS_PATH');
+  }
+  
+  return { url: finalUrl, risks, safe: risks.length === 0 };
+}</code></pre>
+                        <h2 id="a5es-s6">Conclusión</h2>
+                        <p>La seguridad en URLs no es un problema resuelto, pero sí es un problema donde la información
+                            hace la diferencia. Saber a dónde te lleva un link antes de hacer click es una capacidad que
+                            debería ser universal. Link Shield la pone a un clic de distancia, gratis y sin registro. <a
+                                href="https://safe.optimicrotools.com" target="_blank">Prueba el siguiente link
+                                sospechoso que te llegue.</a></p>
+                    </div>
+
+                    <div id="a5-en" class="hidden">
+                        <p>In 2025, the most underestimated attack vector isn't a zero-day exploit or sophisticated
+                            malware. It's a nine-character link that redirects to <code>bit.ly/x9k2m</code> that someone
+                            sent you on WhatsApp. URL shorteners have become the favorite tool of modern phishing
+                            precisely because they're invisible by design.</p>
+                        <div class="callout">
+                            <p>«The problem isn't the shortened link itself — it's that you don't know where it leads
+                                until you're already there.»</p>
+                        </div>
+                        <p><a href="https://safe.optimicrotools.com" target="_blank">Link Shield</a> solves exactly
+                            that: it shows you the final destination of any link before your browser visits it.</p>
+                        <h2 id="a5en-s1">The shortened link problem</h2>
+                        <p>A URL shortener operates via HTTP redirect. When you visit <code>bit.ly/abc123</code>,
+                            bit.ly's server responds with a <strong>301 or 302</strong> code and a <code>Location</code>
+                            header pointing to the real URL. Your browser follows that redirect automatically, without
+                            asking you. The problem compounds because redirects can be chained across multiple
+                            shorteners, with each layer hiding the next.</p>
+                        <h2 id="a5en-s2">How we follow redirects</h2>
+                        <p>The key to Link Shield is that analysis happens <strong>on the server</strong>, not in your
+                            browser. A Cloudflare worker makes a <code>fetch()</code> with
+                            <code>redirect: 'manual'</code> to the URL, captures the <code>Location</code> header
+                            without following the redirect, and repeats the process until reaching the final URL
+                            (maximum 10 hops). Your browser never touches the suspicious URL.
+                        </p>
+                        <pre><code>async function expandUrl(url, maxHops = 10) {
+  let current = url;
+  const hops = [];
+  for (let i = 0; i &lt; maxHops; i++) {
+    const res = await fetch(current, { method: 'HEAD', redirect: 'manual' });
+    if (res.status >= 300 && res.status &lt; 400) {
+      const next = res.headers.get('location');
+      hops.push({ from: current, to: next, status: res.status });
+      current = next;
+    } else { break; }
+  }
+  return { final: current, hops };
+}</code></pre>
+                        <h2 id="a5en-s3">Risk indicators we evaluate</h2>
+                        <ul>
+                            <li><strong>Number of hops:</strong> more than 3 redirects is unusual and suspicious</li>
+                            <li><strong>Known shortener domains:</strong> bit.ly, tinyurl, t.co and dozens more in a
+                                reference list</li>
+                            <li><strong>Suspicious URL patterns:</strong> subdomains with random numbers, uncommon TLDs
+                                (.xyz, .tk, .ml), aggressive tracking parameters</li>
+                            <li><strong>Domain inconsistency:</strong> final domain doesn't match the context in which
+                                the link was sent</li>
+                        </ul>
+                        <h2 id="a5en-s4">What we don\'t detect</h2>
+                        <p>Honesty matters in security. Link Shield is <strong>not</strong> an antivirus or real-time
+                            blocklist. We don\'t detect: freshly created phishing sites not yet in any database,
+                            residential-IP VPNs masking domain reputation, or malicious content served conditionally.
+                            We're a first layer of defense, not the only one.</p>
+                        <h2 id="a5en-s5">Real code</h2>
+                        <pre><code>function analyzeUrl(finalUrl) {
+  const url = new URL(finalUrl);
+  const risks = [];
+  const riskyTLDs = ['.tk', '.ml', '.ga', '.cf', '.xyz', '.top'];
+  if (riskyTLDs.some(tld => url.hostname.endsWith(tld))) risks.push('HIGH_RISK_TLD');
+  if (/\d{1,3}-\d{1,3}-\d{1,3}/.test(url.hostname)) risks.push('IP_DISGUISE_PATTERN');
+  if (url.pathname.length > 50 && /[a-z0-9]{20,}/.test(url.pathname)) risks.push('SUSPICIOUS_PATH');
+  return { url: finalUrl, risks, safe: risks.length === 0 };
+}</code></pre>
+                        <h2 id="a5en-s6">Conclusion</h2>
+                        <p>Security in URLs isn't a solved problem, but it is a problem where information makes a
+                            difference. Knowing where a link takes you before clicking is a capability that should be
+                            universal. Link Shield puts it one click away, free and with no signup. <a
+                                href="https://safe.optimicrotools.com" target="_blank">Try the next suspicious link you
+                                receive.</a></p>
+                    </div>
+
+                    <!-- ══ ARTICLE 6: FastConvert ══ -->
+                    <div id="a6-es" class="hidden">
+                        <p>Las imágenes representan en promedio el 50% del peso de una página web. Son el factor
+                            individual que más impacta en los Core Web Vitals, en el LCP específicamente, y son la razón
+                            más común por la que un sitio que parece bien optimizado en código sigue siendo lento en
+                            producción. Y sin embargo, el ecosistema de conversión de imágenes en la web sigue siendo
+                            sorprendentemente malo.</p>
+                        <div class="callout">
+                            <p>«El formato de imagen correcto puede reducir el peso de un asset entre un 30% y un 80%
+                                sin diferencia visual perceptible para el usuario final.»</p>
+                        </div>
+                        <p>Esta guía explica la decisión técnica entre WebP y AVIF, con datos reales de compresión y el
+                            código de Canvas API que usa <a href="https://mediaconverter.optimicrotools.com"
+                                target="_blank">FastConvert</a> para convertir en el navegador.</p>
+                        <h2 id="a6es-s1">Por qué las imágenes siguen siendo el problema en 2025</h2>
+                        <p>Los formatos JPEG y PNG llevan décadas con nosotros. JPEG nació en 1992 y PNG en 1996. Ambos
+                            son omnipresentes, bien soportados y completamente obsoletos en términos de eficiencia de
+                            compresión comparados con lo que existe hoy.</p>
+                        <p>El problema no es que los desarrolladores no sepan que existen WebP y AVIF — es que el flujo
+                            de trabajo de conversión sigue siendo inconveniente. Herramientas de línea de comandos,
+                            dependencias de servidor, APIs de pago. FastConvert existe para eliminar esa fricción.</p>
+                        <h2 id="a6es-s2">WebP: el estándar maduro</h2>
+                        <p>WebP fue desarrollado por Google y lanzado en 2010. A partir de 2023, tiene soporte universal
+                            en todos los navegadores modernos (Chrome, Firefox, Safari, Edge). Sus características
+                            principales:</p>
+                        <ul>
+                            <li><strong>Compresión con pérdida:</strong> 25-35% más pequeño que JPEG con calidad visual
+                                equivalente</li>
+                            <li><strong>Compresión sin pérdida:</strong> 25-45% más pequeño que PNG</li>
+                            <li><strong>Soporte de transparencia:</strong> alfa de 8 bits, equivalente a PNG</li>
+                            <li><strong>Soporte de animación:</strong> alternativa a GIF con mejor compresión</li>
+                        </ul>
+                        <p>Si hoy tienes imágenes JPEG o PNG en producción y no las has convertido a WebP, estás dejando
+                            performance sobre la mesa sin ninguna razón técnica válida.</p>
+                        <h2 id="a6es-s3">AVIF: el futuro ya llegó</h2>
+                        <p>AVIF (AV1 Image File Format) está basado en el codec de video AV1 desarrollado por la
+                            Alliance for Open Media. Su adopción es más reciente pero su eficiencia es notable:</p>
+                        <ul>
+                            <li><strong>Compresión:</strong> 50% más pequeño que JPEG, 20% más pequeño que WebP en la
+                                mayoría de imágenes</li>
+                            <li><strong>Calidad perceptual:</strong> mejor preservación de detalles finos y gradientes
+                                suaves a compresión alta</li>
+                            <li><strong>Soporte:</strong> Chrome 85+, Firefox 93+, Safari 16.4+. Ya cubre más del 90% de
+                                los usuarios globales</li>
+                            <li><strong>Limitación:</strong> la codificación es considerablemente más lenta que WebP —
+                                importante para conversión en tiempo real</li>
+                        </ul>
+                        <h2 id="a6es-s4">Datos reales de compresión</h2>
+                        <p>Usé un set de 20 imágenes representativas (fotografías, ilustraciones, capturas de pantalla,
+                            logos) y las convertí con FastConvert a calidad 80 para cada formato. Resultados promedio:
+                        </p>
+                        <div class="callout">
+                            <p><strong>Fotografía (1920×1080):</strong> JPEG original 487 KB → WebP 312 KB (-36%) → AVIF
+                                198 KB (-59%)</p>
+                        </div>
+                        <div class="callout">
+                            <p><strong>Ilustración con áreas planas:</strong> PNG original 892 KB → WebP lossless 541 KB
+                                (-39%) → AVIF 287 KB (-68%)</p>
+                        </div>
+                        <div class="callout">
+                            <p><strong>Captura de pantalla con texto:</strong> PNG 234 KB → WebP lossless 189 KB (-19%)
+                                → AVIF 112 KB (-52%)</p>
+                        </div>
+                        <h2 id="a6es-s5">Canvas API: el motor de conversión de FastConvert</h2>
+                        <p>FastConvert convierte imágenes completamente en el navegador sin enviar ningún archivo a
+                            servidores externos. El núcleo es la Canvas API con su método <code>toDataURL()</code>:</p>
+                        <pre><code>async function convertImage(file, targetFormat, quality) {
+  // Cargar imagen en un elemento HTMLImageElement
+  const img = await loadImage(file);
+  
+  // Crear canvas con las dimensiones originales
+  const canvas = document.createElement('canvas');
+  canvas.width = img.naturalWidth;
+  canvas.height = img.naturalHeight;
+  
+  // Dibujar imagen en el canvas
+  const ctx = canvas.getContext('2d');
+  ctx.drawImage(img, 0, 0);
+  
+  // Exportar al formato deseado
+  const mimeType = `image/${targetFormat}`;
+  const dataUrl = canvas.toDataURL(mimeType, quality / 100);
+  
+  return dataUrl;
+}
+
+function loadImage(file) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+    img.onload = () => { URL.revokeObjectURL(url); resolve(img); };
+    img.onerror = reject;
+    img.src = url;
+  });
+}</code></pre>
+                        <p>Una limitación importante: el soporte de <code>toDataURL('image/avif')</code> depende del
+                            navegador. Chrome lo soporta desde la versión 85, pero Firefox y Safari tienen soporte
+                            parcial. FastConvert detecta esto automáticamente y hace fallback a WebP cuando AVIF no está
+                            disponible.</p>
+                        <h2 id="a6es-s6">Cuándo usar cada formato</h2>
+                        <ul>
+                            <li><strong>AVIF primero:</strong> si tu audiencia usa Chrome moderno y la imagen no
+                                requiere conversión en tiempo real. Máxima compresión.</li>
+                            <li><strong>WebP como default:</strong> máxima compatibilidad, excelente compresión, soporte
+                                universal. Es la elección segura para producción hoy.</li>
+                            <li><strong>JPEG:</strong> solo cuando necesitas compatibilidad con sistemas que no soportan
+                                WebP (emails, algunas integraciones legacy).</li>
+                            <li><strong>PNG:</strong> solo para imágenes que requieren transparencia y necesitan
+                                compatibilidad máxima, o cuando la calidad sin pérdida es crítica.</li>
+                        </ul>
+                        <p>La estrategia recomendada para producción es usar el elemento <code>&lt;picture&gt;</code>
+                            con múltiples fuentes: AVIF primero, WebP como fallback, JPEG como último recurso.</p>
+                        <pre><code>&lt;picture&gt;
+  &lt;source srcset="imagen.avif" type="image/avif"&gt;
+  &lt;source srcset="imagen.webp" type="image/webp"&gt;
+  &lt;img src="imagen.jpg" alt="Descripción"&gt;
+&lt;/picture&gt;</code></pre>
+                        <h2 id="a6es-s7">Conclusión</h2>
+                        <p>Migrar tus imágenes a WebP hoy es una de las mejoras de rendimiento con mejor ratio
+                            esfuerzo/impacto disponibles. AVIF es el siguiente paso cuando quieras maximizar.
+                            FastConvert hace esa conversión accesible sin fricción: arrastra tu imagen, elige el
+                            formato, descarga. Sin servidores, sin registro, sin límites. <a
+                                href="https://mediaconverter.optimicrotools.com" target="_blank">Empieza con la imagen
+                                que tengas más a mano.</a></p>
+                    </div>
+
+                    <div id="a6-en" class="hidden">
+                        <p>Images represent on average 50% of a web page's weight. They are the single factor most
+                            impacting Core Web Vitals — LCP specifically — and the most common reason a site that seems
+                            well-optimized in code is still slow in production. And yet the image conversion ecosystem
+                            on the web is surprisingly bad.</p>
+                        <div class="callout">
+                            <p>«The right image format can reduce an asset's weight by 30–80% with no perceptible visual
+                                difference for the end user.»</p>
+                        </div>
+                        <p>This guide explains the technical decision between WebP and AVIF, with real compression data
+                            and the Canvas API code that <a href="https://mediaconverter.optimicrotools.com"
+                                target="_blank">FastConvert</a> uses to convert in the browser.</p>
+                        <h2 id="a6en-s1">Why images are still the problem in 2025</h2>
+                        <p>JPEG and PNG formats have been with us for decades — JPEG since 1992, PNG since 1996. Both
+                            are ubiquitous, well-supported and completely obsolete in terms of compression efficiency
+                            compared to what exists today. The problem isn't that developers don't know WebP and AVIF
+                            exist — it's that the conversion workflow is still inconvenient. FastConvert exists to
+                            eliminate that friction.</p>
+                        <h2 id="a6en-s2">WebP: the mature standard</h2>
+                        <p>WebP was developed by Google and launched in 2010. As of 2023 it has universal support across
+                            all modern browsers. Key features:</p>
+                        <ul>
+                            <li><strong>Lossy compression:</strong> 25-35% smaller than JPEG with equivalent visual
+                                quality</li>
+                            <li><strong>Lossless compression:</strong> 25-45% smaller than PNG</li>
+                            <li><strong>Transparency support:</strong> 8-bit alpha channel, equivalent to PNG</li>
+                            <li><strong>Animation support:</strong> GIF alternative with better compression</li>
+                        </ul>
+                        <h2 id="a6en-s3">AVIF: the future is here</h2>
+                        <p>AVIF (AV1 Image File Format) is based on the AV1 video codec. Its efficiency is remarkable:
+                            50% smaller than JPEG, 20% smaller than WebP on most images, with better perceptual quality
+                            at high compression. Browser support now covers over 90% of global users. Limitation:
+                            encoding is significantly slower than WebP — relevant for real-time conversion.</p>
+                        <h2 id="a6en-s4">Real compression data</h2>
+                        <div class="callout">
+                            <p><strong>Photography (1920×1080):</strong> JPEG original 487 KB → WebP 312 KB (-36%) →
+                                AVIF 198 KB (-59%)</p>
+                        </div>
+                        <div class="callout">
+                            <p><strong>Illustration with flat areas:</strong> PNG original 892 KB → WebP lossless 541 KB
+                                (-39%) → AVIF 287 KB (-68%)</p>
+                        </div>
+                        <div class="callout">
+                            <p><strong>Screenshot with text:</strong> PNG 234 KB → WebP lossless 189 KB (-19%) → AVIF
+                                112 KB (-52%)</p>
+                        </div>
+                        <h2 id="a6en-s5">Canvas API: the conversion engine</h2>
+                        <p>FastConvert converts images entirely in the browser. The core is the Canvas API with its
+                            <code>toDataURL()</code> method:
+                        </p>
+                        <pre><code>async function convertImage(file, targetFormat, quality) {
+  const img = await loadImage(file);
+  const canvas = document.createElement('canvas');
+  canvas.width = img.naturalWidth;
+  canvas.height = img.naturalHeight;
+  const ctx = canvas.getContext('2d');
+  ctx.drawImage(img, 0, 0);
+  const mimeType = `image/${targetFormat}`;
+  return canvas.toDataURL(mimeType, quality / 100);
+}</code></pre>
+                        <p>Important: <code>toDataURL('image/avif')</code> support depends on the browser. FastConvert
+                            auto-detects this and falls back to WebP when AVIF isn't available.</p>
+                        <h2 id="a6en-s6">When to use each format</h2>
+                        <ul>
+                            <li><strong>AVIF first:</strong> if your audience uses modern Chrome and the image doesn't
+                                need real-time conversion. Maximum compression.</li>
+                            <li><strong>WebP as default:</strong> maximum compatibility, excellent compression,
+                                universal support. The safe production choice today.</li>
+                            <li><strong>JPEG:</strong> only for systems that don't support WebP (emails, some legacy
+                                integrations).</li>
+                            <li><strong>PNG:</strong> only when transparency is required with maximum compatibility.
+                            </li>
+                        </ul>
+                        <pre><code>&lt;picture&gt;
+  &lt;source srcset="image.avif" type="image/avif"&gt;
+  &lt;source srcset="image.webp" type="image/webp"&gt;
+  &lt;img src="image.jpg" alt="Description"&gt;
+&lt;/picture&gt;</code></pre>
+                        <h2 id="a6en-s7">Conclusion</h2>
+                        <p>Migrating your images to WebP today is one of the best effort-to-impact performance
+                            improvements available. AVIF is the next step when you want to maximize. FastConvert makes
+                            that conversion frictionless: drag your image, choose the format, download. No servers, no
+                            signup, no limits. <a href="https://mediaconverter.optimicrotools.com" target="_blank">Start
+                                with the image closest at hand.</a></p>
+                    </div>
                 </div><!-- /article-body -->
 
                 <div class="ad-slot w-full md:max-w-[728px] rounded-lg mt-12 mb-8" data-label="Ads"></div>
@@ -1169,7 +1811,7 @@ if (canvas) {
 
     <!-- FOOTER -->
     <footer class="mt-auto glass border-t border-white/5 px-6 py-8">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2">
                 <div
                     class="w-6 h-6 rounded bg-cyan-electric flex items-center justify-center font-bold text-black text-sm">
@@ -1180,14 +1822,88 @@ if (canvas) {
             <div class="flex items-center gap-6 text-xs text-gray-500">
                 <a href="https://optimicrotools.com" id="ft-hub"
                     class="hover:text-cyan-electric transition-colors">Hub</a>
-                <a href="/blog.html" class="text-cyan-electric font-semibold">Blog</a>
-                <a href="https://x.com/optimicrotools" target="_blank"
-                    class="hover:text-cyan-electric transition-colors">@optimicrotools</a>
+                <a href="https://optimicrotools.com/terms.html" class="hover:text-cyan-electric transition-colors"
+                    id="ft-terms">Terms</a>
+                <a href="https://optimicrotools.com/privacy.html" class="hover:text-cyan-electric transition-colors"
+                    id="ft-privacy">Privacy</a>
+                <a href="javascript:void(0)" onclick="openBlogModal()"
+                    class="hover:text-cyan-electric transition-colors" id="ft-support">Support</a>
             </div>
             <p id="ft-copy" class="text-xs text-gray-600">© 2025 OptiMicroTools. Built with Vanilla JS.</p>
         </div>
     </footer>
 
+    <!-- Support Modal -->
+    <div id="blog-modal"
+        class="fixed inset-0 bg-black/80 backdrop-blur-md z-[200] hidden items-center justify-center p-4">
+        <div class="glass max-w-lg w-full rounded-3xl p-8 relative border border-white/10">
+            <button onclick="closeBlogModal()"
+                class="absolute top-6 right-6 text-gray-400 hover:text-cyan-electric transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h2 id="blog-modal-title" class="text-2xl font-bold text-cyan-electric mb-2">Support Project</h2>
+            <p id="blog-modal-sub" class="text-gray-400 text-sm mb-6">Help keep these tools free and fast.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <a href="https://www.buymeacoffee.com/jota302" target="_blank"
+                    class="flex items-center justify-center gap-3 p-4 glass rounded-xl border border-cyan-electric/30 hover:border-cyan-electric hover:bg-cyan-electric/10 transition-all group">
+                    <span class="text-2xl">☕</span>
+                    <span class="font-bold group-hover:text-cyan-electric">Buy Me a Coffee</span>
+                </a>
+                <a href="https://paypal.me/jota302" target="_blank"
+                    class="flex items-center justify-center gap-3 p-4 glass rounded-xl border border-white/5 hover:border-cyan-electric hover:bg-cyan-electric/10 transition-all group">
+                    <span class="text-2xl">💳</span>
+                    <span class="font-bold group-hover:text-cyan-electric">PayPal</span>
+                </a>
+                <div class="md:col-span-2 p-4 glass rounded-xl border border-white/5">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-xs font-bold uppercase tracking-wider text-gray-500">Binance USDT
+                            (TRC20)</span>
+                        <button onclick="copyUSDT(this)" data-addr="TE95Gtd8qTWnsEcqXxDEoQoKLNg2hMvVtV"
+                            class="text-xs bg-cyan-electric/10 text-cyan-electric px-3 py-1 rounded-md hover:bg-cyan-electric hover:text-black transition-all"
+                            id="ft-copy-btn">Copy</button>
+                    </div>
+                    <code
+                        class="block bg-black/40 p-3 rounded-lg text-xs font-mono text-cyan-electric break-all border border-white/5">TE95Gtd8qTWnsEcqXxDEoQoKLNg2hMvVtV</code>
+                </div>
+                <div class="md:col-span-2 p-6 glass rounded-xl border border-white/5 flex flex-col items-center gap-4">
+                    <div
+                        class="w-48 h-48 bg-white/5 rounded-lg flex items-center justify-center border border-white/10 overflow-hidden">
+                        <img src="assets/img/nequi-qr.png" alt="Nequi QR" class="w-full h-full object-contain"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div style="display:none"
+                            class="w-full h-full flex items-center justify-center text-gray-600 text-xs text-center p-2">
+                            Nequi QR</div>
+                    </div>
+                    <span class="text-xs font-bold text-gray-500 uppercase tracking-widest">Scan for Nequi
+                        (Colombia)</span>
+                </div>
+                <div
+                    class="md:col-span-2 pt-4 border-t border-white/5 flex flex-col md:flex-row justify-center items-center gap-4">
+                    <a href="https://x.com/optimicrotools" target="_blank"
+                        class="text-gray-400 hover:text-cyan-electric transition-colors flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.294 19.497h2.039L6.486 3.24H4.298l13.309 17.41z" />
+                        </svg>
+                        <span class="text-sm">@optimicrotools</span>
+                    </a>
+                    <a href="mailto:jota302@gmail.com"
+                        class="text-gray-400 hover:text-cyan-electric transition-colors flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <span class="text-sm">jota302@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
         // ═══════════════════════════════════════════════════════════════
         // ARTICLE DATA
@@ -1196,7 +1912,7 @@ if (canvas) {
             {
                 tags: { es: ['IA & Productividad', 'JavaScript', 'Herramientas'], en: ['AI & Productivity', 'JavaScript', 'Tools'] },
                 title: { es: 'PromptArchitect: Cómo escribir prompts de IA que realmente funcionan', en: 'PromptArchitect: How to write AI prompts that actually work' },
-                lead: { es: 'La diferencia entre un resultado mediocre y uno extraordinario al usar inteligencia artificial no está en el modelo — está en cómo le haces la pregunta.', en: "The difference between a mediocre and an extraordinary AI result isn't in the model — it's in how you ask the question." },
+                lead: { es: 'La diferencia entre un resultado mediocre y uno extraordinario al usar inteligencia artificial no está en el modelo — está en cómo le haces la pregunta.', en: "The difference between a mediocre and an extraordinary AI result isn't in the model — it\'s in how you ask the question." },
                 date: { es: '📅 Jun 2025', en: '📅 Jun 2025' },
                 time: { es: '⏱ 8 min lectura', en: '⏱ 8 min read' },
                 cta: { es: 'https://prompt.optimicrotools.com', en: 'https://prompt.optimicrotools.com' },
@@ -1244,6 +1960,45 @@ if (canvas) {
                     es: [['a3es-s1', 'Elección de librería: qrcodejs'], ['a3es-s2', 'La función de generación'], ['a3es-s3', 'Personalización de colores'], ['a3es-s4', 'Descarga: Canvas a PNG'], ['a3es-s5', 'Despliegue en Vercel'], ['a3es-s6', 'Lo que aprendí'], ['a3es-s7', 'Conclusión']],
                     en: [['a3en-s1', 'Library choice: qrcodejs'], ['a3en-s2', 'The generation function'], ['a3en-s3', 'Download: Canvas to PNG'], ['a3en-s4', 'What I learned'], ['a3en-s5', 'Conclusion']]
                 }
+            },
+            {
+                tags: { es: ['IA & Productividad', 'JavaScript', 'Build Log'], en: ['AI & Productivity', 'JavaScript', 'Build Log'] },
+                title: { es: 'El costo oculto de los prompts verbosos: cómo reducir tokens sin perder contexto', en: 'The hidden cost of verbose prompts: how to reduce tokens without losing context' },
+                lead: { es: 'Cada token que le envías a GPT-4 o Claude API te cuesta dinero. La mayoría de prompts llevan entre un 20% y un 40% de ruido que puedes eliminar en milisegundos. Así funciona SlimContext por dentro.', en: 'Every token you send to GPT-4 or Claude API costs money. Most prompts carry 20–40% noise you can eliminate in milliseconds. Here\'s how SlimContext works under the hood.' },
+                date: { es: '📅 Oct 2025', en: '📅 Oct 2025' },
+                time: { es: '⏱ 8 min lectura', en: '⏱ 8 min read' },
+                cta: { es: 'https://optimizer.optimicrotools.com', en: 'https://optimizer.optimicrotools.com' },
+                ctaLbl: { es: 'Abrir SlimContext', en: 'Open SlimContext' },
+                toc: {
+                    es: [['a4es-s1', '¿Por qué importan los tokens?'], ['a4es-s2', 'Cómo funciona por dentro'], ['a4es-s3', 'Los 3 modos explicados'], ['a4es-s4', 'Benchmarks reales'], ['a4es-s5', 'Cuándo usarlo'], ['a4es-s6', 'Conclusión']],
+                    en: [['a4en-s1', 'Why tokens matter'], ['a4en-s2', 'How it works under the hood'], ['a4en-s3', 'The 3 modes explained'], ['a4en-s4', 'Real benchmarks'], ['a4en-s5', 'When to use it'], ['a4en-s6', 'Conclusion']]
+                }
+            },
+            {
+                tags: { es: ['Seguridad & IA', 'Privacidad', 'Web'], en: ['Security & AI', 'Privacy', 'Web'] },
+                title: { es: 'Antes de hacer click: cómo funciona la detección de URLs maliciosas por dentro', en: 'Before you click: how malicious URL detection works under the hood' },
+                lead: { es: 'Los links acortados son el vector de phishing más subestimado de 2025. Te explico cómo Link Shield sigue redirecciones sin que tu navegador visite la URL sospechosa, y qué indicadores de riesgo evalúa.', en: 'Shortened links are the most underestimated phishing vector of 2025. Here is how Link Shield follows redirects without your browser visiting the suspicious URL, and what risk indicators it evaluates.' },
+                date: { es: '📅 Nov 2025', en: '📅 Nov 2025' },
+                time: { es: '⏱ 9 min lectura', en: '⏱ 9 min read' },
+                cta: { es: 'https://safe.optimicrotools.com', en: 'https://safe.optimicrotools.com' },
+                ctaLbl: { es: 'Abrir Link Shield', en: 'Open Link Shield' },
+                toc: {
+                    es: [['a5es-s1', 'El problema de los links acortados'], ['a5es-s2', 'Cómo seguimos redirecciones'], ['a5es-s3', 'Indicadores de riesgo'], ['a5es-s4', 'Lo que no detectamos'], ['a5es-s5', 'Código real'], ['a5es-s6', 'Conclusión']],
+                    en: [['a5en-s1', 'The shortened link problem'], ['a5en-s2', 'How we follow redirects'], ['a5en-s3', 'Risk indicators'], ['a5en-s4', 'What we don\'t detect'], ['a5en-s5', 'Real code'], ['a5en-s6', 'Conclusion']]
+                }
+            },
+            {
+                tags: { es: ['Rendimiento Web', 'JavaScript', 'Build Log'], en: ['Web Performance', 'JavaScript', 'Build Log'] },
+                title: { es: 'WebP vs AVIF en 2025: cuándo usar cada formato y cómo convertir sin perder calidad', en: 'WebP vs AVIF in 2025: when to use each format and how to convert without losing quality' },
+                lead: { es: 'Las imágenes siguen siendo el mayor culpable de un mal Core Web Vitals. Esta guía técnica explica las diferencias reales entre WebP y AVIF, con datos de compresión reales y el código de Canvas API que usa FastConvert.', en: 'Images are still the biggest culprit behind poor Core Web Vitals. This technical guide explains the real differences between WebP and AVIF, with real compression data and the Canvas API code behind FastConvert.' },
+                date: { es: '📅 Dic 2025', en: '📅 Dec 2025' },
+                time: { es: '⏱ 10 min lectura', en: '⏱ 10 min read' },
+                cta: { es: 'https://mediaconverter.optimicrotools.com', en: 'https://mediaconverter.optimicrotools.com' },
+                ctaLbl: { es: 'Abrir FastConvert', en: 'Open FastConvert' },
+                toc: {
+                    es: [['a6es-s1', 'Por qué las imágenes siguen siendo el problema'], ['a6es-s2', 'WebP: el estándar maduro'], ['a6es-s3', 'AVIF: el futuro ya llegó'], ['a6es-s4', 'Datos reales de compresión'], ['a6es-s5', 'Canvas API: el motor de conversión'], ['a6es-s6', 'Cuándo usar cada formato'], ['a6es-s7', 'Conclusión']],
+                    en: [['a6en-s1', 'Why images are still the problem'], ['a6en-s2', 'WebP: the mature standard'], ['a6en-s3', 'AVIF: the future is here'], ['a6en-s4', 'Real compression data'], ['a6en-s5', 'Canvas API: the conversion engine'], ['a6en-s6', 'When to use each format'], ['a6en-s7', 'Conclusion']]
+                }
             }
         ];
 
@@ -1258,16 +2013,25 @@ if (canvas) {
                 c1Tag: 'AI & Productivity', c1Feat: 'Featured', c1Date: '📅 Jun 2025', c1Read: '⏱ 8 min', c1Cta: 'Read article',
                 c2Tag: 'JavaScript', c2Date: '📅 Jul 2025', c2Read: '⏱ 7 min', c2Cta: 'Read',
                 c2Title: 'Vanilla JS vs Frameworks: Why I chose the hard option',
-                c2Exc: "When performance is the priority, the answer isn't always React or Vue.",
+                c2Exc: "When performance is the priority, the answer isn\'t always React or Vue.",
                 c3Tag: 'Security & AI', c3Date: '📅 Aug 2025', c3Read: '⏱ 9 min', c3Cta: 'Read',
                 c3Title: 'How to protect your data before using ChatGPT: a prompt sanitization guide',
                 c3Exc: 'Every time you use AI with real company data, you\'re taking a privacy risk you can eliminate in 3 seconds.',
                 c4Tag: 'Build Log', c4Date: '📅 Sep 2025', c4Read: '⏱ 10 min', c4Cta: 'Read',
                 c4Title: 'How I built a QR generator with pure JS in a weekend',
                 c4Exc: 'From idea to Vercel deployment: the real technical decisions behind QuickQR Pro.',
+                c5Tag: 'AI & Productivity', c5Date: '📅 Oct 2025', c5Read: '⏱ 8 min', c5Cta: 'Read',
+                c5Title: 'The hidden cost of verbose prompts: how to reduce tokens without losing context',
+                c5Exc: 'Every token you send to GPT-4 or Claude API costs money. Most prompts carry 20–40% noise.',
+                c6Tag: 'Security & AI', c6Date: '📅 Nov 2025', c6Read: '⏱ 9 min', c6Cta: 'Read',
+                c6Title: 'Before you click: how malicious URL detection works under the hood',
+                c6Exc: 'Shortened links are the most underestimated phishing vector of 2025.',
+                c7Tag: 'Web Performance', c7Date: '📅 Dec 2025', c7Read: '⏱ 10 min', c7Cta: 'Read',
+                c7Title: 'WebP vs AVIF in 2025: when to use each format and how to convert without quality loss',
+                c7Exc: 'Images are still the biggest culprit behind poor Core Web Vitals.',
                 artBack: '← Back to blog', artAll: 'View all articles',
                 tocTitle: 'Contents', ctaSub: 'Free, no signup, 100% in your browser.', ctaBtn: 'Open tool',
-                sbToolsTitle: 'Other tools', ftHub: 'Hub', ftCopy: '© 2025 OptiMicroTools. Built with Vanilla JS.',
+                sbToolsTitle: 'Other tools', ftHub: 'Hub', ftCopy: '© 2025 OptiMicroTools. Built with Vanilla JS.', ftTerms: 'Terms', ftPrivacy: 'Privacy', ftSupport: 'Support',
                 prevArt: 'Previous', nextArt: 'Next'
             },
             es: {
@@ -1284,9 +2048,18 @@ if (canvas) {
                 c4Tag: 'Build Log', c4Date: '📅 Sep 2025', c4Read: '⏱ 10 min', c4Cta: 'Leer',
                 c4Title: 'Cómo construí un generador de QR con JS puro en un fin de semana',
                 c4Exc: 'De la idea al despliegue en Vercel: las decisiones técnicas reales detrás de QuickQR Pro.',
+                c5Tag: 'IA & Productividad', c5Date: '📅 Oct 2025', c5Read: '⏱ 8 min', c5Cta: 'Leer',
+                c5Title: 'El costo oculto de los prompts verbosos: cómo reducir tokens sin perder contexto',
+                c5Exc: 'Cada token que envías a GPT-4 o Claude API cuesta dinero. La mayoría de prompts llevan un 20–40% de ruido.',
+                c6Tag: 'Seguridad & IA', c6Date: '📅 Nov 2025', c6Read: '⏱ 9 min', c6Cta: 'Leer',
+                c6Title: 'Antes de hacer click: cómo funciona la detección de URLs maliciosas por dentro',
+                c6Exc: 'Los links acortados son el vector de phishing más subestimado de 2025.',
+                c7Tag: 'Rendimiento Web', c7Date: '📅 Dic 2025', c7Read: '⏱ 10 min', c7Cta: 'Leer',
+                c7Title: 'WebP vs AVIF en 2025: cuándo usar cada formato y cómo convertir sin perder calidad',
+                c7Exc: 'Las imágenes siguen siendo el mayor culpable de un mal Core Web Vitals.',
                 artBack: '← Volver al blog', artAll: 'Ver todos los artículos',
                 tocTitle: 'Contenido', ctaSub: 'Gratis, sin registro, 100% en tu navegador.', ctaBtn: 'Abrir herramienta',
-                sbToolsTitle: 'Otras herramientas', ftHub: 'Hub', ftCopy: '© 2025 OptiMicroTools. Hecho con JS puro.',
+                sbToolsTitle: 'Otras herramientas', ftHub: 'Hub', ftCopy: '© 2025 OptiMicroTools. Hecho con JS puro.', ftTerms: 'Términos', ftPrivacy: 'Privacidad', ftSupport: 'Apoyar',
                 prevArt: 'Anterior', nextArt: 'Siguiente'
             }
         };
@@ -1338,6 +2111,18 @@ if (canvas) {
             setText('c4-date', t.c4Date); setText('c4-read', t.c4Read);
             setHTML('c4-cta', t.c4Cta + '<svg class="w-3 h-3 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>');
 
+            setText('c5-tag', t.c5Tag); setText('c5-title', t.c5Title); setText('c5-exc', t.c5Exc);
+            setText('c5-date', t.c5Date); setText('c5-read', t.c5Read);
+            setHTML('c5-cta', t.c5Cta + '<svg class="w-3 h-3 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>');
+
+            setText('c6-tag', t.c6Tag); setText('c6-title', t.c6Title); setText('c6-exc', t.c6Exc);
+            setText('c6-date', t.c6Date); setText('c6-read', t.c6Read);
+            setHTML('c6-cta', t.c6Cta + '<svg class="w-3 h-3 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>');
+
+            setText('c7-tag', t.c7Tag); setText('c7-title', t.c7Title); setText('c7-exc', t.c7Exc);
+            setText('c7-date', t.c7Date); setText('c7-read', t.c7Read);
+            setHTML('c7-cta', t.c7Cta + '<svg class="w-3 h-3 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>');
+
             // Article UI strings
             setText('art-back', t.artBack);
             setText('art-all', t.artAll);
@@ -1347,6 +2132,16 @@ if (canvas) {
             setText('sb-tools-title', t.sbToolsTitle);
             setText('ft-hub', t.ftHub);
             setText('ft-copy', t.ftCopy);
+            setText('ft-terms', t.ftTerms);
+            setText('ft-privacy', t.ftPrivacy);
+            setText('ft-support', t.ftSupport);
+            setText('ft-terms', t.ftTerms);
+            setText('ft-privacy', t.ftPrivacy);
+            setText('ft-support', t.ftSupport);
+            // Support modal translations
+            setText('blog-modal-title', lang === 'es' ? 'Apoyar Proyecto' : 'Support Project');
+            setText('blog-modal-sub', lang === 'es' ? 'Mantén estas herramientas gratis y rápidas.' : 'Help keep these tools free and fast.');
+            setText('ft-copy-btn', lang === 'es' ? 'Copiar' : 'Copy');
 
             // Toggle
             document.getElementById('toggle-circle').style.transform = lang === 'es' ? 'translateX(20px)' : 'translateX(0)';
@@ -1460,12 +2255,37 @@ if (canvas) {
         });
 
         // ═══════════════════════════════════════════════════════════════
+        // SUPPORT MODAL
+        // ═══════════════════════════════════════════════════════════════
+        function openBlogModal() {
+            document.getElementById('blog-modal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeBlogModal() {
+            document.getElementById('blog-modal').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+        function copyUSDT(btn) {
+            const addr = btn.getAttribute('data-addr');
+            navigator.clipboard.writeText(addr).then(() => {
+                const orig = btn.textContent;
+                btn.textContent = '✓';
+                setTimeout(() => btn.textContent = orig, 2000);
+            });
+        }
+        // ═══════════════════════════════════════════════════════════════
         // INIT
         // ═══════════════════════════════════════════════════════════════
-        document.addEventListener('DOMContentLoaded', () => {
+        (() => {
+            try { lang = localStorage.getItem('lang'); } catch (e) { lang = null; }
+            if (!lang) lang = navigator.language.startsWith('es') ? 'es' : 'en';
             updateUI();
-            document.getElementById('lang-toggle').addEventListener('click', toggleLanguage);
-        });
+            window.addEventListener('keydown', e => { if (e.key === 'Escape') closeBlogModal(); });
+            document.getElementById('blog-modal').addEventListener('click', e => {
+                if (e.target === document.getElementById('blog-modal')) closeBlogModal();
+            });
+        })();
+
     </script>
 </body>
 
