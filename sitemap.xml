@@ -21,6 +21,19 @@
   </url>
 
   <url>
+    <loc>https://optimicrotools.com/privacy.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://optimicrotools.com/terms.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
     <loc>https://text.optimicrotools.com/</loc>
     <lastmod>2026-03-22</lastmod>
     <priority>0.7</priority>
@@ -50,7 +63,7 @@
     <lastmod>2026-03-22</lastmod>
     <priority>0.7</priority>
   </url>
-  
+
   <url>
     <loc>https://myip.optimicrotools.com/</loc>
     <lastmod>2026-03-22</lastmod>
