@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://optimicrotools.com/sitemap.xml
